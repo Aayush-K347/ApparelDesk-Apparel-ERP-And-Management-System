@@ -3,7 +3,7 @@ import React, { useState, useMemo } from 'react';
 import { ViewState, Product } from '../../types';
 import { MOCK_STUDIO_POSTS } from '../../constants';
 import { StudioPost } from './StudioPost';
-import { Camera, Sparkles, Zap, Trophy, UserCheck } from 'lucide-react';
+import { Camera, Sparkles, Zap, Trophy, UserCheck, ArrowLeft } from 'lucide-react';
 
 interface StudioFeedProps {
     setView: (view: ViewState) => void;
@@ -34,6 +34,13 @@ export const StudioFeed: React.FC<StudioFeedProps> = ({ setView, setSelectedProd
     return (
         <div className="min-h-screen bg-[#F2F4F3] bg-subtle-grid pb-32 relative">
             
+            {/* Back Button */}
+            <div className="absolute top-28 left-6 md:left-12 z-20">
+                <button onClick={() => setView('LANDING')} className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-[#111111] transition-colors">
+                    <ArrowLeft size={12} /> Back to Home
+                </button>
+            </div>
+
             {/* Background Decor */}
             <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
                  <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#488C5C]/5 rounded-full blur-[150px]"></div>

@@ -1,15 +1,16 @@
 
 import React from 'react';
-import { UserOrder } from '../../types';
+import { UserOrder, ViewState } from '../../types';
 import { MOCK_USER_ORDERS } from '../../constants';
 import { ArrowLeft, Printer, Package } from 'lucide-react';
 
 interface UserProfileProps {
     selectedOrder: UserOrder | null;
     setSelectedOrder: (order: UserOrder | null) => void;
+    setView: (view: ViewState) => void;
 }
 
-export const UserProfile: React.FC<UserProfileProps> = ({ selectedOrder, setSelectedOrder }) => {
+export const UserProfile: React.FC<UserProfileProps> = ({ selectedOrder, setSelectedOrder, setView }) => {
     // If an order is selected, show detail view
     if (selectedOrder) {
         return (
@@ -95,6 +96,11 @@ export const UserProfile: React.FC<UserProfileProps> = ({ selectedOrder, setSele
     return (
         <div className="pt-32 min-h-screen bg-[#F2F4F3] bg-subtle-grid px-6 md:px-12 pb-24">
             <div className="max-w-7xl mx-auto">
+                {/* Back Button */}
+                <button onClick={() => setView('LANDING')} className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-[#111111] transition-colors mb-8">
+                    <ArrowLeft size={12} /> Back to Home
+                </button>
+
                 <h1 className="text-5xl md:text-7xl font-anton font-bold uppercase tracking-wide mb-12">My Account</h1>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
