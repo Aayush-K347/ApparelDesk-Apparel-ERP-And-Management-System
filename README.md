@@ -25,7 +25,7 @@ Shoppers explore curated collections, creators publish shoppable outfits, vendor
 
 </td>
 <td width="40%">
-<img src="/frontend/screenshots/logo.png" width="100%" alt="Luvarte logo">
+<img src="/frontend/screenshots/image.png" width="100%" alt="Luvarte logo">
 </td>
 </tr>
 </table>
