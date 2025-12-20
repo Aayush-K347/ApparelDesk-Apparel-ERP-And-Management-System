@@ -71,7 +71,7 @@ class ProductColor(models.Model):
         return f"{self.product} - {self.color_name}"
 
 
-class ProductImage(TimeStampedModel):
+class ProductImage(models.Model):
     image_id = models.BigAutoField(primary_key=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
     image_url = models.URLField(max_length=500)
