@@ -311,6 +311,7 @@ const App: React.FC = () => {
             <UserProfile 
                 selectedOrder={selectedOrder}
                 setSelectedOrder={setSelectedOrder}
+                setView={setView}
             />
             <Footer />
           </>
