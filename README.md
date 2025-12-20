@@ -7,7 +7,7 @@
 
 <!-- Terminal Intro Animation -->
 <div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Anton&letterSpacing=0.044rem&pause=1000&color=488C5C&width=435&lines=Initializing+Luvarte+Commerce...;Loading+Creator+Studio...;Activating+Virtual+Try-On+AI...;Curating+Your+Style...;Welcome+to+Atelier.)](https://git.io/typing-svg" alt="Terminal Animation">
+<img src="https://readme-typing-svg.demolab.com/?font=Anton&letterSpacing=0.044rem&pause=1000&color=488C5C&width=435&lines=Initializing+Luvarte+Commerce...;Loading+Creator+Studio...;Activating+Virtual+Try-On+AI...;Curating+Your+Style...;Welcome+to+Atelier." alt="Terminal Animation">
 </div>
 
 
@@ -317,7 +317,7 @@ Admin Panel: http://127.0.0.1:8000/admin
     </tr>
     <tr>
       <td><img src="/frontend/screenshots/homepage5.png" alt="Adjustments" width="100%"></td>
-      <td><img src="/frontend/screenshots/category.png.png" alt="Automated Stock Manager" width="100%"></td>
+      <td><img src="/frontend/screenshots/category.png" alt="Automated Stock Manager" width="100%"></td>
     </tr>
         <tr>
       <td><img src="/frontend/screenshots/Studio.png" alt="Stock Ledger" width="100%"></td>
