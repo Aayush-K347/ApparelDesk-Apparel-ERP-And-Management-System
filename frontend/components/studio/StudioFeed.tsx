@@ -43,7 +43,7 @@ export const StudioFeed: React.FC<StudioFeedProps> = ({ setView, setSelectedProd
 
             {/* Background Decor */}
             <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
-                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#488C5C]/5 rounded-full blur-[150px]"></div>
+                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#c3f235]/5 rounded-full blur-[150px]"></div>
                  <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#111111]/5 rounded-full blur-[150px]"></div>
             </div>
 
@@ -51,8 +51,8 @@ export const StudioFeed: React.FC<StudioFeedProps> = ({ setView, setSelectedProd
             <div className="relative pt-32 pb-16 text-center px-6 z-10">
                  <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 border border-[#111111]/10 rounded-full bg-white/60 backdrop-blur-md shadow-sm">
                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#488C5C] opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#488C5C]"></span>
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c3f235] opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c3f235]"></span>
                      </span>
                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]">LUVARTE Studio</span>
                  </div>
@@ -89,7 +89,7 @@ export const StudioFeed: React.FC<StudioFeedProps> = ({ setView, setSelectedProd
                                 }
                             `}
                          >
-                             <filter.icon size={12} className={activeFilter === filter.id ? 'text-[#488C5C]' : ''} />
+                             <filter.icon size={12} className={activeFilter === filter.id ? 'text-[#c3f235]' : ''} />
                              <span className="whitespace-nowrap">{filter.label}</span>
                          </button>
                      ))}
@@ -127,7 +127,7 @@ export const StudioFeed: React.FC<StudioFeedProps> = ({ setView, setSelectedProd
                 </div>
                 <h3 className="font-anton text-3xl uppercase mb-2">Share Your Style</h3>
                 <p className="text-gray-500 text-xs tracking-widest uppercase mb-8">Tag @luvarte_paris to be featured</p>
-                <button className="border-b border-[#111111] pb-1 text-[10px] font-bold uppercase tracking-[0.2em] hover:text-[#488C5C] hover:border-[#488C5C] transition-colors">
+                <button className="border-b border-[#111111] pb-1 text-[10px] font-bold uppercase tracking-[0.2em] hover:text-[#c3f235] hover:border-[#c3f235] transition-colors">
                     Join Creator Program
                 </button>
             </div>

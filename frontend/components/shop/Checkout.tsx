@@ -63,7 +63,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                         <div className={`bg-white p-8 md:p-10 border border-gray-200 shadow-sm transition-opacity duration-500 ${step === 'PAYMENT' ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
                             <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
                                 <h2 className="font-anton text-2xl uppercase tracking-wide">Shipping Details</h2>
-                                <Truck size={20} className="text-[#488C5C]" />
+                                <Truck size={20} className="text-[#c3f235]" />
                             </div>
 
                             <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -103,7 +103,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                                 <div className="mt-8 flex justify-end">
                                     <button 
                                         onClick={() => setStep('PAYMENT')}
-                                        className="bg-[#111111] text-white px-8 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#488C5C] transition-colors shadow-lg"
+                                        className="bg-[#111111] text-white px-8 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#c3f235] transition-colors shadow-lg"
                                     >
                                         Continue to Payment
                                     </button>
@@ -112,10 +112,10 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                         </div>
 
                         {/* Payment Section */}
-                        <div className={`bg-white p-8 md:p-10 border border-gray-200 shadow-sm transition-all duration-500 ${step === 'SHIPPING' ? 'opacity-50 pointer-events-none grayscale' : 'opacity-100 ring-2 ring-[#488C5C]/10'}`}>
+                        <div className={`bg-white p-8 md:p-10 border border-gray-200 shadow-sm transition-all duration-500 ${step === 'SHIPPING' ? 'opacity-50 pointer-events-none grayscale' : 'opacity-100 ring-2 ring-[#c3f235]/10'}`}>
                             <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
                                 <h2 className="font-anton text-2xl uppercase tracking-wide">Payment Method</h2>
-                                <div className="flex items-center gap-2 text-[#488C5C] text-[10px] font-bold uppercase tracking-widest">
+                                <div className="flex items-center gap-2 text-[#c3f235] text-[10px] font-bold uppercase tracking-widest">
                                     <Lock size={14} /> Secure Encrypted
                                 </div>
                             </div>
@@ -173,7 +173,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                                     <button 
                                         type="submit"
                                         disabled={isProcessing || isLoadingProducts}
-                                        className="bg-[#111111] text-white px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#488C5C] transition-colors shadow-lg flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                                        className="bg-[#111111] text-white px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#c3f235] transition-colors shadow-lg flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         {isProcessing ? (
                                             <>
@@ -223,7 +223,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                                     <span className="font-bold text-[#111111]">₹{cartSubtotal.toFixed(2)}</span>
                                 </div>
                                 {appliedCoupon && (
-                                    <div className="flex justify-between text-[#488C5C]">
+                                    <div className="flex justify-between text-[#c3f235]">
                                         <span>Discount</span>
                                         <span className="font-bold">-₹{discountAmount.toFixed(2)}</span>
                                     </div>
@@ -243,14 +243,14 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                         {/* Trust Badges */}
                         <div className="grid grid-cols-2 gap-4">
                             <div className="bg-white p-4 border border-gray-100 flex items-center gap-3">
-                                <CheckCircle className="text-[#488C5C]" size={20} />
+                                <CheckCircle className="text-[#c3f235]" size={20} />
                                 <div>
                                     <p className="font-bold text-[10px] uppercase tracking-widest">Secure Checkout</p>
                                     <p className="text-[9px] text-gray-400">256-bit SSL Encryption</p>
                                 </div>
                             </div>
                             <div className="bg-white p-4 border border-gray-100 flex items-center gap-3">
-                                <Truck className="text-[#488C5C]" size={20} />
+                                <Truck className="text-[#c3f235]" size={20} />
                                 <div>
                                     <p className="font-bold text-[10px] uppercase tracking-widest">Fast Delivery</p>
                                     <p className="text-[9px] text-gray-400">2-3 Business Days</p>

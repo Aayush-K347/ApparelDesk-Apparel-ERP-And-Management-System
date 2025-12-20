@@ -56,7 +56,7 @@ export const StudioPost: React.FC<StudioPostProps> = ({ post, setView, setSelect
                             <div className="flex flex-col">
                                 <span className="text-white font-bold text-[10px] tracking-wide flex items-center gap-1">
                                     {post.creator.name}
-                                    {post.creator.isVerified && <BadgeCheck size={10} className="text-[#488C5C] fill-white" />}
+                                    {post.creator.isVerified && <BadgeCheck size={10} className="text-[#c3f235] fill-white" />}
                                 </span>
                             </div>
                          </div>
@@ -72,9 +72,9 @@ export const StudioPost: React.FC<StudioPostProps> = ({ post, setView, setSelect
                             {/* Floating Shop Button */}
                             <button 
                                 onClick={(e) => { e.stopPropagation(); setShowProducts(true); }}
-                                className="bg-white text-[#111111] pl-3 pr-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#488C5C] hover:text-white transition-all duration-300 shadow-lg group/btn"
+                                className="bg-white text-[#111111] pl-3 pr-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#c3f235] hover:text-white transition-all duration-300 shadow-lg group/btn"
                             >
-                                <div className="bg-[#111111] text-white rounded-full p-1 group-hover/btn:bg-white group-hover/btn:text-[#488C5C] transition-colors">
+                                <div className="bg-[#111111] text-white rounded-full p-1 group-hover/btn:bg-white group-hover/btn:text-[#c3f235] transition-colors">
                                     <ShoppingBag size={12} />
                                 </div>
                                 <span className="text-[10px] font-bold uppercase tracking-widest">Shop ({displayProducts.length})</span>
@@ -138,7 +138,7 @@ export const StudioPost: React.FC<StudioPostProps> = ({ post, setView, setSelect
                                             <h4 className="font-bold text-sm uppercase tracking-wide mb-1">{product.name}</h4>
                                             <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-2">{product.vendor}</p>
                                         </div>
-                                        <ArrowRight size={16} className="text-gray-300 -rotate-45 group-hover/item:rotate-0 group-hover/item:text-[#488C5C] transition-all" />
+                                        <ArrowRight size={16} className="text-gray-300 -rotate-45 group-hover/item:rotate-0 group-hover/item:text-[#c3f235] transition-all" />
                                     </div>
                                     <div className="flex items-center gap-2 mt-auto">
                                         <span className="font-anton text-lg">₹{product.price}</span>
@@ -154,7 +154,7 @@ export const StudioPost: React.FC<StudioPostProps> = ({ post, setView, setSelect
                     <div className="p-6 bg-white border-t border-gray-200">
                          <button 
                             onClick={() => { setShowProducts(false); setView('PRODUCT_LISTING'); }}
-                            className="w-full bg-[#111111] text-white py-4 rounded-xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#488C5C] transition-colors shadow-lg"
+                            className="w-full bg-[#111111] text-white py-4 rounded-xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#c3f235] transition-colors shadow-lg"
                         >
                              View All Products
                          </button>

@@ -99,7 +99,7 @@ export const VendorBilling: React.FC = () => {
             <ChevronRight size={12} className="text-gray-300"/>
             <span className={docStatus === 'Confirmed' ? 'text-[#111111]' : 'text-gray-400'}>Confirmed</span>
             <ChevronRight size={12} className="text-gray-300"/>
-            <span className={docStatus === 'Paid' ? 'text-[#488C5C]' : 'text-gray-400'}>Paid</span>
+            <span className={docStatus === 'Paid' ? 'text-[#c3f235]' : 'text-gray-400'}>Paid</span>
             <ChevronRight size={12} className="text-gray-300"/>
             <span className={docStatus === 'Cancelled' ? 'text-red-500' : 'text-gray-400'}>Cancelled</span>
         </div>
@@ -108,7 +108,7 @@ export const VendorBilling: React.FC = () => {
     const ActionButtons = ({ type }: { type: 'SO' | 'INV' | 'PO' | 'BILL' }) => (
         <div className="flex gap-2">
              {docStatus === 'Draft' && (
-                 <button onClick={() => setDocStatus('Confirmed')} className="bg-[#111111] text-white px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#488C5C]">Confirm</button>
+                 <button onClick={() => setDocStatus('Confirmed')} className="bg-[#111111] text-white px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#c3f235]">Confirm</button>
              )}
              <button className="border border-gray-200 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50">Print</button>
              <button className="border border-gray-200 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50">Send</button>
@@ -123,10 +123,10 @@ export const VendorBilling: React.FC = () => {
                  <button onClick={() => { setView('VENDOR_BILL'); resetToDraft(); }} className="ml-4 border border-[#111111] text-[#111111] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-white transition-colors">Create Bill</button>
              )}
               {type === 'INV' && docStatus === 'Confirmed' && (
-                 <button onClick={() => setView('INVOICE_PAYMENT')} className="ml-4 border border-[#488C5C] text-[#488C5C] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#488C5C] hover:text-white transition-colors">Register Payment</button>
+                 <button onClick={() => setView('INVOICE_PAYMENT')} className="ml-4 border border-[#c3f235] text-[#c3f235] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#c3f235] hover:text-white transition-colors">Register Payment</button>
              )}
              {type === 'BILL' && docStatus === 'Confirmed' && (
-                 <button onClick={() => setView('BILL_PAYMENT')} className="ml-4 border border-[#488C5C] text-[#488C5C] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#488C5C] hover:text-white transition-colors">Register Payment</button>
+                 <button onClick={() => setView('BILL_PAYMENT')} className="ml-4 border border-[#c3f235] text-[#c3f235] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#c3f235] hover:text-white transition-colors">Register Payment</button>
              )}
         </div>
     );
@@ -170,7 +170,7 @@ export const VendorBilling: React.FC = () => {
         <div className="p-8 h-full animate-[fadeIn_0.3s_ease-out] flex items-center justify-center">
             <div className="bg-white w-full max-w-2xl p-10 rounded-xl shadow-2xl border border-gray-100">
                  <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
-                     <h2 className="font-anton text-3xl uppercase tracking-wide text-[#488C5C]">{isBill ? 'Bill Payment' : 'Invoice Payment'}</h2>
+                     <h2 className="font-anton text-3xl uppercase tracking-wide text-[#c3f235]">{isBill ? 'Bill Payment' : 'Invoice Payment'}</h2>
                      <button onClick={() => setView(isBill ? 'VENDOR_BILL' : 'INVOICE')} className="text-gray-400 hover:text-black">
                          <X size={24} />
                      </button>
@@ -251,7 +251,7 @@ export const VendorBilling: React.FC = () => {
                             setDocStatus('Paid');
                             setView(isBill ? 'VENDOR_BILL' : 'INVOICE');
                         }}
-                        className="px-6 py-2 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#488C5C] shadow-lg"
+                        className="px-6 py-2 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c3f235] shadow-lg"
                     >
                         Confirm
                      </button>
@@ -333,7 +333,7 @@ export const VendorBilling: React.FC = () => {
                 <div className="bg-white p-8 border border-gray-200 shadow-sm rounded-lg relative">
                     {/* Ribbon for Paid Status */}
                     {docStatus === 'Paid' && (
-                        <div className="absolute top-8 right-8 rotate-12 border-4 border-[#488C5C] text-[#488C5C] px-6 py-2 font-anton text-2xl uppercase tracking-widest opacity-80 select-none">
+                        <div className="absolute top-8 right-8 rotate-12 border-4 border-[#c3f235] text-[#c3f235] px-6 py-2 font-anton text-2xl uppercase tracking-widest opacity-80 select-none">
                             PAID
                         </div>
                     )}
@@ -367,7 +367,7 @@ export const VendorBilling: React.FC = () => {
                      <ItemTable />
                      
                      <div className="mt-4 text-right text-xs text-gray-500">
-                         {docStatus === 'Paid' && <p className="text-[#488C5C] font-bold mb-1">Paid on 12/12/2025: ₹600</p>}
+                         {docStatus === 'Paid' && <p className="text-[#c3f235] font-bold mb-1">Paid on 12/12/2025: ₹600</p>}
                          <p className="font-bold text-black">Amount Due: {docStatus === 'Paid' ? '₹0' : '₹600'}</p>
                      </div>
                 </div>
@@ -391,7 +391,7 @@ export const VendorBilling: React.FC = () => {
                 <div className="bg-white p-8 border border-gray-200 shadow-sm rounded-lg relative">
                     {/* Ribbon for Paid Status */}
                     {!isPO && docStatus === 'Paid' && (
-                        <div className="absolute top-8 right-8 rotate-12 border-4 border-[#488C5C] text-[#488C5C] px-6 py-2 font-anton text-2xl uppercase tracking-widest opacity-80 select-none">
+                        <div className="absolute top-8 right-8 rotate-12 border-4 border-[#c3f235] text-[#c3f235] px-6 py-2 font-anton text-2xl uppercase tracking-widest opacity-80 select-none">
                             PAID
                         </div>
                     )}

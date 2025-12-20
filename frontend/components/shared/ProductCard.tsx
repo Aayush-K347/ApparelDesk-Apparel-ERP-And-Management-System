@@ -40,7 +40,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick, onQu
             </div>
             
             <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest mb-1 group-hover:text-[#488C5C] transition-colors truncate">{product.name}</h3>
+                <h3 className="text-xs font-bold uppercase tracking-widest mb-1 group-hover:text-[#c3f235] transition-colors truncate">{product.name}</h3>
                 <div className="flex gap-3 text-xs">
                     <span className="font-bold">₹{product.price.toFixed(2)}</span>
                     {product.originalPrice && <span className="text-gray-400 line-through">₹{product.originalPrice.toFixed(2)}</span>}

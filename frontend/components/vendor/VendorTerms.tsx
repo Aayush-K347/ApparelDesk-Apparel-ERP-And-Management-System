@@ -16,7 +16,7 @@ export const VendorTerms: React.FC = () => {
                         onClick={() => setView('TERMS_DETAIL')}
                         className="bg-white p-12 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all cursor-pointer group hover:-translate-y-1"
                      >
-                        <h2 className="font-anton text-3xl mb-8 uppercase tracking-wide group-hover:text-[#488C5C] transition-colors">Payment Terms</h2>
+                        <h2 className="font-anton text-3xl mb-8 uppercase tracking-wide group-hover:text-[#c3f235] transition-colors">Payment Terms</h2>
                         <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">
                             Number of Payment Terms: <span className="text-black text-lg ml-2">10</span>
                         </div>
@@ -26,7 +26,7 @@ export const VendorTerms: React.FC = () => {
                         onClick={() => setView('OFFERS_DETAIL')}
                         className="bg-white p-12 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all cursor-pointer group hover:-translate-y-1"
                      >
-                        <h2 className="font-anton text-3xl mb-8 uppercase tracking-wide group-hover:text-[#488C5C] transition-colors">Offers</h2>
+                        <h2 className="font-anton text-3xl mb-8 uppercase tracking-wide group-hover:text-[#c3f235] transition-colors">Offers</h2>
                         <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">
                             Number of Active Offers: <span className="text-black text-lg ml-2">3</span>
                         </div>
@@ -111,7 +111,7 @@ export const VendorTerms: React.FC = () => {
                  
                  {/* Stat overlay */}
                  <div className="absolute top-8 right-1/3 flex flex-col items-center">
-                     <div className="text-4xl font-anton text-[#488C5C]">15</div>
+                     <div className="text-4xl font-anton text-[#c3f235]">15</div>
                      <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Coupons Generated</div>
                  </div>
 
@@ -190,7 +190,7 @@ export const VendorTerms: React.FC = () => {
                              
                              <div className="flex justify-end gap-4 mt-8 pt-4 border-t border-gray-100">
                                  <button onClick={() => setShowCouponModal(false)} className="px-6 py-2 border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-gray-50">Cancel</button>
-                                 <button onClick={() => setShowCouponModal(false)} className="px-6 py-2 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#488C5C]">Generate</button>
+                                 <button onClick={() => setShowCouponModal(false)} className="px-6 py-2 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c3f235]">Generate</button>
                              </div>
                          </div>
                      </div>

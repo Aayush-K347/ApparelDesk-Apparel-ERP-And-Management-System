@@ -81,7 +81,7 @@ export const ProductListing: React.FC<ProductListingProps> = ({
                         <React.Fragment key={i}>
                             <span 
                                 onClick={crumb.action}
-                                className={`cursor-pointer hover:text-[#488C5C] transition-colors ${i === breadcrumbs.length - 1 ? 'text-[#111111]' : ''}`}
+                                className={`cursor-pointer hover:text-[#c3f235] transition-colors ${i === breadcrumbs.length - 1 ? 'text-[#111111]' : ''}`}
                             >
                                 {crumb.label}
                             </span>
@@ -102,7 +102,7 @@ export const ProductListing: React.FC<ProductListingProps> = ({
                                 <div key={group}>
                                     <button 
                                         onClick={() => { setSelectedGroup(group); setSelectedCategory(null); }}
-                                        className={`text-xs font-bold uppercase tracking-widest w-full text-left py-1 hover:text-[#488C5C] ${selectedGroup === group ? 'text-[#488C5C]' : 'text-gray-500'}`}
+                                        className={`text-xs font-bold uppercase tracking-widest w-full text-left py-1 hover:text-[#c3f235] ${selectedGroup === group ? 'text-[#c3f235]' : 'text-gray-500'}`}
                                     >
                                         {group}
                                     </button>

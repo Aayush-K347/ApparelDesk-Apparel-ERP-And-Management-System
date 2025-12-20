@@ -36,7 +36,7 @@ export const VendorReports: React.FC = () => {
 
                 <div className="flex justify-end gap-4 mt-12 pt-6 border-t border-gray-100">
                     <button className="px-8 py-3 border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-gray-50 transition-colors">Cancel</button>
-                    <button className="px-8 py-3 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#488C5C] transition-colors shadow-lg">Print</button>
+                    <button className="px-8 py-3 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c3f235] transition-colors shadow-lg">Print</button>
                 </div>
             </div>
         </div>

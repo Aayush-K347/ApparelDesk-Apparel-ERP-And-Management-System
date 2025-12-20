@@ -155,7 +155,7 @@ export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
                         <button 
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#488C5C] transition-colors shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+                            className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#c3f235] transition-colors shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                             {isSubmitting ? 'Please wait...' : isLogin ? 'Sign In' : 'Create Account'}
                         </button>
@@ -175,7 +175,7 @@ export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
                             {isLogin ? "Don't have an account?" : "Already have an account?"}
                             <button 
                                 onClick={() => setIsLogin(!isLogin)}
-                                className="ml-2 text-[#111111] underline hover:text-[#488C5C]"
+                                className="ml-2 text-[#111111] underline hover:text-[#c3f235]"
                             >
                                 {isLogin ? 'Register' : 'Log In'}
                             </button>

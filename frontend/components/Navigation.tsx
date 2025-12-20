@@ -64,18 +64,18 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
       >
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 xl:gap-12 text-xs md:text-sm font-bold tracking-[0.25em] uppercase">
-          <button onClick={() => setView('GENDER_SELECTION')} className="hover:text-[#488C5C] transition-colors relative group py-2">
+          <button onClick={() => setView('GENDER_SELECTION')} className="hover:text-[#c3f235] transition-colors relative group py-2">
             Shop
-            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c3f235] transition-all duration-500 ease-out group-hover:w-full"></span>
           </button>
-          <button onClick={() => setView('GENDER_SELECTION')} className="hover:text-[#488C5C] transition-colors relative group py-2">
+          <button onClick={() => setView('GENDER_SELECTION')} className="hover:text-[#c3f235] transition-colors relative group py-2">
             Collections
-            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c3f235] transition-all duration-500 ease-out group-hover:w-full"></span>
           </button>
           {ENABLE_STUDIO && (
-              <button onClick={() => setView('STUDIO')} className="hover:text-[#488C5C] transition-colors relative group py-2">
+              <button onClick={() => setView('STUDIO')} className="hover:text-[#c3f235] transition-colors relative group py-2">
                  Studio
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c3f235] transition-all duration-500 ease-out group-hover:w-full"></span>
               </button>
           )}
         </div>
@@ -98,26 +98,27 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
 
         {/* Icons */}
         <div className="flex gap-5 md:gap-8 items-center">
-          <a href="http://127.0.0.1:7860" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#488C5C] transition-colors">
-             <Camera size={18} className="text-[#488C5C]" />
+          <a href="http://127.0.0.1:7860" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#c3f235] transition-colors relative group py-2">
+             <Camera size={18} className="text-white group-hover:text-[#c3f235] transition-colors" />
              <span className="hidden xl:inline text-xs font-bold tracking-[0.25em] uppercase">Virtual Try On</span>
+             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c3f235] transition-all duration-500 ease-out group-hover:w-full"></span>
           </a>
-          <button onClick={() => setSearchOpen(true)} className="hover:text-[#488C5C] transition-colors hidden md:block group">
+          <button onClick={() => setSearchOpen(true)} className="hover:text-[#c3f235] transition-colors hidden md:block group">
             <Search size={20} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500 ease-out" />
           </button>
-          <button className="hover:text-[#488C5C] transition-colors relative group" onClick={() => setView('CART')}>
+          <button className="hover:text-[#c3f235] transition-colors relative group" onClick={() => setView('CART')}>
             <ShoppingBag size={20} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500 ease-out" />
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#488C5C] text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold shadow-md animate-in fade-in zoom-in duration-300">
+              <span className="absolute -top-1 -right-1 bg-[#c3f235] text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold shadow-md animate-in fade-in zoom-in duration-300">
                 {cartCount}
               </span>
             )}
           </button>
-          <button className="hover:text-[#488C5C] transition-colors group relative" onClick={handleUserClick} title="My Account">
+          <button className="hover:text-[#c3f235] transition-colors group relative" onClick={handleUserClick} title="My Account">
               <User size={20} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500 ease-out" />
-              {isAuthenticated && <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-[#488C5C] rounded-full"></div>}
+              {isAuthenticated && <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-[#c3f235] rounded-full"></div>}
           </button>
-          <button className="hover:text-[#488C5C] transition-colors group border-l border-current pl-6 ml-2" onClick={() => setView('VENDOR_LOGIN')} title="Vendor Access">
+          <button className="hover:text-[#c3f235] transition-colors group border-l border-current pl-6 ml-2" onClick={() => setView('VENDOR_LOGIN')} title="Vendor Access">
               <Briefcase size={18} strokeWidth={1.5} className="group-hover:scale-110 transition-transform duration-500 ease-out" />
           </button>
         </div>
@@ -133,16 +134,16 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
                   </button>
               </div>
               <div className="flex flex-col gap-10 text-3xl font-anton uppercase tracking-wider">
-                  <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setSearchOpen(true); setMobileMenuOpen(false); }}>Search</button>
-                  <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>Shop All</button>
-                  <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>New Arrivals</button>
-                  <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>Collections</button>
+                  <button className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300" onClick={() => { setSearchOpen(true); setMobileMenuOpen(false); }}>Search</button>
+                  <button className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>Shop All</button>
+                  <button className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>New Arrivals</button>
+                  <button className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>Collections</button>
                   {ENABLE_STUDIO && (
-                      <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('STUDIO'); setMobileMenuOpen(false); }}>Studio</button>
+                      <button className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('STUDIO'); setMobileMenuOpen(false); }}>Studio</button>
                   )}
-                  <a href="http://127.0.0.1:7860" target="_blank" rel="noopener noreferrer" className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300">Virtual Try On</a>
-                  <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { handleUserClick(); setMobileMenuOpen(false); }}>My Profile</button>
-                  <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('VENDOR_LOGIN'); setMobileMenuOpen(false); }}>Vendor Portal</button>
+                  <a href="http://127.0.0.1:7860" target="_blank" rel="noopener noreferrer" className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300">Virtual Try On</a>
+                  <button className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300" onClick={() => { handleUserClick(); setMobileMenuOpen(false); }}>My Profile</button>
+                  <button className="text-left hover:text-[#c3f235] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('VENDOR_LOGIN'); setMobileMenuOpen(false); }}>Vendor Portal</button>
               </div>
           </div>
       )}
@@ -197,7 +198,7 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
                                               <p className="text-[10px] text-gray-500 uppercase tracking-widest">{product.gender} / {product.category}</p>
                                               <p className="font-anton text-lg mt-1">₹{product.price.toFixed(2)}</p>
                                           </div>
-                                          <ArrowRight size={16} className="text-gray-300 group-hover:text-[#488C5C] group-hover:translate-x-1 transition-all" />
+                                          <ArrowRight size={16} className="text-gray-300 group-hover:text-[#c3f235] group-hover:translate-x-1 transition-all" />
                                       </button>
                                   ))}
                               </div>
@@ -214,7 +215,7 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
                                       <button
                                         key={term}
                                         onClick={() => setSearchQuery(term)}
-                                        className="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-bold uppercase tracking-wider hover:border-[#488C5C] hover:text-[#488C5C] transition-colors"
+                                        className="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-bold uppercase tracking-wider hover:border-[#c3f235] hover:text-[#c3f235] transition-colors"
                                       >
                                           {term}
                                       </button>

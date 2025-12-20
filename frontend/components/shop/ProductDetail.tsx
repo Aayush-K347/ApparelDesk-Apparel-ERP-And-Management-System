@@ -62,7 +62,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ selectedProduct, s
 
                      {/* DETAILS */}
                      <div className="flex flex-col justify-center animate-[fadeIn_0.5s_ease-out_0.2s_forwards] opacity-0">
-                         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#488C5C] mb-2">{selectedProduct.gender} / {selectedProduct.category}</span>
+                         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#c3f235] mb-2">{selectedProduct.gender} / {selectedProduct.category}</span>
                          <h1 className="text-4xl md:text-5xl font-anton font-bold uppercase mb-4 leading-tight">{selectedProduct.name}</h1>
                          <div className="flex items-center gap-4 text-2xl font-bold mb-8">
                              <span>₹{selectedProduct.price.toFixed(2)}</span>
@@ -117,7 +117,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ selectedProduct, s
 
                          <button 
                             onClick={() => { addToCart(selectedProduct!, quantity, size, color); setView('CART'); }}
-                            className="w-full bg-[#111111] text-white py-5 font-bold uppercase tracking-[0.25em] text-xs hover:bg-[#488C5C] transition-colors shadow-xl mb-6"
+                            className="w-full bg-[#111111] text-white py-5 font-bold uppercase tracking-[0.25em] text-xs hover:bg-[#c3f235] transition-colors shadow-xl mb-6"
                         >
                              Add to Cart
                          </button>
@@ -125,14 +125,14 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ selectedProduct, s
                          {/* Terms */}
                          <div className="bg-white p-6 border border-gray-100 space-y-4">
                              <div className="flex gap-3 items-start">
-                                 <Truck size={18} className="text-[#488C5C] mt-0.5" />
+                                 <Truck size={18} className="text-[#c3f235] mt-0.5" />
                                  <div>
                                      <h4 className="font-bold text-[10px] uppercase tracking-widest mb-1">Fast Shipping</h4>
                                      <p className="text-xs text-gray-500">Free delivery on orders over ₹200. Standard shipping 2-3 business days.</p>
                                  </div>
                              </div>
                              <div className="flex gap-3 items-start">
-                                 <ShieldCheck size={18} className="text-[#488C5C] mt-0.5" />
+                                 <ShieldCheck size={18} className="text-[#c3f235] mt-0.5" />
                                  <div>
                                      <h4 className="font-bold text-[10px] uppercase tracking-widest mb-1">Guarantee</h4>
                                      <p className="text-xs text-gray-500">30-day money-back guarantee. No questions asked returns.</p>
@@ -146,8 +146,8 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ selectedProduct, s
                  {relatedProducts.length > 0 && (
                      <div className="border-t border-gray-200 pt-16">
                          <div className="flex items-center gap-4 mb-10">
-                            <span className="h-[1px] w-12 bg-[#488C5C]"></span>
-                            <span className="text-[10px] font-bold tracking-[0.4em] text-[#488C5C] uppercase">You May Also Like</span>
+                            <span className="h-[1px] w-12 bg-[#c3f235]"></span>
+                            <span className="text-[10px] font-bold tracking-[0.4em] text-[#c3f235] uppercase">You May Also Like</span>
                         </div>
                          <h2 className="text-3xl font-anton uppercase mb-12">Related Items</h2>
                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
