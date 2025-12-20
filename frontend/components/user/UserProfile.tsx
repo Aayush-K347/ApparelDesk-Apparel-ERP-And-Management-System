@@ -64,7 +64,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({
                              <div>
                                  <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-4">Status</h3>
                                  <div className="flex items-center gap-2">
-                                     <div className="h-2 w-2 bg-[#488C5C] rounded-full animate-pulse"></div>
+                                     <div className="h-2 w-2 bg-[#c9b52e] rounded-full animate-pulse"></div>
                                      <span className="text-sm font-bold">{selectedOrder.order_status}</span>
                                  </div>
                              </div>
@@ -99,7 +99,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({
                              </div>
                              <div className="w-64 flex justify-between">
                                  <span className="text-gray-500">Discount</span>
-                                 <span className="font-bold text-[#488C5C]">-₹{Number(selectedOrder.discount_amount).toFixed(2)}</span>
+                                 <span className="font-bold text-[#c9b52e]">-₹{Number(selectedOrder.discount_amount).toFixed(2)}</span>
                              </div>
                              <div className="w-64 flex justify-between text-lg border-t border-gray-200 pt-3 mt-1">
                                  <span className="font-anton uppercase">Total</span>
@@ -164,7 +164,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({
                                          <p className="font-anton text-xl mb-2">₹{Number(order.total_amount).toFixed(2)}</p>
                                          <button 
                                             onClick={() => setSelectedOrder(order)}
-                                            className="text-[10px] font-bold uppercase tracking-[0.2em] border-b border-black pb-1 hover:text-[#488C5C] hover:border-[#488C5C] transition-colors"
+                                            className="text-[10px] font-bold uppercase tracking-[0.2em] border-b border-black pb-1 hover:text-[#c9b52e] hover:border-[#c9b52e] transition-colors"
                                         >
                                             View Details
                                          </button>

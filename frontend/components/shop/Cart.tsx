@@ -41,7 +41,7 @@ export const Cart: React.FC<CartProps> = ({
       ? (appliedCoupon.discountType === 'PERCENTAGE' ? cartSubtotal * (appliedCoupon.value / 100) : appliedCoupon.value)
       : 0;
     const deliveryFee = cartSubtotal > 200 ? 0 : 20.00;
-    const cartTotal = Math.max(0, cartSubtotal - discountAmount + (cart.length > 0 ? deliveryFee : 0));
+    const cartTotal = Math.max(0, cartSubtotal - discountAmount + deliveryFee);
 
     return (
         <div className="pt-32 min-h-screen bg-[#F2F4F3] bg-subtle-grid px-6 md:px-12 pb-24 animate-[fadeIn_0.5s_ease-out]">
@@ -58,7 +58,7 @@ export const Cart: React.FC<CartProps> = ({
                     {cart.length === 0 ? (
                         <div className="text-center py-20 bg-white border border-dashed border-gray-200">
                             <p className="text-gray-400 uppercase tracking-widest text-xs mb-6">Your bag is empty</p>
-                            <button onClick={() => setView('GENDER_SELECTION')} className="text-[10px] font-bold uppercase tracking-[0.2em] underline hover:text-[#488C5C]">Continue Shopping</button>
+                            <button onClick={() => setView('GENDER_SELECTION')} className="text-[10px] font-bold uppercase tracking-[0.2em] underline hover:text-[#c9b52e]">Continue Shopping</button>
                         </div>
                     ) : (
                         <div className="space-y-8">
@@ -106,10 +106,10 @@ export const Cart: React.FC<CartProps> = ({
                                   placeholder="Enter Code" 
                                   className="flex-1 bg-white border border-gray-200 px-3 py-2 text-xs focus:border-[#111111] uppercase tracking-wider"
                                 />
-                                <button onClick={handleApplyCoupon} className="bg-[#111111] text-white px-4 text-[10px] font-bold uppercase tracking-widest hover:bg-[#488C5C] transition-colors">Apply</button>
+                                <button onClick={handleApplyCoupon} className="bg-[#111111] text-white px-4 text-[10px] font-bold uppercase tracking-widest hover:bg-[#c9b52e] transition-colors">Apply</button>
                             </div>
                             {appliedCoupon && (
-                                <div className="mt-3 flex items-center gap-2 text-[#488C5C] bg-green-50 p-2 border border-green-100 text-xs animate-[fadeIn_0.3s_ease-out]">
+                                <div className="mt-3 flex items-center gap-2 text-[#c9b52e] bg-green-50 p-2 border border-green-100 text-xs animate-[fadeIn_0.3s_ease-out]">
                                     <Check size={12} /> <span className="font-bold">Code Applied:</span> {appliedCoupon.description}
                                 </div>
                             )}
@@ -121,7 +121,7 @@ export const Cart: React.FC<CartProps> = ({
                                 <span className="font-bold text-[#111111]">₹{cartSubtotal.toFixed(2)}</span>
                             </div>
                             {appliedCoupon && (
-                                <div className="flex justify-between text-[#488C5C]">
+                                <div className="flex justify-between text-[#c9b52e]">
                                     <span>Discount</span>
                                     <span className="font-bold">-₹{discountAmount.toFixed(2)}</span>
                                 </div>
@@ -140,7 +140,7 @@ export const Cart: React.FC<CartProps> = ({
                         <button 
                             onClick={() => setView('CHECKOUT')}
                             disabled={cart.length === 0} 
-                            className="w-full bg-[#111111] text-white py-5 font-bold uppercase tracking-[0.25em] text-xs hover:bg-[#488C5C] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full bg-[#111111] text-white py-5 font-bold uppercase tracking-[0.25em] text-xs hover:bg-[#c9b52e] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             Proceed to Checkout <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform"/>
                         </button>

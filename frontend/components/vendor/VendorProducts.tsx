@@ -105,7 +105,7 @@ export const VendorProducts: React.FC = () => {
                     <label className="flex items-center gap-2 cursor-pointer">
                         <div className="relative">
                             <input type="checkbox" className="sr-only peer" defaultChecked />
-                            <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#488C5C]"></div>
+                            <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#c9b52e]"></div>
                         </div>
                         <span className="text-[10px] font-bold uppercase tracking-wider">Published</span>
                     </label>
@@ -122,13 +122,13 @@ export const VendorProducts: React.FC = () => {
             <form onSubmit={submit} className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div className="space-y-8">
                     <div className="group">
-                        <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#488C5C] transition-colors">Product Name</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#c9b52e] transition-colors">Product Name</label>
                         <input value={form.product_name} onChange={(e) => setForm({ ...form, product_name: e.target.value })} type="text" className="w-full border-b border-gray-200 py-2 text-xl font-display font-bold focus:border-[#111111] transition-colors bg-transparent" placeholder="e.g. Essential Heavyweight Hoodie" required />
                     </div>
 
                     <div className="grid grid-cols-2 gap-8">
                         <div className="group">
-                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#488C5C] transition-colors">Gender</label>
+                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#c9b52e] transition-colors">Gender</label>
                             <select value={form.product_category} onChange={(e) => setForm({ ...form, product_category: e.target.value })} className="w-full border-b border-gray-200 py-2 text-sm bg-transparent focus:border-[#111111]">
                                 <option value="men">Men</option>
                                 <option value="women">Women</option>
@@ -137,7 +137,7 @@ export const VendorProducts: React.FC = () => {
                             </select>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#488C5C] transition-colors">Product Type</label>
+                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#c9b52e] transition-colors">Product Type</label>
                             <select value={form.product_type} onChange={(e) => setForm({ ...form, product_type: e.target.value })} className="w-full border-b border-gray-200 py-2 text-sm bg-transparent focus:border-[#111111]">
                                 <option value="shirt">Shirt</option>
                                 <option value="pant">Pant</option>
@@ -151,12 +151,12 @@ export const VendorProducts: React.FC = () => {
                     </div>
 
                     <div className="group">
-                        <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#488C5C] transition-colors">Material</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#c9b52e] transition-colors">Material</label>
                         <input value={form.material} onChange={(e) => setForm({ ...form, material: e.target.value })} className="w-full border-b border-gray-200 py-2 text-sm bg-transparent focus:border-[#111111]" />
                     </div>
 
                     <div className="group">
-                        <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#488C5C] transition-colors">Description</label>
+                        <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#c9b52e] transition-colors">Description</label>
                         <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full border border-gray-200 p-3 text-sm bg-transparent focus:border-[#111111]" rows={3} />
                     </div>
 
@@ -177,14 +177,14 @@ export const VendorProducts: React.FC = () => {
                     
                     <div className="grid grid-cols-2 gap-8">
                          <div className="group">
-                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#488C5C] transition-colors">Sales Price</label>
+                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#c9b52e] transition-colors">Sales Price</label>
                             <div className="flex items-center border-b border-gray-200 focus-within:border-[#111111] transition-colors">
                                 <span className="text-gray-400">₹</span>
                                 <input value={form.sales_price} onChange={(e) => setForm({ ...form, sales_price: Number(e.target.value) })} type="number" className="w-full py-2 pl-2 text-sm bg-transparent" placeholder="0.00" required />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#488C5C] transition-colors">Purchase Price</label>
+                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#c9b52e] transition-colors">Purchase Price</label>
                             <div className="flex items-center border-b border-gray-200 focus-within:border-[#111111] transition-colors">
                                 <span className="text-gray-400">₹</span>
                                 <input value={form.purchase_price} onChange={(e) => setForm({ ...form, purchase_price: Number(e.target.value) })} type="number" className="w-full py-2 pl-2 text-sm bg-transparent" placeholder="0.00" required />
@@ -197,7 +197,7 @@ export const VendorProducts: React.FC = () => {
                         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Published</span>
                     </div>
 
-                    <button type="submit" disabled={loading} className="w-full bg-[#111111] text-white py-4 rounded-lg text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#488C5C] transition-colors disabled:opacity-60">
+                    <button type="submit" disabled={loading} className="w-full bg-[#111111] text-white py-4 rounded-lg text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#c9b52e] transition-colors disabled:opacity-60">
                         {loading ? 'Saving…' : 'Save Product'}
                     </button>
                 </div>

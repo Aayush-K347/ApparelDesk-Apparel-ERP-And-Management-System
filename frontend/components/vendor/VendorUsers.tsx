@@ -150,7 +150,7 @@ export const VendorUsers: React.FC = () => {
                         <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                             <UsersIcon size={100} />
                         </div>
-                        <h2 className="font-anton text-3xl mb-8 uppercase tracking-wide group-hover:text-[#488C5C] transition-colors">Contacts</h2>
+                        <h2 className="font-anton text-3xl mb-8 uppercase tracking-wide group-hover:text-[#c9b52e] transition-colors">Contacts</h2>
                         <div className="space-y-2">
                             <div className="flex justify-between items-center text-sm border-b border-gray-100 pb-2">
                                 <span className="text-gray-500 font-bold uppercase tracking-wider text-[10px]">Customers</span>

@@ -43,7 +43,7 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FD] font-sans text-[#111111] flex overflow-hidden selection:bg-[#488C5C] selection:text-white">
+    <div className="min-h-screen bg-[#F8F9FD] font-sans text-[#111111] flex overflow-hidden selection:bg-[#c9b52e] selection:text-[#111111]">
       
       {/* SIDEBAR */}
       <aside className="w-72 bg-white flex flex-col border-r border-gray-100 flex-shrink-0 z-20">
@@ -51,7 +51,7 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
           {/* User Profile Card (Top Left as per reference) */}
           <div className="p-6 pb-2">
               <div className="flex items-center gap-2 mb-8 cursor-pointer" onClick={() => setView('LANDING')}>
-                  <div className="w-8 h-8 bg-[#488C5C] text-white rounded-full flex items-center justify-center font-anton text-sm">L</div>
+                  <div className="w-8 h-8 bg-[#c9b52e] text-white rounded-full flex items-center justify-center font-anton text-sm">L</div>
                   <span className="font-anton text-xl tracking-wide">LUVARTE</span>
               </div>
 
@@ -79,7 +79,7 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
                                 : 'text-gray-500 hover:bg-gray-50 hover:text-[#111111]'
                             }`}
                       >
-                          <item.icon size={18} strokeWidth={2} className={`${activeTab === item.id ? 'text-[#488C5C]' : 'text-gray-400 group-hover:text-[#111111]'}`} />
+                          <item.icon size={18} strokeWidth={2} className={`${activeTab === item.id ? 'text-[#c9b52e]' : 'text-gray-400 group-hover:text-[#111111]'}`} />
                           {item.label}
                       </button>
                   ))}
@@ -101,13 +101,13 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
           {/* Upgrade Plan Card */}
           <div className="p-6">
               <div className="bg-[#111111] rounded-[24px] p-6 text-center text-white relative overflow-hidden group">
-                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#488C5C] rounded-full blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#c9b52e] rounded-full blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
                    <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                       <Gem size={18} className="text-[#488C5C]" />
+                       <Gem size={18} className="text-[#c9b52e]" />
                    </div>
                    <h4 className="font-anton uppercase tracking-wide text-lg mb-2">Upgrade Plan</h4>
                    <p className="text-[10px] text-gray-400 mb-4 leading-relaxed">Unlock smarter insights and financial control.</p>
-                   <button className="w-full py-3 bg-[#488C5C] rounded-[14px] text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-[#111111] transition-colors">
+                   <button className="w-full py-3 bg-[#c9b52e] rounded-[14px] text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-[#111111] transition-colors">
                        Upgrade Now
                    </button>
               </div>

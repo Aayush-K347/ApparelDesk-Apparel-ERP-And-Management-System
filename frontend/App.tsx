@@ -21,6 +21,7 @@ import { VendorLogin } from './components/auth/VendorLogin';
 import { UserAuth } from './components/auth/UserAuth';
 import { QuickViewModal } from './components/shared/QuickViewModal';
 import { StudioFeed } from './components/studio/StudioFeed';
+import ClickSpark from './components/shared/ClickSpark';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('LANDING');
@@ -305,7 +306,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="font-sans antialiased text-[#111111] selection:bg-[#488C5C] selection:text-white relative">
+    <ClickSpark sparkColor="#c9b52e" sparkRadius={25} duration={600}>
+    <div className="font-sans antialiased text-[#111111] selection:bg-[#c9b52e] selection:text-[#111111] relative">
       {view !== 'VENDOR_LOGIN' && view !== 'VENDOR_DASHBOARD' && view !== 'CHECKOUT' && view !== 'ORDER_SUCCESS' && view !== 'USER_AUTH' && (
         <Navigation 
             cartCount={cart.length} 
@@ -313,6 +315,7 @@ const App: React.FC = () => {
             isTransparent={view === 'LANDING'}
             isAuthenticated={isAuthenticated}
             onLogout={handleLogout}
+            setSelectedProduct={setSelectedProduct}
         />
       )}
 
@@ -471,7 +474,7 @@ const App: React.FC = () => {
               <div className="flex-1">
                   <h4 className="font-anton uppercase tracking-wider text-sm flex items-center gap-2">
                       {notification.message}
-                      <Check size={14} className="text-[#488C5C]" />
+                      <Check size={14} className="text-[#c9b52e]" />
                   </h4>
                   {notification.subtext && (
                       <p className="text-[10px] text-gray-400 uppercase tracking-widest mt-1 truncate max-w-[200px]">{notification.subtext}</p>
@@ -489,6 +492,7 @@ const App: React.FC = () => {
       />
 
     </div>
+    </ClickSpark>
   );
 };
 

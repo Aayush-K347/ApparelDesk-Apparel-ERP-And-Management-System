@@ -235,26 +235,31 @@ export const VendorBilling: React.FC = () => {
           <button className="text-xs uppercase font-bold text-gray-500" onClick={() => setView('DASHBOARD')}>&larr; Back</button>
           <StatusBar />
         </div>
-        {error && <div className="text-sm text-red-600 bg-red-50 border border-red-100 p-3 rounded">{error}</div>}
-        {success && <div className="text-sm text-green-700 bg-green-50 border border-green-100 p-3 rounded">{success}</div>}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="text-[10px] uppercase font-bold text-gray-500">Vendor</label>
-            <select value={selectedVendor ?? ''} onChange={(e) => setSelectedVendor(e.target.value ? Number(e.target.value) : null)} className="w-full border-b py-2">
-              <option value="">Select Vendor</option>
-              {vendors.map(v => <option key={v.contact_id} value={v.contact_id}>{v.contact_name} — {v.email}</option>)}
-            </select>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-[10px] uppercase font-bold text-gray-500">PO Date</label>
-              <input type="date" value={poDate} onChange={e => setPoDate(e.target.value)} className="w-full border-b py-2" />
-            </div>
-            <div>
-              <label className="text-[10px] uppercase font-bold text-gray-500">Expected Date</label>
-              <input type="date" value={poExpected} onChange={e => setPoExpected(e.target.value)} className="w-full border-b py-2" />
-            </div>
-          </div>
+    );
+
+    const ActionButtons = ({ type }: { type: 'SO' | 'INV' | 'PO' | 'BILL' }) => (
+        <div className="flex gap-2">
+             {docStatus === 'Draft' && (
+                 <button onClick={() => setDocStatus('Confirmed')} className="bg-[#111111] text-white px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#488C5C]">Confirm</button>
+             )}
+             <button className="border border-gray-200 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50">Print</button>
+             <button className="border border-gray-200 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50">Send</button>
+             {docStatus !== 'Paid' && (
+                 <button onClick={() => setDocStatus('Cancelled')} className="border border-gray-200 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50 text-red-500 hover:text-red-600">Cancel</button>
+             )}
+             
+             {type === 'SO' && docStatus === 'Confirmed' && (
+                 <button onClick={() => { setView('INVOICE'); resetToDraft(); }} className="ml-4 border border-[#111111] text-[#111111] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-white transition-colors">Create Invoice</button>
+             )}
+             {type === 'PO' && docStatus === 'Confirmed' && (
+                 <button onClick={() => { setView('VENDOR_BILL'); resetToDraft(); }} className="ml-4 border border-[#111111] text-[#111111] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-white transition-colors">Create Bill</button>
+             )}
+              {type === 'INV' && docStatus === 'Confirmed' && (
+                 <button onClick={() => setView('INVOICE_PAYMENT')} className="ml-4 border border-[#488C5C] text-[#488C5C] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#488C5C] hover:text-white transition-colors">Register Payment</button>
+             )}
+             {type === 'BILL' && docStatus === 'Confirmed' && (
+                 <button onClick={() => setView('BILL_PAYMENT')} className="ml-4 border border-[#488C5C] text-[#488C5C] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-[#488C5C] hover:text-white transition-colors">Register Payment</button>
+             )}
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm border-t">
@@ -278,93 +283,101 @@ export const VendorBilling: React.FC = () => {
                 );
               })}
             </tbody>
-          </table>
-        </div>
-        <div className="flex justify-between items-center">
-          <button className="text-xs font-bold border px-3 py-2" onClick={()=>setPoLines(lines=>[...lines,{productName:'',quantity:1,unitPrice:0,tax:0}])}>+ Add Line</button>
-          <div className="text-sm text-right space-y-1">
-            <div>Subtotal: ₹{poSubtotal.toFixed(2)}</div>
-            <div>Tax: ₹{poTax.toFixed(2)}</div>
-            <div className="font-bold">Total: ₹{(poSubtotal+poTax).toFixed(2)}</div>
-          </div>
-        </div>
-        <div className="flex gap-3">
-          <button onClick={handleCreatePO} disabled={loading} className="bg-black text-white px-4 py-2 text-xs uppercase font-bold rounded">{loading?'Saving...':'Confirm PO'}</button>
-          <button onClick={()=>{resetPoForm(); setSuccess(null); setError(null);}} className="border px-4 py-2 text-xs uppercase font-bold rounded">Reset</button>
-        </div>
-      </div>
+            <tfoot className="border-t border-gray-200">
+                <tr>
+                    <td colSpan={6} className="py-4 text-right font-bold uppercase tracking-widest text-xs">Total</td>
+                    <td className="py-4 text-right font-bold text-lg">1200</td>
+                </tr>
+            </tfoot>
+        </table>
     );
-  }
 
-  // VENDOR BILL VIEW
-  if (view === 'VENDOR_BILL') {
-    const bill = vendorBills.find(b => (b.vendor_bill_id || b.id) === selectedBillId);
-    return (
-      <div className="p-8 space-y-6">
-        <div className="flex justify-between items-center">
-          <button className="text-xs uppercase font-bold text-gray-500" onClick={() => setView('DASHBOARD')}>&larr; Back</button>
-          <StatusBar />
-        </div>
-        {error && <div className="text-sm text-red-600 bg-red-50 border border-red-100 p-3 rounded">{error}</div>}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="bg-white border rounded-lg p-4 lg:col-span-1 max-h-[70vh] overflow-y-auto">
-            <div className="flex justify-between mb-2 text-sm font-bold uppercase text-gray-500">
-              <span>Bills</span><span className="text-[10px] text-gray-400">{vendorBills.length}</span>
-            </div>
-            <div className="space-y-2">
-              {vendorBills.map(b => {
-                const active = (b.vendor_bill_id || b.id) === selectedBillId;
-                return (
-                  <button key={b.vendor_bill_id || b.id} onClick={()=>setSelectedBillId(b.vendor_bill_id||b.id)} className={`w-full text-left border px-3 py-2 rounded ${active?'border-black bg-gray-50':'border-gray-200'}`}>
-                    <div className="flex justify-between text-sm font-bold">
-                      <span>{b.bill_number || `BILL-${b.vendor_bill_id || b.id}`}</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded-full uppercase">{b.bill_status}</span>
-                    </div>
-                    <p className="text-xs text-gray-500">{b.vendor_detail?.contact_name || 'Vendor'} — ₹{b.total_amount}</p>
-                  </button>
-                );
-              })}
-              {!vendorBills.length && <div className="text-xs text-gray-500">No vendor bills found.</div>}
-            </div>
-          </div>
-          <div className="bg-white border rounded-lg p-6 lg:col-span-2 relative">
-            {bill ? (
-              <>
-                {bill.bill_status === 'paid' && (
-                  <div className="absolute top-4 right-4 border-4 border-green-500 text-green-600 px-4 py-1 font-anton text-xl uppercase rotate-6">PAID</div>
-                )}
-                <h1 className="font-anton text-3xl mb-4">Vendor Bill <span className="text-gray-300">{bill.bill_number || bill.vendor_bill_id}</span></h1>
-                <p className="text-sm text-gray-500 mb-4">Vendor: <span className="font-bold">{bill.vendor_detail?.contact_name}</span> · Email: {bill.vendor_detail?.email || 'n/a'}</p>
-                <div className="grid grid-cols-2 gap-4 text-sm mb-4">
-                  <div><p className="text-[10px] uppercase text-gray-500">Reference PO</p><p className="font-bold">{bill.purchase_order_number || '—'}</p></div>
-                  <div><p className="text-[10px] uppercase text-gray-500">Status</p><p className="font-bold uppercase">{bill.bill_status}</p></div>
-                  <div><p className="text-[10px] uppercase text-gray-500">Invoice Date</p><p className="font-bold">{bill.invoice_date}</p></div>
-                  <div><p className="text-[10px] uppercase text-gray-500">Due Date</p><p className="font-bold">{bill.due_date}</p></div>
-                </div>
-                <div className="border-t pt-3 text-sm space-y-1">
-                  <div className="flex justify-between"><span className="text-gray-500">Subtotal</span><span className="font-bold">₹{Number(bill.subtotal||0).toFixed(2)}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-500">Tax</span><span className="font-bold">₹{Number(bill.tax_amount||0).toFixed(2)}</span></div>
-                  <div className="flex justify-between text-lg font-bold border-t pt-2"><span>Total</span><span>₹{Number(bill.total_amount||0).toFixed(2)}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-500">Paid</span><span className="font-bold text-green-600">₹{Number(bill.paid_amount||0).toFixed(2)}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-500">Balance</span><span className="font-bold text-red-500">₹{Number(bill.remaining_amount||0).toFixed(2)}</span></div>
-                </div>
-                {Number(bill.remaining_amount || 0) > 0 && (
-                  <div className="mt-4 flex gap-3">
-                    <button
-                      onClick={async () => {
-                        try {
-                          setLoading(true);
-                          await payVendorBill(bill.vendor_bill_id || bill.id);
-                          setSuccess('Bill paid and recorded');
-                          const refreshed = await fetchVendorBills();
-                          setVendorBills(Array.isArray(refreshed) ? refreshed : []);
-                        } catch (err: any) {
-                          setError(err?.message || 'Unable to pay bill');
-                        } finally {
-                          setLoading(false);
-                        }
-                      }}
-                      className="bg-black text-white px-4 py-2 text-xs uppercase font-bold rounded"
+    const PaymentForm = ({ isBill }: { isBill: boolean }) => (
+        <div className="p-8 h-full animate-[fadeIn_0.3s_ease-out] flex items-center justify-center">
+            <div className="bg-white w-full max-w-2xl p-10 rounded-xl shadow-2xl border border-gray-100">
+                 <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                     <h2 className="font-anton text-3xl uppercase tracking-wide text-[#488C5C]">{isBill ? 'Bill Payment' : 'Invoice Payment'}</h2>
+                     <button onClick={() => setView(isBill ? 'VENDOR_BILL' : 'INVOICE')} className="text-gray-400 hover:text-black">
+                         <X size={24} />
+                     </button>
+                 </div>
+
+                 {/* Early Payment Notification */}
+                 <div className="bg-blue-50 text-blue-700 text-xs p-4 rounded mb-8 border border-blue-100">
+                     Early Payment Discount of 15.22 has been applied.
+                 </div>
+
+                 <div className="space-y-6">
+                     <div className="flex items-center">
+                         <label className="w-1/3 text-[10px] font-bold uppercase tracking-widest text-gray-500">Payment Type</label>
+                         <div className="flex gap-6">
+                             <label className="flex items-center gap-2 cursor-pointer">
+                                 <input type="radio" name="payType" defaultChecked={!isBill} className="accent-[#111111]" /> 
+                                 <span className="text-sm">Send</span>
+                             </label>
+                             <label className="flex items-center gap-2 cursor-pointer">
+                                 <input type="radio" name="payType" defaultChecked={isBill} className="accent-[#111111]" /> 
+                                 <span className="text-sm">Receive</span>
+                             </label>
+                         </div>
+                     </div>
+
+                     <div className="flex items-center">
+                         <label className="w-1/3 text-[10px] font-bold uppercase tracking-widest text-gray-500">Partner Type</label>
+                         <div className="flex gap-6">
+                             <label className="flex items-center gap-2 cursor-pointer">
+                                 <input type="radio" name="partnerType" defaultChecked={!isBill} className="accent-[#111111]" /> 
+                                 <span className="text-sm">Customer</span>
+                             </label>
+                             <label className="flex items-center gap-2 cursor-pointer">
+                                 <input type="radio" name="partnerType" defaultChecked={isBill} className="accent-[#111111]" /> 
+                                 <span className="text-sm">Vendor</span>
+                             </label>
+                         </div>
+                     </div>
+
+                     <div className="flex items-center">
+                         <label className="w-1/3 text-[10px] font-bold uppercase tracking-widest text-gray-500">Partner</label>
+                         <input type="text" defaultValue={isBill ? "Fabric Supplier Co." : "John Doe"} className="flex-1 border-b border-gray-200 py-2 bg-transparent text-sm focus:border-[#111111]" />
+                     </div>
+
+                     <div className="flex items-center">
+                         <label className="w-1/3 text-[10px] font-bold uppercase tracking-widest text-gray-500">Amount</label>
+                         <div className="flex-1 flex items-center border-b border-gray-200 focus-within:border-[#111111]">
+                             <span className="text-gray-400 font-bold">₹</span>
+                             <input 
+                                type="number" 
+                                value={paymentAmount} 
+                                onChange={(e) => setPaymentAmount(Number(e.target.value))} 
+                                className="w-full py-2 pl-2 bg-transparent text-lg font-bold" 
+                            />
+                         </div>
+                     </div>
+
+                     <div className="flex items-center">
+                         <label className="w-1/3 text-[10px] font-bold uppercase tracking-widest text-gray-500">Date</label>
+                         <input 
+                            type="date" 
+                            value={paymentDate} 
+                            onChange={(e) => setPaymentDate(e.target.value)} 
+                            className="flex-1 border-b border-gray-200 py-2 bg-transparent text-sm focus:border-[#111111]" 
+                        />
+                     </div>
+
+                     <div className="flex items-center">
+                         <label className="w-1/3 text-[10px] font-bold uppercase tracking-widest text-gray-500">Memo</label>
+                         <input type="text" placeholder={isBill ? "Bill Payment" : "Invoice Payment"} className="flex-1 border-b border-gray-200 py-2 bg-transparent text-sm focus:border-[#111111]" />
+                     </div>
+                 </div>
+
+                 <div className="flex justify-end gap-4 mt-10 pt-6 border-t border-gray-100">
+                     <button onClick={() => setView(isBill ? 'VENDOR_BILL' : 'INVOICE')} className="px-6 py-2 border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-gray-50">Cancel</button>
+                     <button 
+                        onClick={() => {
+                            setDocStatus('Paid');
+                            setView(isBill ? 'VENDOR_BILL' : 'INVOICE');
+                        }}
+                        className="px-6 py-2 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#488C5C] shadow-lg"
                     >
                       Pay Bill
                     </button>
@@ -448,69 +461,109 @@ export const VendorBilling: React.FC = () => {
     );
   }
 
-  // INVOICE view (vendor/internals)
-  if (view === 'INVOICE') {
-    return (
-      <div className="p-8 space-y-6">
-        <div className="flex justify-between items-center">
-          <button className="text-xs uppercase font-bold text-gray-500" onClick={()=>setView('DASHBOARD')}>&larr; Back</button>
-          <StatusBar />
-        </div>
-        {error && <div className="text-sm text-red-600 bg-red-50 border border-red-100 p-3 rounded">{error}</div>}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="bg-white border rounded-lg p-4 lg:col-span-1 max-h-[70vh] overflow-y-auto">
-            <div className="flex justify-between mb-2 text-sm font-bold uppercase text-gray-500">
-              <span>Invoices</span><span className="text-[10px] text-gray-400">{vendorInvoices.length}</span>
+    if (view === 'INVOICE') {
+        return (
+             <div className="p-8 animate-[fadeIn_0.3s_ease-out]">
+                <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-100">
+                     <button onClick={() => setView('DASHBOARD')} className="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-[#111111]">&larr; Billing</button>
+                     <div className="flex items-center gap-4">
+                        <ActionButtons type="INV" />
+                        <StatusBar />
+                     </div>
+                </div>
+
+                <div className="bg-white p-8 border border-gray-200 shadow-sm rounded-lg relative">
+                    {/* Ribbon for Paid Status */}
+                    {docStatus === 'Paid' && (
+                        <div className="absolute top-8 right-8 rotate-12 border-4 border-[#488C5C] text-[#488C5C] px-6 py-2 font-anton text-2xl uppercase tracking-widest opacity-80 select-none">
+                            PAID
+                        </div>
+                    )}
+
+                    {/* Smart Button Link */}
+                     <div onClick={() => { setView('SALE_ORDER'); setDocStatus('Confirmed'); }} className="absolute top-0 right-0 border-l border-b border-gray-200 bg-gray-50 px-4 py-2 text-[10px] font-bold uppercase tracking-widest cursor-pointer hover:bg-[#111111] hover:text-white transition-colors">
+                         Sale Order
+                     </div>
+
+                     <h1 className="font-anton text-4xl mb-8">Invoice <span className="text-gray-300">INV/0001</span></h1>
+                     
+                     <div className="grid grid-cols-2 gap-12 mb-8">
+                         <div className="space-y-4">
+                             <div className="group">
+                                <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">Customer</label>
+                                <input type="text" className="w-full border-b border-gray-200 py-1 font-bold focus:border-[#111111] bg-transparent" defaultValue="John Doe" />
+                            </div>
+                         </div>
+                         <div className="space-y-4">
+                              <div className="group">
+                                <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">Reference</label>
+                                <input type="text" className="w-full border-b border-gray-200 py-1 text-sm bg-transparent" defaultValue="S0001" />
+                            </div>
+                            <div className="group">
+                                <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">Invoice Date</label>
+                                <input type="date" className="w-full border-b border-gray-200 py-1 text-sm bg-transparent" />
+                            </div>
+                         </div>
+                     </div>
+
+                     <ItemTable />
+                     
+                     <div className="mt-4 text-right text-xs text-gray-500">
+                         {docStatus === 'Paid' && <p className="text-[#488C5C] font-bold mb-1">Paid on 12/12/2025: ₹600</p>}
+                         <p className="font-bold text-black">Amount Due: {docStatus === 'Paid' ? '₹0' : '₹600'}</p>
+                     </div>
+                </div>
             </div>
-            <div className="space-y-2">
-              {vendorInvoices.map(inv => {
-                const active = (inv.customer_invoice_id || inv.id) === selectedInvoiceId;
-                return (
-                  <button key={inv.customer_invoice_id || inv.id} onClick={()=>setSelectedInvoiceId(inv.customer_invoice_id||inv.id)} className={`w-full text-left border px-3 py-2 rounded ${active?'border-black bg-gray-50':'border-gray-200'}`}>
-                    <div className="flex justify-between text-sm font-bold">
-                      <span>{inv.invoice_number || `INV-${inv.customer_invoice_id || inv.id}`}</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded-full uppercase">{inv.invoice_status}</span>
-                    </div>
-                    <p className="text-xs text-gray-500">{inv.customer_detail?.contact_name || 'Customer'} — ₹{inv.total_amount}</p>
-                  </button>
-                );
-              })}
-              {!vendorInvoices.length && <div className="text-xs text-gray-500">No invoices found.</div>}
+        );
+    }
+    
+    // Simplification: Purchase Order and Vendor Bill follow nearly identical structure to SO/Invoice
+    if (view === 'PURCHASE_ORDER' || view === 'VENDOR_BILL') {
+        const isPO = view === 'PURCHASE_ORDER';
+         return (
+             <div className="p-8 animate-[fadeIn_0.3s_ease-out]">
+                <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-100">
+                     <button onClick={() => setView('DASHBOARD')} className="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-[#111111]">&larr; Billing</button>
+                     <div className="flex items-center gap-4">
+                        <ActionButtons type={isPO ? 'PO' : 'BILL'} />
+                        <StatusBar />
+                     </div>
+                </div>
+
+                <div className="bg-white p-8 border border-gray-200 shadow-sm rounded-lg relative">
+                    {/* Ribbon for Paid Status */}
+                    {!isPO && docStatus === 'Paid' && (
+                        <div className="absolute top-8 right-8 rotate-12 border-4 border-[#488C5C] text-[#488C5C] px-6 py-2 font-anton text-2xl uppercase tracking-widest opacity-80 select-none">
+                            PAID
+                        </div>
+                    )}
+
+                     <div onClick={() => { setView(isPO ? 'VENDOR_BILL' : 'PURCHASE_ORDER'); resetToDraft(); }} className="absolute top-0 right-0 border-l border-b border-gray-200 bg-gray-50 px-4 py-2 text-[10px] font-bold uppercase tracking-widest cursor-pointer hover:bg-[#111111] hover:text-white transition-colors">
+                         {isPO ? 'Vendor Bill' : 'Purchase Order'}
+                     </div>
+
+                     <h1 className="font-anton text-4xl mb-8">{isPO ? 'Purchase Order' : 'Vendor Bill'} <span className="text-gray-300">{isPO ? 'P0001' : 'BILL/0001'}</span></h1>
+                     
+                     <div className="grid grid-cols-2 gap-12 mb-8">
+                         <div className="space-y-4">
+                             <div className="group">
+                                <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">Vendor</label>
+                                <input type="text" className="w-full border-b border-gray-200 py-1 font-bold focus:border-[#111111] bg-transparent" placeholder="Select Vendor" />
+                            </div>
+                         </div>
+                         <div className="space-y-4">
+                              <div className="group">
+                                <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">{isPO ? 'PO Date' : 'Bill Date'}</label>
+                                <input type="date" className="w-full border-b border-gray-200 py-1 text-sm bg-transparent" />
+                            </div>
+                         </div>
+                     </div>
+
+                     <ItemTable />
+                </div>
             </div>
-          </div>
-          <div className="bg-white border rounded-lg p-6 lg:col-span-2 relative">
-            {(() => {
-              const inv = vendorInvoices.find(i => (i.customer_invoice_id || i.id) === selectedInvoiceId);
-              if (!inv) return <div className="text-sm text-gray-500">Select an invoice to view details.</div>;
-              return (
-                <>
-                  {inv.invoice_status === 'paid' && (
-                    <div className="absolute top-4 right-4 border-4 border-green-500 text-green-600 px-4 py-1 font-anton text-xl uppercase rotate-6">PAID</div>
-                  )}
-                  <h1 className="font-anton text-3xl mb-4">Invoice <span className="text-gray-300">{inv.invoice_number || inv.customer_invoice_id}</span></h1>
-                  <p className="text-sm text-gray-500 mb-4">Customer: <span className="font-bold">{inv.customer_detail?.contact_name}</span> · Email: {inv.customer_detail?.email || 'n/a'}</p>
-                  <div className="grid grid-cols-2 gap-4 text-sm mb-4">
-                    <div><p className="text-[10px] uppercase text-gray-500">Reference SO</p><p className="font-bold">{inv.sales_order_id || '—'}</p></div>
-                    <div><p className="text-[10px] uppercase text-gray-500">Status</p><p className="font-bold uppercase">{inv.invoice_status}</p></div>
-                    <div><p className="text-[10px] uppercase text-gray-500">Invoice Date</p><p className="font-bold">{inv.invoice_date}</p></div>
-                    <div><p className="text-[10px] uppercase text-gray-500">Due Date</p><p className="font-bold">{inv.due_date}</p></div>
-                  </div>
-                  <div className="border-t pt-3 text-sm space-y-1">
-                    <div className="flex justify-between"><span className="text-gray-500">Subtotal</span><span className="font-bold">₹{Number(inv.subtotal||0).toFixed(2)}</span></div>
-                    <div className="flex justify-between"><span className="text-gray-500">Discount</span><span className="font-bold">₹{Number(inv.discount_amount||0).toFixed(2)}</span></div>
-                    <div className="flex justify-between"><span className="text-gray-500">Tax</span><span className="font-bold">₹{Number(inv.tax_amount||0).toFixed(2)}</span></div>
-                    <div className="flex justify-between text-lg font-bold border-t pt-2"><span>Total</span><span>₹{Number(inv.total_amount||0).toFixed(2)}</span></div>
-                    <div className="flex justify-between"><span className="text-gray-500">Paid</span><span className="font-bold text-green-600">₹{Number(inv.paid_amount||0).toFixed(2)}</span></div>
-                    <div className="flex justify-between"><span className="text-gray-500">Balance</span><span className="font-bold text-red-500">₹{Number(inv.remaining_amount||0).toFixed(2)}</span></div>
-                  </div>
-                </>
-              );
-            })()}
-          </div>
-        </div>
-      </div>
-    );
-  }
+        );
+    }
 
   return null;
 };

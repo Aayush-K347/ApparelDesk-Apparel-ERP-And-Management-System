@@ -79,7 +79,7 @@ export const VendorTerms: React.FC = () => {
                     <div
                         onClick={() => setView('OFFERS_DETAIL')}
                         className="bg-white p-12 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all cursor-pointer group hover:-translate-y-1"
-                    >
+                     >
                         <h2 className="font-anton text-3xl mb-8 uppercase tracking-wide group-hover:text-[#488C5C] transition-colors">Offers</h2>
                         <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">
                             Active Offers: <span className="text-black text-lg ml-2">{offers.length}</span>
@@ -168,7 +168,7 @@ export const VendorTerms: React.FC = () => {
                  
                  {/* Stat overlay */}
                  <div className="absolute top-8 right-1/3 flex flex-col items-center">
-                     <div className="text-4xl font-anton text-[#488C5C]">{coupons.length}</div>
+                     <div className="text-4xl font-anton text-[#488C5C]">15</div>
                      <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Coupons Generated</div>
                  </div>
 
@@ -288,63 +288,7 @@ export const VendorTerms: React.FC = () => {
                              
                              <div className="flex justify-end gap-4 mt-8 pt-4 border-t border-gray-100">
                                  <button onClick={() => setShowCouponModal(false)} className="px-6 py-2 border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-gray-50">Cancel</button>
-                                 <button
-                                  onClick={async () => {
-                                      // normalize required inputs
-                                      if (!offerName.trim()) { setError('Enter offer name'); return; }
-                                      const todayStr = new Date().toISOString().split('T')[0];
-                                      const expiryToUse = expiration || offerEnd || offerStart || todayStr;
-                                      const qtyToUse = customerSelection === 'Anonymous' ? (quantity || 1) : quantity;
-
-                                      setError(null); setSuccess(null);
-                                      setLoading(true); setError(null); setSuccess(null);
-                                      try {
-                                        const payload: any = {
-                                          discount_offer_id: selectedOfferId,
-                                          for_type: customerSelection.toLowerCase(),
-                                          expiration_date: expiryToUse,
-                                          max_usage_count: maxUsage || 1,
-                                        };
-                                        if (customerSelection === 'Selected') payload.customer_ids = selectedCustomers;
-                                        if (customerSelection === 'Anonymous') payload.quantity = qtyToUse || 1;
-                                        let offerIdToUse = selectedOfferId;
-                                        if (!offerIdToUse) {
-                                            const newOffer = await createOffer({
-                                                offer_name: offerName || 'New Offer',
-                                                discount_percentage: offerDiscount || 0,
-                                                start_date: offerStart || expiration,
-                                                end_date: offerEnd || expiryToUse,
-                                                available_on: offerAvailableOn || 'website',
-                                                is_active: true,
-                                            });
-                                            offerIdToUse = newOffer.discount_offer_id;
-                                            setOffers(prev => [newOffer, ...prev]);
-                                            setSelectedOfferId(offerIdToUse);
-                                        }
-                                        payload.discount_offer_id = offerIdToUse;
-                                        const created = await generateCoupons(payload);
-                                        setSuccess(`Generated ${created.length} coupons`);
-                                        await refreshCoupons(offerIdToUse);
-                                        setShowCouponModal(false);
-                                        setSelectedCustomers([]);
-                                        setExpiration('');
-                                        setQuantity(1);
-                                        setSelectedOfferId(offerIdToUse);
-                                        setOfferName('');
-                                        setOfferDiscount(10);
-                                        setOfferStart('');
-                                        setOfferEnd('');
-                                        setOfferAvailableOn('website');
-                                      } catch (err: any) {
-                                        setError(err?.message || 'Failed to generate coupons');
-                                      } finally {
-                                        setLoading(false);
-                                      }
-                                   }}
-                                   className="px-6 py-2 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#488C5C]"
-                                 >
-                                   {loading ? 'Generating…' : 'Generate'}
-                                 </button>
+                                 <button onClick={() => setShowCouponModal(false)} className="px-6 py-2 bg-[#111111] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#488C5C]">Generate</button>
                              </div>
                          </div>
                      </div>

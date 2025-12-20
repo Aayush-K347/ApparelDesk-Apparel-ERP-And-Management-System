@@ -13,9 +13,9 @@ export const Footer: React.FC = () => {
                 Redefining contemporary luxury through impeccable tailoring and timeless design. Paris, France.
             </p>
             <div className="flex gap-4">
-                <Facebook size={18} className="hover:text-[#488C5C] transition-colors cursor-pointer" />
-                <Instagram size={18} className="hover:text-[#488C5C] transition-colors cursor-pointer" />
-                <Twitter size={18} className="hover:text-[#488C5C] transition-colors cursor-pointer" />
+                <Facebook size={18} className="hover:text-[#c9b52e] transition-colors cursor-pointer" />
+                <Instagram size={18} className="hover:text-[#c9b52e] transition-colors cursor-pointer" />
+                <Twitter size={18} className="hover:text-[#c9b52e] transition-colors cursor-pointer" />
             </div>
         </div>
 
