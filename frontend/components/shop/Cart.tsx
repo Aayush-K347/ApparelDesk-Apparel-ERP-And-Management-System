@@ -41,7 +41,7 @@ export const Cart: React.FC<CartProps> = ({
       ? (appliedCoupon.discountType === 'PERCENTAGE' ? cartSubtotal * (appliedCoupon.value / 100) : appliedCoupon.value)
       : 0;
     const deliveryFee = cartSubtotal > 200 ? 0 : 20.00;
-    const cartTotal = Math.max(0, cartSubtotal - discountAmount + (cart.length > 0 ? deliveryFee : 0));
+    const cartTotal = Math.max(0, cartSubtotal - discountAmount + deliveryFee);
 
     return (
         <div className="pt-32 min-h-screen bg-[#F2F4F3] bg-subtle-grid px-6 md:px-12 pb-24 animate-[fadeIn_0.5s_ease-out]">

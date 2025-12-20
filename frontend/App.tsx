@@ -313,6 +313,7 @@ const App: React.FC = () => {
             isTransparent={view === 'LANDING'}
             isAuthenticated={isAuthenticated}
             onLogout={handleLogout}
+            setSelectedProduct={setSelectedProduct}
         />
       )}
 
