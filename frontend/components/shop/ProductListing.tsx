@@ -2,7 +2,7 @@
 import React, { useState, useMemo } from 'react';
 import { Product, ViewState } from '../../types';
 import { NAV_HIERARCHY } from '../../constants';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ArrowLeft } from 'lucide-react';
 import { ProductCard } from '../shared/ProductCard';
 
 interface ProductListingProps {
@@ -67,6 +67,13 @@ export const ProductListing: React.FC<ProductListingProps> = ({
     // Sort Logic
     return (
         <div className="pt-24 min-h-screen bg-[#F2F4F3] bg-subtle-grid pb-24">
+            {/* Back Button */}
+            <div className="px-6 md:px-12 pt-4 mb-4">
+                <button onClick={() => setView('GENDER_SELECTION')} className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-[#111111] transition-colors">
+                    <ArrowLeft size={12} /> Back to Categories
+                </button>
+            </div>
+
             {/* Breadcrumbs */}
             <div className="px-6 md:px-12 py-6 border-b border-gray-200 bg-white/50 backdrop-blur-sm sticky top-20 z-30">
                 <div className="max-w-7xl mx-auto flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500">

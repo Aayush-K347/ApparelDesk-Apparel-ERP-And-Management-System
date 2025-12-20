@@ -41,7 +41,7 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
         ${isSolid ? 'bg-[#F2F4F3]/90 backdrop-blur-xl text-[#111111] border-b border-[#111111]/5 py-4' : 'bg-transparent text-[#F2F4F3] py-8'}`}
       >
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-12 text-[10px] font-bold tracking-[0.25em] uppercase">
+        <div className="hidden md:flex gap-12 text-sm font-bold tracking-[0.25em] uppercase">
           <button onClick={() => setView('GENDER_SELECTION')} className="hover:text-[#488C5C] transition-colors relative group py-2">
             Shop
             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
@@ -55,8 +55,8 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
           </button>
           {ENABLE_STUDIO && (
-              <button onClick={() => setView('STUDIO')} className="hover:text-[#488C5C] transition-colors relative group py-2 flex items-center gap-2 text-[#111111] font-anton tracking-widest text-xs">
-                 <Camera size={12} className="text-[#488C5C]" />
+              <button onClick={() => setView('STUDIO')} className="hover:text-[#488C5C] transition-colors relative group py-2 flex items-center gap-2">
+                 <Camera size={14} className="text-[#488C5C]" />
                  Studio
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
               </button>

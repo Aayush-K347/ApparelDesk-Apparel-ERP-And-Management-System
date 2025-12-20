@@ -3,16 +3,12 @@ import { Address, SalesOrderResponse } from '../../types';
 import { Package, MapPin, Plus, ArrowLeft, Printer } from 'lucide-react';
 
 interface UserProfileProps {
-    selectedOrder: SalesOrderResponse | null;
-    setSelectedOrder: (order: SalesOrderResponse | null) => void;
-    orders: SalesOrderResponse[];
-    addresses: Address[];
+    selectedOrder: UserOrder | null;
+    setSelectedOrder: (order: UserOrder | null) => void;
 }
 
-export const UserProfile: React.FC<UserProfileProps> = ({ selectedOrder, setSelectedOrder, orders, addresses }) => {
-    const orderList = Array.isArray(orders) ? orders : [];
-    const addressList = Array.isArray(addresses) ? addresses : [];
-    // Detail view
+export const UserProfile: React.FC<UserProfileProps> = ({ selectedOrder, setSelectedOrder }) => {
+    // If an order is selected, show detail view
     if (selectedOrder) {
         return (
             <div className="pt-24 min-h-screen bg-[#F2F4F3] bg-subtle-grid pb-24 px-6 md:px-12">
@@ -107,6 +103,11 @@ export const UserProfile: React.FC<UserProfileProps> = ({ selectedOrder, setSele
     return (
         <div className="pt-32 min-h-screen bg-[#F2F4F3] bg-subtle-grid px-6 md:px-12 pb-24">
             <div className="max-w-7xl mx-auto">
+                {/* Back Button */}
+                <button onClick={() => setView('LANDING')} className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-[#111111] transition-colors mb-8">
+                    <ArrowLeft size={12} /> Back to Home
+                </button>
+
                 <h1 className="text-5xl md:text-7xl font-anton font-bold uppercase tracking-wide mb-12">My Account</h1>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">

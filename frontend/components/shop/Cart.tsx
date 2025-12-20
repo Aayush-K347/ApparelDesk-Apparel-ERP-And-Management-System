@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { CartItem, Coupon, ViewState } from '../../types';
-import { Minus, Plus, Trash2, Check, ArrowRight } from 'lucide-react';
+import { Minus, Plus, Trash2, Check, ArrowRight, ArrowLeft } from 'lucide-react';
 
 interface CartProps {
     cart: CartItem[];
@@ -45,6 +45,12 @@ export const Cart: React.FC<CartProps> = ({
 
     return (
         <div className="pt-32 min-h-screen bg-[#F2F4F3] bg-subtle-grid px-6 md:px-12 pb-24 animate-[fadeIn_0.5s_ease-out]">
+            <div className="max-w-7xl mx-auto">
+                {/* Back Button */}
+                <button onClick={() => setView('PRODUCT_LISTING')} className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-[#111111] transition-colors mb-8">
+                    <ArrowLeft size={12} /> Continue Shopping
+                </button>
+            </div>
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
                 {/* Items List */}
                 <div className="lg:col-span-7">

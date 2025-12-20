@@ -157,7 +157,7 @@ const CREATORS: Creator[] = [
         id: 'c4',
         name: 'Sofia Kenin',
         handle: '@sofia.k',
-        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop',
+        avatar: 'https://plus.unsplash.com/premium_photo-1689371957762-b5f8d601933e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop',
         isVerified: true,
         verificationType: 'GREEN'
     },
@@ -184,7 +184,7 @@ export const MOCK_STUDIO_POSTS: StudioPost[] = [
     {
         id: 'post2',
         creator: CREATORS[1],
-        mediaUrl: 'https://images.unsplash.com/photo-1529139574466-a302c27e3844?q=80&w=1000&auto=format&fit=crop',
+        mediaUrl: 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         mediaType: 'IMAGE',
         caption: 'Sunday brunch vibes in the new silk set. Absolutely obsessed with the quality! ✨',
         likes: 856,
@@ -234,7 +234,7 @@ export const MOCK_STUDIO_POSTS: StudioPost[] = [
     {
         id: 'post7',
         creator: CREATORS[1],
-        mediaUrl: 'https://images.unsplash.com/photo-1550614000-4b9519e09d5a?q=80&w=1000&auto=format&fit=crop',
+        mediaUrl: 'https://images.unsplash.com/photo-1623113526872-d5237a0d079d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         mediaType: 'IMAGE',
         caption: 'Golden hour glow. The texture of this fabric is unreal.',
         likes: 2100,
@@ -255,7 +255,7 @@ export const MOCK_STUDIO_POSTS: StudioPost[] = [
     {
         id: 'post9',
         creator: CREATORS[3],
-        mediaUrl: 'https://images.unsplash.com/photo-1515347619252-60a6bf4fffce?q=80&w=1000&auto=format&fit=crop',
+        mediaUrl: 'https://images.unsplash.com/photo-1668266366677-08d06537ec8d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         mediaType: 'IMAGE',
         caption: 'Morning light. Verified look for the season.',
         likes: 4500,

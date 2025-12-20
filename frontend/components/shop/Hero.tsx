@@ -126,7 +126,7 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
                         </p>
                         <button 
                             onClick={() => { setSelectedGender('Men'); setView('PRODUCT_LISTING'); }}
-                            className="group flex items-center gap-4 border-b border-[#111111] pb-1 text-xs font-bold tracking-[0.3em] uppercase hover:text-[#488C5C] hover:border-[#488C5C] transition-all duration-300"
+                            className="group flex items-center gap-4 border-b border-[#111111] pb-1 text-xs font-bold tracking-[0.3em] uppercase hover:text-[#488C5C] hover:border-[#488C5C] transition-all duration-300 mx-auto"
                         >
                             View Collection <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
                         </button>
@@ -239,7 +239,7 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
         <ProductSection 
             title="Modern Trousers" 
             category="Bottomwear" 
-            heroImage="https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1780&auto=format&fit=crop"
+            heroImage="https://images.unsplash.com/photo-1765828594000-1605dd96033e?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             layout="split" 
             index={1} 
         />
