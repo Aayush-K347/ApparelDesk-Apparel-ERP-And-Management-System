@@ -21,6 +21,7 @@ import { VendorLogin } from './components/auth/VendorLogin';
 import { UserAuth } from './components/auth/UserAuth';
 import { QuickViewModal } from './components/shared/QuickViewModal';
 import { StudioFeed } from './components/studio/StudioFeed';
+import ClickSpark from './components/shared/ClickSpark';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('LANDING');
@@ -305,6 +306,7 @@ const App: React.FC = () => {
   };
 
   return (
+    <ClickSpark sparkColor="#488C5C" sparkRadius={25} duration={600}>
     <div className="font-sans antialiased text-[#111111] selection:bg-[#488C5C] selection:text-white relative">
       {view !== 'VENDOR_LOGIN' && view !== 'VENDOR_DASHBOARD' && view !== 'CHECKOUT' && view !== 'ORDER_SUCCESS' && view !== 'USER_AUTH' && (
         <Navigation 
@@ -473,6 +475,7 @@ const App: React.FC = () => {
       />
 
     </div>
+    </ClickSpark>
   );
 };
 
