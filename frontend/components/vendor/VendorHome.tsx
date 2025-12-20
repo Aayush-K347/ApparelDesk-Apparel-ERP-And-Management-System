@@ -27,7 +27,7 @@ const CASHFLOW_DATA = [
 
 const STAT_DATA = [
   { name: 'Rent', value: 3500, color: '#111111' },
-  { name: 'Invest', value: 2100, color: '#c3f235' },
+  { name: 'Invest', value: 2100, color: '#c9b52e' },
   { name: 'Food', value: 1200, color: '#E5E7EB' },
 ];
 
@@ -38,7 +38,7 @@ export const VendorHome: React.FC = () => {
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 mb-6">
                 
                 {/* 1. Total Balance Card (Green) */}
-                <div className="xl:col-span-4 bg-[#c3f235] rounded-[32px] p-8 text-white relative overflow-hidden group shadow-xl shadow-[#c3f235]/20">
+                <div className="xl:col-span-4 bg-[#c9b52e] rounded-[32px] p-8 text-white relative overflow-hidden group shadow-xl shadow-[#c9b52e]/20">
                     <div className="absolute -right-10 -top-10 w-48 h-48 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-colors"></div>
                     <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-black/10 rounded-full blur-3xl"></div>
                     
@@ -54,7 +54,7 @@ export const VendorHome: React.FC = () => {
                         </div>
                         
                         <div className="flex gap-4">
-                            <button className="flex-1 bg-white text-[#c3f235] py-3 rounded-[16px] font-bold text-sm hover:bg-gray-100 transition-colors shadow-sm flex items-center justify-center gap-2">
+                            <button className="flex-1 bg-white text-[#c9b52e] py-3 rounded-[16px] font-bold text-sm hover:bg-gray-100 transition-colors shadow-sm flex items-center justify-center gap-2">
                                 <ArrowDownLeft size={16} /> Deposit
                             </button>
                             <button className="flex-1 bg-[#111111] text-white py-3 rounded-[16px] font-bold text-sm hover:bg-black/80 transition-colors shadow-sm flex items-center justify-center gap-2">
@@ -80,12 +80,12 @@ export const VendorHome: React.FC = () => {
                             <div key={i} className="bg-[#F8F9FD] p-4 rounded-[20px]">
                                 <div className="flex items-center gap-2 mb-3 text-gray-500">
                                     <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-sm">
-                                        <stat.icon size={12} className="text-[#c3f235]" />
+                                        <stat.icon size={12} className="text-[#c9b52e]" />
                                     </div>
                                     <span className="text-xs font-bold">{stat.label}</span>
                                 </div>
                                 <h4 className="font-bold text-sm mb-1">{stat.val}</h4>
-                                <span className="text-[10px] font-bold text-[#c3f235] bg-[#c3f235]/10 px-1.5 py-0.5 rounded">{stat.change}</span>
+                                <span className="text-[10px] font-bold text-[#c9b52e] bg-[#c9b52e]/10 px-1.5 py-0.5 rounded">{stat.change}</span>
                             </div>
                         ))}
                     </div>
@@ -105,7 +105,7 @@ export const VendorHome: React.FC = () => {
                         </div>
                         <div className="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
                             <div className="w-[92%] h-full bg-[#111111] rounded-full relative">
-                                <div className="absolute right-0 top-0 bottom-0 w-20 bg-[#c3f235]"></div>
+                                <div className="absolute right-0 top-0 bottom-0 w-20 bg-[#c9b52e]"></div>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ export const VendorHome: React.FC = () => {
                         <div className="flex items-center gap-4">
                              <div className="flex items-center gap-2 text-xs font-bold">
                                  <span className="w-3 h-3 bg-[#111111] rounded-full"></span> Income
-                                 <span className="w-3 h-3 bg-[#c3f235] rounded-full ml-2"></span> Expense
+                                 <span className="w-3 h-3 bg-[#c9b52e] rounded-full ml-2"></span> Expense
                              </div>
                              <select className="bg-gray-50 border border-gray-200 rounded-lg text-xs font-bold px-3 py-2 cursor-pointer outline-none">
                                  <option>This Year</option>
@@ -147,7 +147,7 @@ export const VendorHome: React.FC = () => {
                                     contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)'}}
                                 />
                                 <Bar dataKey="income" fill="#111111" radius={[4, 4, 4, 4]} />
-                                <Bar dataKey="expense" fill="#c3f235" radius={[4, 4, 4, 4]} />
+                                <Bar dataKey="expense" fill="#c9b52e" radius={[4, 4, 4, 4]} />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
@@ -160,7 +160,7 @@ export const VendorHome: React.FC = () => {
                      </div>
                      
                      <div className="flex-1 flex flex-col items-center justify-center text-center mt-4">
-                         <div className="w-20 h-20 bg-gradient-to-br from-[#c3f235] to-[#111111] rounded-full mb-6 shadow-lg shadow-green-900/20 animate-pulse"></div>
+                         <div className="w-20 h-20 bg-gradient-to-br from-[#c9b52e] to-[#111111] rounded-full mb-6 shadow-lg shadow-green-900/20 animate-pulse"></div>
                          <h3 className="font-bold text-lg mb-4">What Can I help with?</h3>
                          
                          <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -178,7 +178,7 @@ export const VendorHome: React.FC = () => {
                          </div>
                          <button className="p-2 text-gray-400 hover:text-black"><Mic size={18} /></button>
                          <button className="p-2 text-gray-400 hover:text-black"><Paperclip size={18} /></button>
-                         <button className="bg-[#c3f235] text-white px-4 py-2 rounded-[14px] flex items-center gap-2 text-xs font-bold hover:bg-[#3a754b] transition-colors">
+                         <button className="bg-[#c9b52e] text-white px-4 py-2 rounded-[14px] flex items-center gap-2 text-xs font-bold hover:bg-[#3a754b] transition-colors">
                              <Send size={14} /> Send
                          </button>
                      </div>
@@ -202,9 +202,9 @@ export const VendorHome: React.FC = () => {
 
                     <div className="space-y-6">
                         {[
-                            { name: 'Dividend Payout', type: 'Investments', date: '2024-09-25 10:00', amount: '+$200.00', status: 'Completed', color: 'text-[#c3f235]' },
+                            { name: 'Dividend Payout', type: 'Investments', date: '2024-09-25 10:00', amount: '+$200.00', status: 'Completed', color: 'text-[#c9b52e]' },
                             { name: 'Grocery Shopping', type: 'Food & Dining', date: '2024-09-24 14:30', amount: '-$154.20', status: 'Completed', color: 'text-red-500' },
-                            { name: 'Freelance Payment', type: 'Income', date: '2024-09-23 15:00', amount: '+$850.00', status: 'Completed', color: 'text-[#c3f235]' },
+                            { name: 'Freelance Payment', type: 'Income', date: '2024-09-23 15:00', amount: '+$850.00', status: 'Completed', color: 'text-[#c9b52e]' },
                             { name: 'Electricity Bill', type: 'Utilities', date: '2024-09-22 09:15', amount: '-$120.75', status: 'Completed', color: 'text-red-500' }
                         ].map((tx, i) => (
                             <div key={i} className="flex items-center justify-between group cursor-pointer">
@@ -238,7 +238,7 @@ export const VendorHome: React.FC = () => {
 
                     <div className="flex justify-between text-xs font-bold text-gray-400 mb-8">
                          <span>Income ($4,800)</span>
-                         <span className="text-[#c3f235]">Expense ($3,500)</span>
+                         <span className="text-[#c9b52e]">Expense ($3,500)</span>
                     </div>
 
                     <div className="h-[200px] w-full relative flex items-center justify-center">
@@ -293,7 +293,7 @@ export const VendorHome: React.FC = () => {
                         <div className="bg-gray-50 px-4 py-3 rounded-[16px] flex items-center gap-2 cursor-pointer border border-gray-100 flex-1 justify-center">
                             <span className="text-lg">🇺🇸</span> <span className="font-bold text-sm">USD</span> <ChevronDown size={14} />
                         </div>
-                        <RefreshCw size={20} className="text-[#c3f235]" />
+                        <RefreshCw size={20} className="text-[#c9b52e]" />
                         <div className="bg-gray-50 px-4 py-3 rounded-[16px] flex items-center gap-2 cursor-pointer border border-gray-100 flex-1 justify-center">
                              <span className="text-lg">🇬🇧</span> <span className="font-bold text-sm">GBP</span> <ChevronDown size={14} />
                         </div>

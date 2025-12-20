@@ -51,7 +51,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white">
                     <div className="mb-auto">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="w-2 h-2 bg-[#c3f235] rounded-full"></span>
+                            <span className="w-2 h-2 bg-[#c9b52e] rounded-full"></span>
                             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">{product.gender} Collection</span>
                         </div>
                         
@@ -120,7 +120,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                             </div>
                             <button 
                                 onClick={() => { onAddToCart(product, quantity, size, color); onClose(); }}
-                                className="flex-1 bg-[#111111] text-white font-bold uppercase tracking-[0.25em] text-[10px] hover:bg-[#c3f235] transition-all duration-300 shadow-xl"
+                                className="flex-1 bg-[#111111] text-white font-bold uppercase tracking-[0.25em] text-[10px] hover:bg-[#c9b52e] transition-all duration-300 shadow-xl"
                             >
                                 Add to Bag — ₹{(product.price * quantity).toFixed(2)}
                             </button>

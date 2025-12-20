@@ -306,8 +306,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <ClickSpark sparkColor="#c3f235" sparkRadius={25} duration={600}>
-    <div className="font-sans antialiased text-[#111111] selection:bg-[#c3f235] selection:text-[#111111] relative">
+    <ClickSpark sparkColor="#c9b52e" sparkRadius={25} duration={600}>
+    <div className="font-sans antialiased text-[#111111] selection:bg-[#c9b52e] selection:text-[#111111] relative">
       {view !== 'VENDOR_LOGIN' && view !== 'VENDOR_DASHBOARD' && view !== 'CHECKOUT' && view !== 'ORDER_SUCCESS' && view !== 'USER_AUTH' && (
         <Navigation 
             cartCount={cart.length} 
@@ -457,7 +457,7 @@ const App: React.FC = () => {
               <div className="flex-1">
                   <h4 className="font-anton uppercase tracking-wider text-sm flex items-center gap-2">
                       {notification.message}
-                      <Check size={14} className="text-[#c3f235]" />
+                      <Check size={14} className="text-[#c9b52e]" />
                   </h4>
                   {notification.subtext && (
                       <p className="text-[10px] text-gray-400 uppercase tracking-widest mt-1 truncate max-w-[200px]">{notification.subtext}</p>

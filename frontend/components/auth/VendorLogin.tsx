@@ -42,12 +42,12 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
                 <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
                 
                 <div className="absolute inset-0 z-20 flex flex-col justify-between p-12 text-white">
-                    <div className="font-anton tracking-widest text-2xl text-[#c3f235]">LUVARTE.ADMIN</div>
+                    <div className="font-anton tracking-widest text-2xl text-[#c9b52e]">LUVARTE.ADMIN</div>
                     <div className="max-w-lg">
                         <h2 className="text-5xl font-anton uppercase leading-none mb-6">
                             Vendor Portal
                         </h2>
-                        <div className="h-1 w-20 bg-[#c3f235] mb-8"></div>
+                        <div className="h-1 w-20 bg-[#c9b52e] mb-8"></div>
                         <p className="text-sm tracking-[0.2em] font-bold uppercase opacity-60 leading-relaxed mb-4">
                             Manage inventory, track sales performance, and handle financial settlements in real-time.
                         </p>
@@ -117,7 +117,7 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
                       <button 
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#c3f235] transition-colors shadow-xl flex items-center justify-center gap-3 disabled:opacity-60"
+                          className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#c9b52e] transition-colors shadow-xl flex items-center justify-center gap-3 disabled:opacity-60"
                       >
                           {isSubmitting ? 'Please wait…' : 'Access Dashboard'} <ArrowRight size={14} />
                       </button>
