@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ViewState, Product } from '../../types';
 import { ArrowRight, Gem, Star, ArrowUpRight } from 'lucide-react';
+import ScrollReveal from '../shared/ScrollReveal';
 
 interface HeroProps {
     setView: (view: ViewState) => void;
@@ -113,7 +114,7 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
                         0{index + 1}
                     </div>
 
-                    <FadeInSection className="relative z-10 max-w-lg">
+                    <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={0} blurStrength={8} containerClassName="relative z-10 max-w-lg">
                         <div className="flex flex-col items-center gap-4 mb-10">
                             <span className="h-12 w-[1px] bg-[#111111]"></span>
                             <span className="text-[10px] font-bold tracking-[0.4em] text-[#111111] uppercase">Collection 0{index + 1}</span>
@@ -130,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
                         >
                             View Collection <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
                         </button>
-                    </FadeInSection>
+                    </ScrollReveal>
                 </div>
             </section>
         );
@@ -177,12 +178,14 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
 
     return (
         <section className="py-24 bg-[#111111] overflow-hidden border-t border-white/5 relative z-20">
+            <ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={0} blurStrength={6}>
             <div className="container mx-auto px-6 mb-12 flex justify-between items-end">
                 <h2 className="text-5xl md:text-8xl font-anton text-[#F2F4F3] uppercase tracking-wide opacity-20">New Arrivals</h2>
                 <div className="hidden md:flex items-center gap-2 text-[#488C5C] text-[10px] font-bold uppercase tracking-widest">
                     Swipe <ArrowRight size={14} />
                 </div>
             </div>
+            </ScrollReveal>
             
             <div className="flex w-full overflow-hidden relative">
                 <div className="flex animate-infiniteScroll w-max hover:[animation-play-state:paused]">

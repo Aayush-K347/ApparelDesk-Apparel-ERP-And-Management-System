@@ -34,7 +34,7 @@ export const GenderSelection: React.FC<GenderSelectionProps> = ({ setSelectedGen
                   <div 
                     key={cat.id} 
                     onClick={() => { setSelectedGender(cat.id); setView('PRODUCT_LISTING'); setSelectedGroup(null); setSelectedCategory(null); }}
-                    className="relative group cursor-pointer overflow-hidden rounded-sm shadow-xl"
+                    className="relative group cursor-pointer overflow-hidden rounded-sm shadow-xl h-[60vh]"
                   >
                       <img src={cat.img} className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
