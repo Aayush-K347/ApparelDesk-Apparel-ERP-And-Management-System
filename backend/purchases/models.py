@@ -38,7 +38,7 @@ class PurchaseOrder(TimeStampedModel):
         return self.po_number
 
 
-class PurchaseOrderLine(TimeStampedModel):
+class PurchaseOrderLine(models.Model):
     po_line_id = models.BigAutoField(primary_key=True)
     purchase_order = models.ForeignKey(
         PurchaseOrder, on_delete=models.CASCADE, related_name="lines"
@@ -87,7 +87,15 @@ class VendorBill(TimeStampedModel):
     tax_amount = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     total_amount = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     paid_amount = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    remaining_amount = models.DecimalField(max_digits=15, decimal_places=2, default=0)
+    # Computed in DB (total_amount - paid_amount). Keep DB default by excluding from INSERT/UPDATE.
+    remaining_amount = models.DecimalField(
+        max_digits=15,
+        decimal_places=2,
+        null=True,
+        blank=True,
+        editable=False,
+        db_default=None,
+    )
     vendor_reference = models.CharField(max_length=100, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     created_by = models.BigIntegerField(null=True, blank=True, db_column="created_by")

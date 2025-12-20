@@ -301,7 +301,9 @@ export async function deleteAddress(addressId: number): Promise<void> {
 export async function vendorFetchProducts(): Promise<Product[]> {
   const res = await fetch(`${API_BASE}/catalog/vendor/products/`, { headers: authHeaders() });
   if (!res.ok) throw new Error('Unable to load vendor products');
-  return (await res.json()) as Product[];
+  const data = await res.json();
+  if (Array.isArray(data)) return mapProducts(data);
+  return mapProducts(data.results || []);
 }
 
 export async function vendorCreateProduct(payload: {
@@ -322,6 +324,233 @@ export async function vendorCreateProduct(payload: {
     headers: { 'Content-Type': 'application/json', ...authHeaders() },
     body: JSON.stringify(payload),
   });
-  if (!res.ok) throw new Error('Unable to create product');
-  return (await res.json()) as Product;
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Unable to create product');
+  }
+  const data = await res.json();
+  if (Array.isArray(data)) return mapProducts(data)[0];
+  if (data && data.product_id) return mapProducts([data])[0];
+  throw new Error('Unexpected response');
+}
+
+// Sales helpers for vendors (customer + payment term selection)
+export async function fetchSaleCustomers(search?: string): Promise<{ contact_id: number; contact_name: string; email: string }[]> {
+  const query = search ? `?search=${encodeURIComponent(search)}` : '';
+  const res = await fetch(`${API_BASE}/sales/customers/${query}`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load customers');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function fetchPaymentTerms(): Promise<any[]> {
+  const res = await fetch(`${API_BASE}/pricing/payment-terms/`);
+  if (!res.ok) throw new Error('Unable to load payment terms');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+// Offers & Coupons
+export type Offer = {
+  discount_offer_id: number;
+  offer_name: string;
+  discount_percentage: number;
+  start_date: string;
+  end_date: string;
+  available_on: string;
+  is_active: boolean;
+};
+
+export type CouponRow = {
+  coupon_id: number;
+  coupon_code: string;
+  expiration_date: string;
+  coupon_status: string;
+  usage_count: number;
+  max_usage_count: number;
+  contact_detail?: { contact_id: number; contact_name: string; email: string } | null;
+  discount_offer?: Offer;
+};
+
+export async function fetchOffers(): Promise<Offer[]> {
+  const res = await fetch(`${API_BASE}/pricing/offers/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load offers');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function createOffer(payload: {
+  offer_name: string;
+  discount_percentage: number;
+  start_date: string;
+  end_date: string;
+  available_on: string;
+  is_active?: boolean;
+}): Promise<Offer> {
+  const res = await fetch(`${API_BASE}/pricing/offers/create/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify({ ...payload, is_active: payload.is_active ?? true }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Unable to create offer');
+  }
+  return res.json();
+}
+
+export async function fetchCoupons(filter?: { offer_id?: number; status?: string; customer_id?: number }): Promise<CouponRow[]> {
+  const qs = new URLSearchParams();
+  if (filter?.offer_id) qs.append('offer_id', String(filter.offer_id));
+  if (filter?.status) qs.append('status', filter.status);
+  if (filter?.customer_id) qs.append('customer_id', String(filter.customer_id));
+  const query = qs.toString() ? `?${qs.toString()}` : '';
+  const res = await fetch(`${API_BASE}/pricing/coupons/${query}`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load coupons');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function generateCoupons(payload: {
+  discount_offer_id: number;
+  for_type: 'anonymous' | 'selected' | 'all';
+  customer_ids?: number[];
+  quantity?: number;
+  expiration_date: string;
+  max_usage_count?: number;
+}): Promise<CouponRow[]> {
+  const res = await fetch(`${API_BASE}/pricing/coupons/generate/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Unable to generate coupons');
+  }
+  const data = await res.json();
+  return data.created || [];
+}
+
+export async function fetchVendorInvoices(filter?: { customer_id?: number; status?: string }) {
+  const query = new URLSearchParams();
+  if (filter?.customer_id) query.append('customer_id', String(filter.customer_id));
+  if (filter?.status) query.append('status', filter.status);
+  const qs = query.toString() ? `?${query.toString()}` : '';
+  const res = await fetch(`${API_BASE}/sales/vendor/invoices/${qs}`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load invoices');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function fetchPurchaseOrders(): Promise<any[]> {
+  const res = await fetch(`${API_BASE}/purchases/purchase-orders/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load purchase orders');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function createPurchaseOrder(payload: {
+  vendor_id: number;
+  expected_delivery_date?: string;
+  order_date?: string;
+  notes?: string;
+  lines: { product_id?: number; product_name?: string; quantity: number; unit_price: number; tax_percentage?: number }[];
+}) {
+  const res = await fetch(`${API_BASE}/purchases/purchase-orders/create/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Unable to create purchase order');
+  }
+  return res.json();
+}
+
+// Portal Users APIs
+export type PortalUser = {
+  contact_id: number;
+  contact_name: string;
+  contact_type: string;
+  email: string;
+  mobile: string;
+  address_line1?: string;
+  address_line2?: string;
+  city?: string;
+  state?: string;
+  pincode?: string;
+  country: string;
+  is_active: boolean;
+};
+
+export async function fetchPortalUsers(): Promise<PortalUser[]> {
+  const res = await fetch(`${API_BASE}/users/portal/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load portal users');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function updatePortalUser(contactId: number, payload: Partial<PortalUser>): Promise<PortalUser> {
+  const res = await fetch(`${API_BASE}/users/portal/${contactId}/`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Unable to update user');
+  }
+  return res.json();
+}
+
+// Contacts APIs (single source)
+export async function fetchCustomers(): Promise<PortalUser[]> {
+  const res = await fetch(`${API_BASE}/contacts/customers/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load customers');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function fetchVendors(): Promise<PortalUser[]> {
+  // Use purchases vendors endpoint to include active vendor/both contacts
+  const res = await fetch(`${API_BASE}/purchases/vendors/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load vendors');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function fetchVendorBills(filter?: { vendor_id?: number }) {
+  const query = new URLSearchParams();
+  if (filter?.vendor_id) query.append('vendor_id', String(filter.vendor_id));
+  const qs = query.toString() ? `?${query.toString()}` : '';
+  const res = await fetch(`${API_BASE}/purchases/vendor-bills/${qs}`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load vendor bills');
+  const data = await res.json();
+  return Array.isArray(data) ? data : data.results || [];
+}
+
+export async function createBillFromPurchaseOrder(poId: number) {
+  const res = await fetch(`${API_BASE}/purchases/purchase-orders/${poId}/create-bill/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Unable to create vendor bill');
+  }
+  return res.json();
+}
+
+export async function payVendorBill(billId: number) {
+  const res = await fetch(`${API_BASE}/purchases/vendor-bills/${billId}/pay/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Unable to pay bill');
+  }
+  return res.json();
 }

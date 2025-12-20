@@ -6,6 +6,10 @@ from .views import (
     VendorRegisterView,
     AddressListCreateView,
     AddressDetailView,
+    PortalUsersListView,
+    PortalUserDetailView,
+    CustomersListView,
+    VendorsListView,
 )
 
 urlpatterns = [
@@ -20,4 +24,8 @@ urlpatterns = [
         AddressDetailView.as_view(),
         name="address-detail",
     ),
+    path("users/portal/", PortalUsersListView.as_view(), name="portal-users-list"),
+    path("users/portal/<int:contact_id>/", PortalUserDetailView.as_view(), name="portal-user-detail"),
+    path("contacts/customers/", CustomersListView.as_view(), name="customers-list"),
+    path("contacts/vendors/", VendorsListView.as_view(), name="vendors-list"),
 ]

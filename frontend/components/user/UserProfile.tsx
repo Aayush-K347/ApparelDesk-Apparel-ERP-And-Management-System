@@ -8,6 +8,7 @@ interface UserProfileProps {
     orders: SalesOrderResponse[];
     addresses: Address[];
     setView?: (view: ViewState) => void;
+    onLogout?: () => void;
 }
 
 export const UserProfile: React.FC<UserProfileProps> = ({
@@ -16,6 +17,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({
     orders,
     addresses,
     setView,
+    onLogout,
 }) => {
     const orderList = Array.isArray(orders) ? orders : [];
     const addressList = Array.isArray(addresses) ? addresses : [];
@@ -130,7 +132,18 @@ export const UserProfile: React.FC<UserProfileProps> = ({
                         <button className="w-full text-left px-4 py-3 bg-[#111111] text-white text-[10px] font-bold uppercase tracking-widest">Order History</button>
                         <button className="w-full text-left px-4 py-3 hover:bg-white text-gray-400 text-[10px] font-bold uppercase tracking-widest transition-colors">Addresses</button>
                         <button className="w-full text-left px-4 py-3 hover:bg-white text-gray-400 text-[10px] font-bold uppercase tracking-widest transition-colors">Wishlist</button>
-                        <button className="w-full text-left px-4 py-3 text-red-400 hover:text-red-600 text-[10px] font-bold uppercase tracking-widest mt-8 transition-colors">Sign Out</button>
+                        <button
+                            onClick={() => {
+                                if (typeof onLogout === 'function') {
+                                    onLogout();
+                                } else {
+                                    setView && setView('LANDING');
+                                }
+                            }}
+                            className="w-full text-left px-4 py-3 text-red-400 hover:text-red-600 text-[10px] font-bold uppercase tracking-widest mt-8 transition-colors"
+                        >
+                            Sign Out
+                        </button>
                     </div>
 
                     {/* Content */}

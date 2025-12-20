@@ -1,6 +1,7 @@
 from datetime import date
 from decimal import Decimal
 from django.db import transaction
+from django.utils import timezone
 from accounts.models import Contact, Address
 from catalog.models import Product
 from pricing.models import CouponCode, PaymentTerm
@@ -153,5 +154,12 @@ def create_checkout(data, user=None):
         changed_by=user,
         note="Order placed via checkout",
     )
+
+    if coupon:
+        coupon.usage_count = (coupon.usage_count or 0) + 1
+        if coupon.usage_count >= coupon.max_usage_count:
+            coupon.coupon_status = "used"
+        coupon.used_at = timezone.now()
+        coupon.save(update_fields=["usage_count", "coupon_status", "used_at"])
 
     return order, invoice

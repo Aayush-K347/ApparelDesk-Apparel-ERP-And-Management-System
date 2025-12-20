@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.utils import timezone
 from accounts.models import Contact
 from catalog.models import Product
 from pricing.models import PaymentTerm, CouponCode
@@ -54,9 +55,45 @@ class SalesOrderSerializer(serializers.ModelSerializer):
 
 
 class CustomerInvoiceSerializer(serializers.ModelSerializer):
+    customer_detail = serializers.SerializerMethodField()
+    payment_term_name = serializers.SerializerMethodField()
+
     class Meta:
         model = CustomerInvoice
         fields = "__all__"
+
+    def get_customer_detail(self, obj):
+        if not obj.customer_id:
+            return None
+        return {
+            "contact_id": obj.customer.contact_id,
+            "contact_name": obj.customer.contact_name,
+            "email": obj.customer.email,
+        }
+
+    def get_payment_term_name(self, obj):
+        return obj.payment_term.term_name if obj.payment_term_id else None
+
+
+class SalesOrderDetailSerializer(serializers.ModelSerializer):
+    lines = SalesOrderLineSerializer(many=True, read_only=True)
+    invoices = CustomerInvoiceSerializer(many=True, read_only=True)
+    status_logs = serializers.SerializerMethodField()
+
+    class Meta:
+        model = SalesOrder
+        fields = "__all__"
+
+    def get_status_logs(self, obj):
+        return [
+            {
+                "previous_status": log.previous_status,
+                "new_status": log.new_status,
+                "changed_at": log.created_at,
+                "note": log.note,
+            }
+            for log in obj.status_logs.order_by("-created_at")
+        ]
 
 
 class CheckoutLineSerializer(serializers.Serializer):
@@ -124,7 +161,13 @@ class CheckoutSerializer(serializers.Serializer):
         coupon_code = attrs.get("coupon_code")
         if coupon_code:
             try:
-                attrs["coupon"] = CouponCode.objects.get(coupon_code=coupon_code)
+                coupon = CouponCode.objects.select_related("discount_offer").get(coupon_code=coupon_code, is_active=True)
+                today = timezone.now().date()
+                if coupon.expiration_date < today or coupon.coupon_status == "expired":
+                    raise serializers.ValidationError("Coupon expired")
+                if coupon.usage_count >= coupon.max_usage_count or coupon.coupon_status == "used":
+                    raise serializers.ValidationError("Coupon already used")
+                attrs["coupon"] = coupon
             except CouponCode.DoesNotExist:
                 raise serializers.ValidationError("Invalid coupon")
 

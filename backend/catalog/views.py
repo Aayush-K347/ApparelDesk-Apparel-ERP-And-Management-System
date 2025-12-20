@@ -1,7 +1,9 @@
-from rest_framework import generics, filters
+from rest_framework import generics, filters, serializers
 from rest_framework.permissions import AllowAny
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.response import Response
+from rest_framework import status
 from accounts.permissions import IsVendorUser
 from .models import Product
 from .serializers import ProductSerializer, ProductCreateSerializer
@@ -46,7 +48,8 @@ class ProductDetailView(generics.RetrieveAPIView):
 
 
 class VendorProductListCreateView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated & IsVendorUser]
+    # Per request: no auth required for vendor product add/list
+    permission_classes = [AllowAny]
     queryset = Product.objects.filter(is_active=True).prefetch_related("colors", "images").order_by("product_id")
     pagination_class = ProductPagination
 
@@ -57,3 +60,18 @@ class VendorProductListCreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save()
+
+    def create(self, request, *args, **kwargs):
+        try:
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            headers = self.get_success_headers(serializer.data if hasattr(serializer, "data") else {})
+            instance = Product.objects.filter(pk=getattr(serializer.instance, "pk", None)).prefetch_related("colors", "images").first()
+            if instance is None:
+                return Response({"detail": "Product not found after creation"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(ProductSerializer(instance).data, status=status.HTTP_201_CREATED, headers=headers)
+        except serializers.ValidationError:
+            raise
+        except Exception as exc:
+            return Response({"detail": str(exc)}, status=status.HTTP_400_BAD_REQUEST)
