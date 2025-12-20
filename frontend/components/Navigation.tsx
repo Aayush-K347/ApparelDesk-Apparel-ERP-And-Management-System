@@ -61,6 +61,11 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
               </button>
           )}
+          <a href="http://127.0.0.1:7860" target="_blank" rel="noopener noreferrer" className="hover:text-[#488C5C] transition-colors relative group py-2 flex items-center gap-2">
+             <Camera size={14} className="text-[#488C5C]" />
+             Virtual Try On
+            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#488C5C] transition-all duration-500 ease-out group-hover:w-full"></span>
+          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -118,6 +123,7 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
                   {ENABLE_STUDIO && (
                       <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('STUDIO'); setMobileMenuOpen(false); }}>Studio</button>
                   )}
+                  <a href="http://127.0.0.1:7860" target="_blank" rel="noopener noreferrer" className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300">Virtual Try On</a>
                   <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { handleUserClick(); setMobileMenuOpen(false); }}>My Profile</button>
                   <button className="text-left hover:text-[#488C5C] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('VENDOR_LOGIN'); setMobileMenuOpen(false); }}>Vendor Portal</button>
               </div>
