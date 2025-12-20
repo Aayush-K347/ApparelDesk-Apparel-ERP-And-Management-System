@@ -99,7 +99,7 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
         {/* Icons */}
         <div className="flex gap-5 md:gap-8 items-center">
           <a href="http://127.0.0.1:7860" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#c9b52e] transition-colors relative group py-2">
-             <Camera size={18} className="text-white group-hover:text-[#c9b52e] transition-colors" />
+             <Camera size={18} className={`transition-colors group-hover:text-[#c9b52e] ${isSolid ? 'text-[#111111]' : 'text-[#F2F4F3]'}`} />
              <span className="hidden xl:inline text-xs font-bold tracking-[0.25em] uppercase">Virtual Try On</span>
              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c9b52e] transition-all duration-500 ease-out group-hover:w-full"></span>
           </a>
