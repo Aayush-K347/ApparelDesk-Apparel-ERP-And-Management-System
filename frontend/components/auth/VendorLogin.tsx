@@ -2,18 +2,32 @@
 import React, { useState } from 'react';
 import { ViewState } from '../../types';
 import { ArrowRight, Briefcase, Lock, Key } from 'lucide-react';
+import { loginUser } from '../../api';
 
 interface VendorLoginProps {
     setView: (view: ViewState) => void;
+    onVendorAuth?: () => void;
 }
 
-export const VendorLogin: React.FC<VendorLoginProps> = ({ setView }) => {
+export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth }) => {
     const [vendorPassword, setVendorPassword] = useState('');
-    const [vendorId, setVendorId] = useState('');
+    const [vendorEmail, setVendorEmail] = useState('');
+    const [error, setError] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        setView('VENDOR_DASHBOARD');
+        setError(null);
+        setIsSubmitting(true);
+        try {
+            await loginUser({ email: vendorEmail, password: vendorPassword });
+            onVendorAuth?.();
+            setView('VENDOR_DASHBOARD');
+        } catch (err: any) {
+            setError(err.message || 'Invalid credentials');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -73,21 +87,21 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView }) => {
 
                   <form onSubmit={handleLogin} className="space-y-8">
                       <div className="group">
-                          <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Vendor ID</label>
+                          <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Vendor Email</label>
                           <div className="relative">
                               <input 
                                 type="text" 
-                                value={vendorId}
-                                onChange={(e) => setVendorId(e.target.value)}
+                                value={vendorEmail}
+                                onChange={(e) => setVendorEmail(e.target.value)}
                                 className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors font-bold placeholder:text-gray-300" 
-                                placeholder="VID-0000" 
+                                placeholder="name@brand.com" 
                               />
                               <Key className="absolute right-0 top-3 text-gray-300 group-focus-within:text-[#111111] transition-colors" size={16} />
                           </div>
                       </div>
 
                       <div className="group">
-                          <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Access Key</label>
+                          <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Password</label>
                           <div className="relative">
                               <input 
                                 type="password" 
@@ -102,11 +116,14 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView }) => {
 
                       <button 
                           type="submit"
-                          className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#488C5C] transition-colors shadow-xl flex items-center justify-center gap-3"
+                          disabled={isSubmitting}
+                          className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#488C5C] transition-colors shadow-xl flex items-center justify-center gap-3 disabled:opacity-60"
                       >
-                          Access Dashboard <ArrowRight size={14} />
+                          {isSubmitting ? 'Please wait…' : 'Access Dashboard'} <ArrowRight size={14} />
                       </button>
                   </form>
+
+                  {error && <div className="mt-6 text-sm text-red-500">{error}</div>}
 
                   <div className="mt-12 text-center">
                       <p className="text-[10px] text-gray-400 uppercase tracking-widest">

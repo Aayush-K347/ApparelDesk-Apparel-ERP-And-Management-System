@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { ViewState, Product, CartItem, Coupon, UserOrder } from './types';
+import { ViewState, Product, CartItem, Coupon, SalesOrderResponse, Address } from './types';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { VendorDashboard } from './components/VendorDashboard';
 import { ShoppingBag, Check } from 'lucide-react';
 import { ENABLE_STUDIO } from './constants';
-import { fetchProducts, validateCoupon, loginUser, registerUser, fetchProfile, checkoutOrder, createPayment, clearTokens } from './api';
+import { fetchProducts, fetchProductsByUrl, validateCoupon, loginUser, registerUser, registerVendor, fetchProfile, checkoutOrder, createPayment, clearTokens, fetchAddresses, fetchOrders, fetchCart, saveCart } from './api';
 
 // New Components
 import { Hero } from './components/shop/Hero';
@@ -30,12 +30,14 @@ const App: React.FC = () => {
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [selectedOrder, setSelectedOrder] = useState<UserOrder | null>(null);
+  const [selectedOrder, setSelectedOrder] = useState<SalesOrderResponse | null>(null);
 
   // Auth State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [contactId, setContactId] = useState<number | null>(null);
   const [userRole, setUserRole] = useState<string | null>(null);
+  const [addresses, setAddresses] = useState<Address[]>([]);
+  const [orders, setOrders] = useState<SalesOrderResponse[]>([]);
 
   // Quick View State
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
@@ -48,6 +50,7 @@ const App: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(false);
   const [productError, setProductError] = useState<string | null>(null);
+  const [nextProductsUrl, setNextProductsUrl] = useState<string | null>(null);
 
   // Notification State
   const [notification, setNotification] = useState<{ show: boolean; message: string; subtext?: string; image?: string }>({ 
@@ -65,8 +68,9 @@ const App: React.FC = () => {
     async function loadProducts() {
       setIsLoadingProducts(true);
       try {
-        const apiProducts = await fetchProducts();
-        setProducts(apiProducts);
+        const { items, next } = await fetchProducts();
+        setProducts(items);
+        setNextProductsUrl(next);
         setProductError(null);
       } catch (err) {
         setProductError('Unable to load products. Please refresh.');
@@ -77,6 +81,20 @@ const App: React.FC = () => {
     loadProducts();
   }, []);
 
+  const loadMoreProducts = async () => {
+    if (!nextProductsUrl) return;
+    setIsLoadingProducts(true);
+    try {
+      const { items, next } = await fetchProductsByUrl(nextProductsUrl);
+      setProducts(prev => [...prev, ...items]);
+      setNextProductsUrl(next);
+    } catch (err) {
+      setProductError('Unable to load more products.');
+    } finally {
+      setIsLoadingProducts(false);
+    }
+  };
+
   useEffect(() => {
     async function loadProfile() {
       try {
@@ -84,17 +102,100 @@ const App: React.FC = () => {
         setContactId(profile.contact_id);
         setUserRole(profile.user_role);
         setIsAuthenticated(true);
+        await Promise.all([loadAddresses(), loadOrders(), loadCartFromBackend()]);
       } catch (err) {
         setIsAuthenticated(false);
         setContactId(null);
         setUserRole(null);
+        setAddresses([]);
+        setOrders([]);
+        setCart([]);
       }
     }
     loadProfile();
   }, []);
 
-  const addToCart = (product: Product, quantity: number, size: string, color: string) => {
+  const loadAddresses = async () => {
+    try {
+      const data = await fetchAddresses();
+      setAddresses(data);
+    } catch (err) {
+      // ignore for now
+    }
+  };
+
+  const loadOrders = async () => {
+    try {
+      const data = await fetchOrders();
+      setOrders(data);
+    } catch (err) {
+      // ignore for now
+    }
+  };
+
+  const mapCartItemFromBackend = (item: any): CartItem => {
+    const productId = item.product;
+    const detail = item.product_detail || {};
+    return {
+      id: `prod_${productId}`,
+      backendId: productId,
+      name: detail.name || 'Product',
+      gender: 'Men',
+      group: 'Topwear',
+      category: detail.code || '',
+      price: Number(detail.price || 0),
+      image: detail.image || '',
+      images: detail.image ? [detail.image] : [],
+      description: '',
+      sku: detail.code || '',
+      sizes: ['S', 'M', 'L', 'XL'],
+      colors: [item.selected_color || 'Default'],
+      material: 'Cotton',
+      vendor: 'LUVARTE',
+      reviews: [],
+      popularityScore: 0,
+      createdAt: new Date().toISOString(),
+      quantity: Number(item.quantity || 0),
+      selectedSize: item.selected_size || 'M',
+      selectedColor: item.selected_color || 'Default',
+    };
+  };
+
+  const loadCartFromBackend = async () => {
+    try {
+      const data = await fetchCart();
+      const mapped = Array.isArray(data.items) ? data.items.map(mapCartItemFromBackend) : [];
+      setCart(mapped);
+    } catch (err) {
+      // ignore loading cart errors
+    }
+  };
+
+  const persistCart = async (items: CartItem[]) => {
+    if (!isAuthenticated) return;
+    try {
+      const payload = items.map(item => ({
+        product_id: item.backendId || parseInt(item.id.replace('prod_', ''), 10),
+        quantity: item.quantity,
+        selected_size: item.selectedSize,
+        selected_color: item.selectedColor,
+      }));
+      await saveCart(payload);
+    } catch (err) {
+      // ignore save errors for now
+    }
+  };
+
+  const updateCart = (updater: CartItem[] | ((prev: CartItem[]) => CartItem[])) => {
     setCart(prev => {
+      const next = typeof updater === 'function' ? (updater as (p: CartItem[]) => CartItem[])(prev) : updater;
+      persistCart(next);
+      return next;
+    });
+  };
+
+  const addToCart = (product: Product, quantity: number, size: string, color: string) => {
+    updateCart(prev => {
       const existing = prev.find(p => p.id === product.id && p.selectedSize === size && p.selectedColor === color);
       if (existing) {
         return prev.map(p => p.id === product.id && p.selectedSize === size && p.selectedColor === color ? { ...p, quantity: p.quantity + quantity } : p);
@@ -133,7 +234,6 @@ const App: React.FC = () => {
         }));
 
         const { order, invoice } = await checkoutOrder({
-          customer_id: contactId,
           payment_term_id: 1,
           coupon_code: appliedCoupon?.code,
           shipping_address_line1: shipping.address,
@@ -145,9 +245,10 @@ const App: React.FC = () => {
 
         await createPayment(invoice.customer_invoice_id, invoice.total_amount);
 
-        setCart([]); // Clear cart
+        updateCart(() => []); // Clear cart
         setAppliedCoupon(null);
         setCouponCode('');
+        await loadOrders();
         setView('ORDER_SUCCESS');
       } catch (err) {
         alert('Checkout failed. Please try again.');
@@ -169,17 +270,26 @@ const App: React.FC = () => {
       }
   };
 
-  const handleUserLogin = async (email: string, password: string, fullName?: string, mode: 'login' | 'register' = 'login') => {
+  const handleUserLogin = async (email: string, password: string, fullName?: string, mode: 'login' | 'register' = 'login', isVendor?: boolean) => {
       try {
         if (mode === 'register') {
-          await registerUser({ email, password, fullName: fullName || email });
+          if (isVendor) {
+            await registerVendor({ email, password, fullName: fullName || email });
+          } else {
+            await registerUser({ email, password, fullName: fullName || email });
+          }
         }
         await loginUser({ email, password });
         const profile = await fetchProfile();
         setContactId(profile.contact_id);
         setUserRole(profile.user_role);
         setIsAuthenticated(true);
-        setView('USER_PROFILE');
+        if (isVendor) {
+          setView('VENDOR_DASHBOARD');
+        } else {
+          setView('USER_PROFILE');
+        }
+        await Promise.all([loadAddresses(), loadOrders(), loadCartFromBackend()]);
       } catch (err) {
         alert('Authentication failed. Please check your details.');
       }
@@ -190,6 +300,7 @@ const App: React.FC = () => {
       setIsAuthenticated(false);
       setContactId(null);
       setUserRole(null);
+      setCart([]);
       setView('LANDING');
   };
 
@@ -258,6 +369,8 @@ const App: React.FC = () => {
                 products={products}
                 isLoading={isLoadingProducts}
                 error={productError ?? undefined}
+                hasMore={!!nextProductsUrl}
+                onLoadMore={loadMoreProducts}
             />
             <Footer />
           </>
@@ -280,7 +393,7 @@ const App: React.FC = () => {
           <>
             <Cart 
                 cart={cart}
-                setCart={setCart}
+                setCart={updateCart}
                 setView={setView}
                 couponCode={couponCode}
                 setCouponCode={setCouponCode}
@@ -308,9 +421,11 @@ const App: React.FC = () => {
 
       {view === 'USER_PROFILE' && (
           <>
-            <UserProfile 
+        <UserProfile 
                 selectedOrder={selectedOrder}
                 setSelectedOrder={setSelectedOrder}
+                orders={orders}
+                addresses={addresses}
             />
             <Footer />
           </>
@@ -320,7 +435,7 @@ const App: React.FC = () => {
           <UserAuth setView={setView} onLogin={handleUserLogin} />
       )}
 
-      {view === 'VENDOR_LOGIN' && <VendorLogin setView={setView} />}
+      {view === 'VENDOR_LOGIN' && <VendorLogin setView={setView} onVendorAuth={() => setIsAuthenticated(true)} />}
       
       {view === 'VENDOR_DASHBOARD' && (
         <VendorDashboard setView={setView} />

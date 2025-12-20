@@ -65,8 +65,8 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ selectedProduct, s
                          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#488C5C] mb-2">{selectedProduct.gender} / {selectedProduct.category}</span>
                          <h1 className="text-4xl md:text-5xl font-anton font-bold uppercase mb-4 leading-tight">{selectedProduct.name}</h1>
                          <div className="flex items-center gap-4 text-2xl font-bold mb-8">
-                             <span>${selectedProduct.price.toFixed(2)}</span>
-                             {selectedProduct.originalPrice && <span className="text-gray-400 line-through text-lg">${selectedProduct.originalPrice.toFixed(2)}</span>}
+                             <span>₹{selectedProduct.price.toFixed(2)}</span>
+                             {selectedProduct.originalPrice && <span className="text-gray-400 line-through text-lg">₹{selectedProduct.originalPrice.toFixed(2)}</span>}
                          </div>
 
                          <p className="text-sm text-gray-600 leading-relaxed mb-8">{selectedProduct.description}</p>
@@ -128,7 +128,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ selectedProduct, s
                                  <Truck size={18} className="text-[#488C5C] mt-0.5" />
                                  <div>
                                      <h4 className="font-bold text-[10px] uppercase tracking-widest mb-1">Fast Shipping</h4>
-                                     <p className="text-xs text-gray-500">Free delivery on orders over $200. Standard shipping 2-3 business days.</p>
+                                     <p className="text-xs text-gray-500">Free delivery on orders over ₹200. Standard shipping 2-3 business days.</p>
                                  </div>
                              </div>
                              <div className="flex gap-3 items-start">

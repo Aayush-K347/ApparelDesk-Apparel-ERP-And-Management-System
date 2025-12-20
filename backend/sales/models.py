@@ -1,7 +1,12 @@
+from django.conf import settings
 from django.db import models
 from accounts.models import Contact, TimeStampedModel
 from pricing.models import PaymentTerm, CouponCode
 from catalog.models import Product
+from accounts.models import Address
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class SalesOrder(TimeStampedModel):
@@ -10,6 +15,7 @@ class SalesOrder(TimeStampedModel):
         ("draft", "Draft"),
         ("confirmed", "Confirmed"),
         ("invoiced", "Invoiced"),
+        ("completed", "Completed"),
         ("cancelled", "Cancelled"),
     )
 
@@ -36,6 +42,14 @@ class SalesOrder(TimeStampedModel):
     shipping_city = models.CharField(max_length=100, blank=True, null=True)
     shipping_state = models.CharField(max_length=100, blank=True, null=True)
     shipping_pincode = models.CharField(max_length=10, blank=True, null=True)
+    shipping_country = models.CharField(max_length=100, default="India")
+    shipping_address = models.ForeignKey(
+        Address,
+        on_delete=models.PROTECT,
+        related_name="sales_orders",
+        null=True,
+        blank=True,
+    )
     created_by = models.BigIntegerField(null=True, blank=True, db_column="created_by")
     confirmed_at = models.DateTimeField(blank=True, null=True)
 
@@ -47,13 +61,14 @@ class SalesOrder(TimeStampedModel):
             models.Index(fields=["order_status"], name="idx_so_status"),
             models.Index(fields=["order_source"], name="idx_so_source"),
             models.Index(fields=["order_date"], name="idx_so_order_date"),
+            models.Index(fields=["shipping_address"], name="idx_so_ship_address"),
         ]
 
     def __str__(self) -> str:
         return self.so_number
 
 
-class SalesOrderLine(TimeStampedModel):
+class SalesOrderLine(models.Model):
     so_line_id = models.BigAutoField(primary_key=True)
     sales_order = models.ForeignKey(
         SalesOrder, on_delete=models.CASCADE, related_name="lines"
@@ -125,3 +140,68 @@ class CustomerInvoice(TimeStampedModel):
 
     def __str__(self) -> str:
         return self.invoice_number
+
+
+class SalesOrderStatusLog(TimeStampedModel):
+    log_id = models.BigAutoField(primary_key=True)
+    sales_order = models.ForeignKey(
+        SalesOrder, on_delete=models.CASCADE, related_name="status_logs"
+    )
+    previous_status = models.CharField(max_length=15)
+    new_status = models.CharField(max_length=15)
+    changed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="order_status_changes",
+    )
+    note = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        db_table = "sales_order_status_logs"
+        indexes = [
+            models.Index(fields=["sales_order"], name="idx_so_statuslog_order"),
+            models.Index(fields=["new_status"], name="idx_so_statuslog_status"),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.sales_order} {self.previous_status} -> {self.new_status}"
+
+
+class Cart(TimeStampedModel):
+    cart_id = models.BigAutoField(primary_key=True)
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        related_name="cart",
+        db_index=True,
+        db_constraint=False,
+    )
+
+    class Meta:
+        db_table = "carts"
+        indexes = [models.Index(fields=["user"], name="idx_cart_user")]
+
+    def __str__(self) -> str:
+        return f"Cart for {self.user}"
+
+
+class CartItem(TimeStampedModel):
+    cart_item_id = models.BigAutoField(primary_key=True)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name="items")
+    product = models.ForeignKey(Product, on_delete=models.PROTECT, related_name="cart_items")
+    quantity = models.DecimalField(max_digits=15, decimal_places=3)
+    selected_size = models.CharField(max_length=20, blank=True, null=True)
+    selected_color = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        db_table = "cart_items"
+        unique_together = (("cart", "product", "selected_size", "selected_color"),)
+        indexes = [
+            models.Index(fields=["cart"], name="idx_cartitem_cart"),
+            models.Index(fields=["product"], name="idx_cartitem_product"),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.product} x {self.quantity}"

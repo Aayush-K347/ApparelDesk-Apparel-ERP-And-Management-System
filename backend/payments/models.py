@@ -49,7 +49,7 @@ class Payment(TimeStampedModel):
         return self.payment_number
 
 
-class PaymentAllocation(TimeStampedModel):
+class PaymentAllocation(models.Model):
     allocation_id = models.BigAutoField(primary_key=True)
     payment = models.ForeignKey(Payment, on_delete=models.CASCADE, related_name="allocations")
     customer_invoice = models.ForeignKey(

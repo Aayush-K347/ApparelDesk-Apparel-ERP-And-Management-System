@@ -96,3 +96,30 @@ class User(AbstractUser, TimeStampedModel):
 
     def __str__(self) -> str:
         return self.username
+
+
+class Address(TimeStampedModel):
+    address_id = models.BigAutoField(primary_key=True)
+    contact = models.ForeignKey(
+        Contact, on_delete=models.CASCADE, related_name="addresses", db_constraint=False
+    )
+    label = models.CharField(max_length=100, default="Home")
+    address_line1 = models.CharField(max_length=255)
+    address_line2 = models.CharField(max_length=255, blank=True, null=True)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100, blank=True, null=True)
+    pincode = models.CharField(max_length=10, blank=True, null=True)
+    country = models.CharField(max_length=100, default="India")
+    is_default_shipping = models.BooleanField(default=False)
+    is_default_billing = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = "addresses"
+        indexes = [
+            models.Index(fields=["contact"], name="idx_address_contact"),
+            models.Index(fields=["is_default_shipping"], name="idx_address_ship"),
+            models.Index(fields=["is_default_billing"], name="idx_address_bill"),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.label} - {self.address_line1}"

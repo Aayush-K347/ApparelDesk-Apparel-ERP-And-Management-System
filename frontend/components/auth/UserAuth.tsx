@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
 import { ViewState } from '../../types';
-import { ArrowRight, Mail, Lock, User, Github, Twitter } from 'lucide-react';
+import { ArrowRight, Mail, Lock, User, Github, Twitter, Shield } from 'lucide-react';
 
 interface UserAuthProps {
     setView: (view: ViewState) => void;
-    onLogin: (email: string, password: string, fullName?: string, mode?: 'login' | 'register') => Promise<void> | void;
+    onLogin: (email: string, password: string, fullName?: string, mode?: 'login' | 'register', isVendor?: boolean) => Promise<void> | void;
 }
 
 export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
@@ -14,12 +14,25 @@ export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
     const [password, setPassword] = useState('');
     const [fullName, setFullName] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [isVendor, setIsVendor] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError(null);
+        if (!isLogin && password !== confirmPassword) {
+            setError('Passwords do not match.');
+            return;
+        }
         setIsSubmitting(true);
-        await onLogin(email, password, fullName || email, isLogin ? 'login' : 'register');
-        setIsSubmitting(false);
+        try {
+            await onLogin(email, password, fullName || email, isLogin ? 'login' : 'register', isVendor);
+        } catch (err: any) {
+            setError(err.message || 'Authentication failed.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -67,6 +80,8 @@ export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
                         </p>
                     </div>
 
+                    {error && <div className="mb-4 text-red-500 text-xs font-bold uppercase tracking-widest">{error}</div>}
+
                     <form onSubmit={handleSubmit} className="space-y-8">
                         {!isLogin && (
                              <div className="group">
@@ -105,6 +120,29 @@ export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
                                 <Lock className="absolute right-0 top-3 text-gray-300 group-focus-within:text-[#111111] transition-colors" size={16} />
                             </div>
                         </div>
+
+                        {!isLogin && (
+                            <div className="group">
+                                <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Confirm Password</label>
+                                <div className="relative">
+                                    <input 
+                                        type="password" 
+                                        value={confirmPassword}
+                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                        className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300" 
+                                        placeholder="••••••••" 
+                                    />
+                                    <Lock className="absolute right-0 top-3 text-gray-300 group-focus-within:text-[#111111] transition-colors" size={16} />
+                                </div>
+                            </div>
+                        )}
+
+                        {!isLogin && (
+                            <label className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 cursor-pointer">
+                                <input type="checkbox" checked={isVendor} onChange={(e) => setIsVendor(e.target.checked)} className="w-4 h-4" />
+                                <Shield size={14} /> Sign up as Vendor
+                            </label>
+                        )}
 
                         {isLogin && (
                             <div className="flex justify-end">

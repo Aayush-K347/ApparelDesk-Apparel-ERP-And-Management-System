@@ -181,7 +181,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                                                 Processing...
                                             </>
                                         ) : (
-                                            `Pay $${total.toFixed(2)}`
+                                            `Pay ₹${total.toFixed(2)}`
                                         )}
                                     </button>
                                 </div>
@@ -211,7 +211,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                                              <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">{item.selectedSize} / {item.selectedColor}</p>
                                          </div>
                                          <div className="font-bold text-sm">
-                                             ${(item.price * item.quantity).toFixed(2)}
+                                             ₹{(item.price * item.quantity).toFixed(2)}
                                          </div>
                                      </div>
                                  ))}
@@ -220,23 +220,23 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                              <div className="space-y-4 text-xs text-gray-600 border-t border-gray-100 pt-6">
                                 <div className="flex justify-between">
                                     <span>Subtotal</span>
-                                    <span className="font-bold text-[#111111]">${cartSubtotal.toFixed(2)}</span>
+                                    <span className="font-bold text-[#111111]">₹{cartSubtotal.toFixed(2)}</span>
                                 </div>
                                 {appliedCoupon && (
                                     <div className="flex justify-between text-[#488C5C]">
                                         <span>Discount</span>
-                                        <span className="font-bold">-${discountAmount.toFixed(2)}</span>
+                                        <span className="font-bold">-₹{discountAmount.toFixed(2)}</span>
                                     </div>
                                 )}
                                 <div className="flex justify-between">
                                     <span>Shipping</span>
-                                    <span>{deliveryFee === 0 ? 'Free' : `$${deliveryFee.toFixed(2)}`}</span>
+                                    <span>{deliveryFee === 0 ? 'Free' : `₹${deliveryFee.toFixed(2)}`}</span>
                                 </div>
                             </div>
 
                             <div className="flex justify-between font-anton text-2xl mt-8 pt-6 border-t border-[#111111]">
                                 <span>Total</span>
-                                <span>${total.toFixed(2)}</span>
+                                <span>₹{total.toFixed(2)}</span>
                             </div>
                         </div>
 

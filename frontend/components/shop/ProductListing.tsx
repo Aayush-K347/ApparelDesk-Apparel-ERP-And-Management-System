@@ -17,12 +17,14 @@ interface ProductListingProps {
     products: Product[];
     isLoading?: boolean;
     error?: string;
+    hasMore?: boolean;
+    onLoadMore?: () => void;
 }
 
 export const ProductListing: React.FC<ProductListingProps> = ({ 
     selectedGender, selectedGroup, selectedCategory,
     setSelectedGroup, setSelectedCategory, setSelectedProduct, setView, onQuickView,
-    products, isLoading, error
+    products, isLoading, error, hasMore, onLoadMore
 }) => {
     // Filters State
     const [priceRange, setPriceRange] = useState([0, 300]);
@@ -124,8 +126,8 @@ export const ProductListing: React.FC<ProductListingProps> = ({
                             className="w-full accent-[#111111]"
                         />
                         <div className="flex justify-between text-xs font-bold mt-2">
-                            <span>$0</span>
-                            <span>${priceRange[1]}</span>
+                            <span>₹0</span>
+                            <span>₹{priceRange[1]}</span>
                         </div>
                     </div>
 
@@ -179,6 +181,17 @@ export const ProductListing: React.FC<ProductListingProps> = ({
                             />
                         ))}
                     </div>
+                    {hasMore && (
+                        <div className="flex justify-center mt-12">
+                            <button
+                                onClick={onLoadMore}
+                                disabled={isLoading}
+                                className="px-6 py-3 border border-gray-300 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#111111] hover:text-white transition-colors disabled:opacity-60"
+                            >
+                                {isLoading ? 'Loading…' : 'Next'}
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

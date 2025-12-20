@@ -218,7 +218,7 @@ export const VendorBilling: React.FC = () => {
                      <div className="flex items-center">
                          <label className="w-1/3 text-[10px] font-bold uppercase tracking-widest text-gray-500">Amount</label>
                          <div className="flex-1 flex items-center border-b border-gray-200 focus-within:border-[#111111]">
-                             <span className="text-gray-400 font-bold">$</span>
+                             <span className="text-gray-400 font-bold">₹</span>
                              <input 
                                 type="number" 
                                 value={paymentAmount} 
@@ -367,8 +367,8 @@ export const VendorBilling: React.FC = () => {
                      <ItemTable />
                      
                      <div className="mt-4 text-right text-xs text-gray-500">
-                         {docStatus === 'Paid' && <p className="text-[#488C5C] font-bold mb-1">Paid on 12/12/2025: 600</p>}
-                         <p className="font-bold text-black">Amount Due: {docStatus === 'Paid' ? '0' : '600'}</p>
+                         {docStatus === 'Paid' && <p className="text-[#488C5C] font-bold mb-1">Paid on 12/12/2025: ₹600</p>}
+                         <p className="font-bold text-black">Amount Due: {docStatus === 'Paid' ? '₹0' : '₹600'}</p>
                      </div>
                 </div>
             </div>

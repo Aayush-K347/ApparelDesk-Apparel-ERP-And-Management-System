@@ -1,6 +1,9 @@
-import { Product, Coupon } from './types';
+import { Product, Coupon, Address, SalesOrderResponse } from './types';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const RAW_API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const API_BASE = RAW_API_BASE.replace(/\/+$/, '').endsWith('/api')
+  ? RAW_API_BASE.replace(/\/+$/, '')
+  : `${RAW_API_BASE.replace(/\/+$/, '')}/api`;
 
 let accessToken: string | null = typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null;
 let refreshToken: string | null = typeof window !== 'undefined' ? localStorage.getItem('refreshToken') : null;
@@ -56,16 +59,10 @@ const mapCategoryToGender = (category: string) => {
   return 'Men';
 };
 
-export async function fetchProducts(params: Record<string, string | number | undefined> = {}): Promise<Product[]> {
-  const query = new URLSearchParams();
-  Object.entries(params).forEach(([k, v]) => {
-    if (v !== undefined && v !== null && v !== '') query.append(k, String(v));
-  });
-  const res = await fetch(`${API_BASE}/catalog/products/?${query.toString()}`, { headers: authHeaders() });
-  if (!res.ok) throw new Error('Failed to load products');
-  const data = await res.json();
-  const items: BackendProduct[] = Array.isArray(data) ? data : data.results || [];
-  return items.map(p => ({
+type ProductPage = { items: Product[]; next: string | null; count?: number };
+
+const mapProducts = (backend: BackendProduct[]): Product[] =>
+  backend.map(p => ({
     id: `prod_${p.product_id}`,
     backendId: p.product_id,
     name: p.product_name,
@@ -86,6 +83,31 @@ export async function fetchProducts(params: Record<string, string | number | und
     popularityScore: 50,
     createdAt: p.created_at || new Date().toISOString(),
   }));
+
+export async function fetchProducts(
+  params: Record<string, string | number | undefined> = {}
+): Promise<ProductPage> {
+  const query = new URLSearchParams();
+  if (!params.page_size) {
+    query.append("page_size", "50");
+  }
+  Object.entries(params).forEach(([k, v]) => {
+    if (v !== undefined && v !== null && v !== "") query.append(k, String(v));
+  });
+  const res = await fetch(`${API_BASE}/catalog/products/?${query.toString()}`, { headers: authHeaders() });
+  if (!res.ok) throw new Error("Failed to load products");
+  const data = await res.json();
+  if (Array.isArray(data)) {
+    return { items: mapProducts(data), next: null, count: data.length };
+  }
+  return { items: mapProducts(data.results || []), next: data.next, count: data.count };
+}
+
+export async function fetchProductsByUrl(url: string): Promise<ProductPage> {
+  const res = await fetch(url, { headers: authHeaders() });
+  if (!res.ok) throw new Error("Failed to load products");
+  const data = await res.json();
+  return { items: mapProducts(data.results || []), next: data.next, count: data.count };
 }
 
 export async function validateCoupon(code: string): Promise<Coupon | null> {
@@ -115,7 +137,29 @@ export async function registerUser(payload: { email: string; password: string; f
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error('Registration failed');
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Registration failed');
+  }
+}
+
+export async function registerVendor(payload: { email: string; password: string; fullName: string }): Promise<void> {
+  const body = {
+    username: payload.email,
+    email: payload.email,
+    password: payload.password,
+    contact_name: payload.fullName,
+    user_role: 'internal',
+  };
+  const res = await fetch(`${API_BASE}/auth/vendor/register/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Registration failed');
+  }
 }
 
 export async function loginUser(payload: { email: string; password: string }): Promise<void> {
@@ -125,7 +169,10 @@ export async function loginUser(payload: { email: string; password: string }): P
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error('Invalid credentials');
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail || 'Invalid credentials');
+  }
   const data = await res.json();
   setTokens(data.access, data.refresh);
 }
@@ -150,15 +197,17 @@ type CheckoutLine = {
 };
 
 export async function checkoutOrder(payload: {
-  customer_id: number;
+  customer_id?: number;
   payment_term_id: number;
   coupon_code?: string;
+  address_id?: number;
   shipping_address_line1?: string;
   shipping_city?: string;
   shipping_state?: string;
   shipping_pincode?: string;
+  shipping_country?: string;
   lines: CheckoutLine[];
-}): Promise<{ order: any; invoice: any }> {
+}): Promise<{ order: SalesOrderResponse; invoice: any }> {
   const res = await fetch(`${API_BASE}/sales/checkout/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...authHeaders() },
@@ -181,11 +230,98 @@ export async function createPayment(invoiceId: number, amount: number): Promise<
 export async function fetchOrders(): Promise<any[]> {
   const res = await fetch(`${API_BASE}/sales/orders/`, { headers: authHeaders() });
   if (!res.ok) throw new Error('Unable to load orders');
-  return res.json();
+  const data = await res.json();
+  if (Array.isArray(data)) {
+    return data as SalesOrderResponse[];
+  }
+  if (data && Array.isArray(data.results)) {
+    return data.results as SalesOrderResponse[];
+  }
+  return [];
 }
 
 export async function fetchInvoices(): Promise<any[]> {
   const res = await fetch(`${API_BASE}/sales/invoices/`, { headers: authHeaders() });
   if (!res.ok) throw new Error('Unable to load invoices');
   return res.json();
+}
+
+// Cart APIs
+export async function fetchCart(): Promise<any> {
+  const res = await fetch(`${API_BASE}/sales/cart/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load cart');
+  return res.json();
+}
+
+export async function saveCart(items: { product_id: number; quantity: number; selected_size?: string; selected_color?: string }[]): Promise<any> {
+  const res = await fetch(`${API_BASE}/sales/cart/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify({ items }),
+  });
+  if (!res.ok) throw new Error('Unable to save cart');
+  return res.json();
+}
+
+export async function fetchAddresses(): Promise<Address[]> {
+  const res = await fetch(`${API_BASE}/auth/addresses/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load addresses');
+  return res.json();
+}
+
+export async function createAddress(payload: Partial<Address>): Promise<Address> {
+  const res = await fetch(`${API_BASE}/auth/addresses/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error('Unable to save address');
+  return res.json();
+}
+
+export async function updateAddress(addressId: number, payload: Partial<Address>): Promise<Address> {
+  const res = await fetch(`${API_BASE}/auth/addresses/${addressId}/`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error('Unable to update address');
+  return res.json();
+}
+
+export async function deleteAddress(addressId: number): Promise<void> {
+  const res = await fetch(`${API_BASE}/auth/addresses/${addressId}/`, {
+    method: 'DELETE',
+    headers: { ...authHeaders() },
+  });
+  if (!res.ok) throw new Error('Unable to delete address');
+}
+
+// Vendor APIs
+export async function vendorFetchProducts(): Promise<Product[]> {
+  const res = await fetch(`${API_BASE}/catalog/vendor/products/`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load vendor products');
+  return (await res.json()) as Product[];
+}
+
+export async function vendorCreateProduct(payload: {
+  product_name: string;
+  product_code?: string;
+  product_category: 'men' | 'women' | 'children' | 'unisex';
+  product_type: 'shirt' | 'pant' | 'kurta' | 't-shirt' | 'jeans' | 'dress' | 'other';
+  material?: string;
+  description?: string;
+  sales_price: number;
+  purchase_price: number;
+  colors?: string[];
+  images?: string[];
+  is_published?: boolean;
+}): Promise<Product> {
+  const res = await fetch(`${API_BASE}/catalog/vendor/products/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error('Unable to create product');
+  return (await res.json()) as Product;
 }

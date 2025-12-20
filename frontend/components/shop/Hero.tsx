@@ -206,7 +206,7 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
                             <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                                 <h3 className="text-white font-anton text-xl uppercase tracking-wide mb-1 truncate">{product.name}</h3>
                                 <div className="flex justify-between items-center">
-                                    <p className="text-[#488C5C] font-bold">${product.price}</p>
+                                    <p className="text-[#488C5C] font-bold">₹{product.price}</p>
                                     <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white">
                                         <ArrowUpRight size={14} />
                                     </div>

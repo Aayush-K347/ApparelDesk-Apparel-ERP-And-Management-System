@@ -58,9 +58,9 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                         <h2 className="text-4xl md:text-5xl font-anton uppercase mb-4 leading-none">{product.name}</h2>
                         
                         <div className="flex items-center gap-4 mb-8">
-                            <span className="text-2xl font-bold">${product.price.toFixed(2)}</span>
+                            <span className="text-2xl font-bold">₹{product.price.toFixed(2)}</span>
                             {product.originalPrice && (
-                                <span className="text-gray-400 line-through text-lg">${product.originalPrice.toFixed(2)}</span>
+                                <span className="text-gray-400 line-through text-lg">₹{product.originalPrice.toFixed(2)}</span>
                             )}
                             {product.popularityScore > 80 && (
                                 <span className="text-[9px] font-bold bg-[#111111] text-white px-2 py-1 uppercase tracking-wider">Trending</span>
@@ -122,7 +122,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                                 onClick={() => { onAddToCart(product, quantity, size, color); onClose(); }}
                                 className="flex-1 bg-[#111111] text-white font-bold uppercase tracking-[0.25em] text-[10px] hover:bg-[#488C5C] transition-all duration-300 shadow-xl"
                             >
-                                Add to Bag — ${(product.price * quantity).toFixed(2)}
+                                Add to Bag — ₹{(product.price * quantity).toFixed(2)}
                             </button>
                         </div>
                     </div>

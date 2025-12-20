@@ -141,9 +141,9 @@ export const StudioPost: React.FC<StudioPostProps> = ({ post, setView, setSelect
                                         <ArrowRight size={16} className="text-gray-300 -rotate-45 group-hover/item:rotate-0 group-hover/item:text-[#488C5C] transition-all" />
                                     </div>
                                     <div className="flex items-center gap-2 mt-auto">
-                                        <span className="font-anton text-lg">${product.price}</span>
+                                        <span className="font-anton text-lg">₹{product.price}</span>
                                         {product.originalPrice && (
-                                            <span className="text-xs text-gray-300 line-through">${product.originalPrice}</span>
+                                            <span className="text-xs text-gray-300 line-through">₹{product.originalPrice}</span>
                                         )}
                                     </div>
                                 </div>

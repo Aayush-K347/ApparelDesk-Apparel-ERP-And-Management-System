@@ -74,6 +74,55 @@ export interface VendorOrder {
   ref: string;
 }
 
+export interface Address {
+  address_id: number;
+  label: string;
+  address_line1: string;
+  address_line2?: string | null;
+  city: string;
+  state?: string | null;
+  pincode?: string | null;
+  country: string;
+  is_default_shipping: boolean;
+  is_default_billing: boolean;
+}
+
+export interface OrderLineDetail {
+  so_line_id: number;
+  line_number: number;
+  product: number;
+  product_detail?: {
+    name: string;
+    code: string;
+    price: number;
+  };
+  quantity: number;
+  unit_price: number;
+  tax_percentage: number;
+  line_subtotal: number;
+  line_tax_amount: number;
+  line_total: number;
+}
+
+export interface SalesOrderResponse {
+  sales_order_id: number;
+  so_number: string;
+  order_date: string;
+  order_status: string;
+  subtotal: number;
+  discount_amount: number;
+  tax_amount: number;
+  total_amount: number;
+  shipping_address_line1?: string;
+  shipping_address_line2?: string | null;
+  shipping_city?: string | null;
+  shipping_state?: string | null;
+  shipping_pincode?: string | null;
+  shipping_country?: string | null;
+  lines: OrderLineDetail[];
+  status_logs?: { previous_status: string; new_status: string; changed_at: string; note?: string | null }[];
+}
+
 export interface Creator {
     id: string;
     name: string;

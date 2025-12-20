@@ -67,7 +67,7 @@ export const Cart: React.FC<CartProps> = ({
                                                 <h3 className="font-bold uppercase text-sm tracking-wide mb-1">{item.name}</h3>
                                                 <p className="text-[10px] text-gray-500 uppercase tracking-widest">{item.selectedColor} / {item.selectedSize}</p>
                                             </div>
-                                            <span className="font-bold text-lg">${(item.price * item.quantity).toFixed(2)}</span>
+                                            <span className="font-bold text-lg">₹{(item.price * item.quantity).toFixed(2)}</span>
                                         </div>
                                         <div className="flex justify-between items-end">
                                              <div className="flex items-center border border-gray-200">
@@ -112,23 +112,23 @@ export const Cart: React.FC<CartProps> = ({
                         <div className="space-y-4 text-xs text-gray-600 mb-6 pb-6 border-b border-gray-100">
                             <div className="flex justify-between">
                                 <span>Subtotal</span>
-                                <span className="font-bold text-[#111111]">${cartSubtotal.toFixed(2)}</span>
+                                <span className="font-bold text-[#111111]">₹{cartSubtotal.toFixed(2)}</span>
                             </div>
                             {appliedCoupon && (
                                 <div className="flex justify-between text-[#488C5C]">
                                     <span>Discount</span>
-                                    <span className="font-bold">-${discountAmount.toFixed(2)}</span>
+                                    <span className="font-bold">-₹{discountAmount.toFixed(2)}</span>
                                 </div>
                             )}
                             <div className="flex justify-between">
                                 <span>Shipping</span>
-                                <span>${deliveryFee.toFixed(2)}</span>
+                                <span>₹{deliveryFee.toFixed(2)}</span>
                             </div>
                         </div>
                         
                         <div className="flex justify-between font-anton text-2xl mb-8">
                             <span>Total</span>
-                            <span>${cartTotal.toFixed(2)}</span>
+                            <span>₹{cartTotal.toFixed(2)}</span>
                         </div>
 
                         <button 
