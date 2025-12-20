@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Product, ViewState } from '../../types';
-import { MOCK_PRODUCTS, NAV_HIERARCHY } from '../../constants';
+import { NAV_HIERARCHY } from '../../constants';
 import { ChevronRight } from 'lucide-react';
 import { ProductCard } from '../shared/ProductCard';
 
@@ -14,11 +14,15 @@ interface ProductListingProps {
     setSelectedProduct: (product: Product) => void;
     setView: (view: ViewState) => void;
     onQuickView: (e: React.MouseEvent, product: Product) => void;
+    products: Product[];
+    isLoading?: boolean;
+    error?: string;
 }
 
 export const ProductListing: React.FC<ProductListingProps> = ({ 
     selectedGender, selectedGroup, selectedCategory,
-    setSelectedGroup, setSelectedCategory, setSelectedProduct, setView, onQuickView
+    setSelectedGroup, setSelectedCategory, setSelectedProduct, setView, onQuickView,
+    products, isLoading, error
 }) => {
     // Filters State
     const [priceRange, setPriceRange] = useState([0, 300]);
@@ -35,26 +39,30 @@ export const ProductListing: React.FC<ProductListingProps> = ({
     ];
 
     // Filter Logic
-    let filteredProducts = MOCK_PRODUCTS.filter(p => {
-        if (selectedGender && p.gender !== selectedGender) return false;
-        if (selectedGroup && p.group !== selectedGroup) return false;
-        if (selectedCategory && p.category !== selectedCategory) return false;
-        if (p.price < priceRange[0] || p.price > priceRange[1]) return false;
-        if (filterSizes.length > 0 && !p.sizes.some(s => filterSizes.includes(s))) return false;
-        if (filterColors.length > 0 && !p.colors.some(c => filterColors.includes(c))) return false;
-        return true;
-    });
+    const filteredProducts = useMemo(() => {
+        let list = products;
+        list = list.filter(p => {
+            if (selectedGender && p.gender !== selectedGender) return false;
+            if (selectedGroup && p.group !== selectedGroup) return false;
+            if (selectedCategory && p.category !== selectedCategory) return false;
+            if (p.price < priceRange[0] || p.price > priceRange[1]) return false;
+            if (filterSizes.length > 0 && !p.sizes.some(s => filterSizes.includes(s))) return false;
+            if (filterColors.length > 0 && !p.colors.some(c => filterColors.includes(c))) return false;
+            return true;
+        });
+
+        list.sort((a, b) => {
+            switch(sortBy) {
+                case 'PRICE_LOW': return a.price - b.price;
+                case 'PRICE_HIGH': return b.price - a.price;
+                case 'POPULAR': return b.popularityScore - a.popularityScore;
+                default: return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+            }
+        });
+        return list;
+    }, [products, selectedGender, selectedGroup, selectedCategory, priceRange, filterSizes, filterColors, sortBy]);
 
     // Sort Logic
-    filteredProducts.sort((a, b) => {
-        switch(sortBy) {
-            case 'PRICE_LOW': return a.price - b.price;
-            case 'PRICE_HIGH': return b.price - a.price;
-            case 'POPULAR': return b.popularityScore - a.popularityScore;
-            default: return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-        }
-    });
-
     return (
         <div className="pt-24 min-h-screen bg-[#F2F4F3] bg-subtle-grid pb-24">
             {/* Breadcrumbs */}
@@ -139,7 +147,9 @@ export const ProductListing: React.FC<ProductListingProps> = ({
                 {/* PRODUCT GRID */}
                 <div className="flex-1">
                     <div className="flex justify-between items-center mb-8">
-                        <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">{filteredProducts.length} Products Found</span>
+                        <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">
+                            {isLoading ? 'Loading...' : `${filteredProducts.length} Products Found`}
+                        </span>
                         <div className="flex items-center gap-3">
                             <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Sort By</span>
                             <select 
@@ -154,6 +164,10 @@ export const ProductListing: React.FC<ProductListingProps> = ({
                             </select>
                         </div>
                     </div>
+
+                    {error && (
+                        <div className="mb-4 text-xs text-red-500 uppercase tracking-widest">{error}</div>
+                    )}
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
                         {filteredProducts.map((p) => (

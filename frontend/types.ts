@@ -9,6 +9,7 @@ export interface Review {
 
 export interface Product {
   id: string;
+  backendId?: number;
   name: string;
   gender: 'Men' | 'Women' | 'Children';
   group: 'Topwear' | 'Bottomwear' | 'Footwear' | 'Accessories'; // Broad Category

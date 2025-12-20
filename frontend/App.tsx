@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { VendorDashboard } from './components/VendorDashboard';
 import { ShoppingBag, Check } from 'lucide-react';
 import { ENABLE_STUDIO } from './constants';
+import { fetchProducts, validateCoupon, loginUser, registerUser, fetchProfile, checkoutOrder, createPayment, clearTokens } from './api';
 
 // New Components
 import { Hero } from './components/shop/Hero';
@@ -33,6 +34,8 @@ const App: React.FC = () => {
 
   // Auth State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [contactId, setContactId] = useState<number | null>(null);
+  const [userRole, setUserRole] = useState<string | null>(null);
 
   // Quick View State
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
@@ -42,6 +45,9 @@ const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState<Coupon | null>(null);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isLoadingProducts, setIsLoadingProducts] = useState(false);
+  const [productError, setProductError] = useState<string | null>(null);
 
   // Notification State
   const [notification, setNotification] = useState<{ show: boolean; message: string; subtext?: string; image?: string }>({ 
@@ -54,6 +60,38 @@ const App: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [view, selectedGender, selectedGroup, selectedCategory]);
+
+  useEffect(() => {
+    async function loadProducts() {
+      setIsLoadingProducts(true);
+      try {
+        const apiProducts = await fetchProducts();
+        setProducts(apiProducts);
+        setProductError(null);
+      } catch (err) {
+        setProductError('Unable to load products. Please refresh.');
+      } finally {
+        setIsLoadingProducts(false);
+      }
+    }
+    loadProducts();
+  }, []);
+
+  useEffect(() => {
+    async function loadProfile() {
+      try {
+        const profile = await fetchProfile();
+        setContactId(profile.contact_id);
+        setUserRole(profile.user_role);
+        setIsAuthenticated(true);
+      } catch (err) {
+        setIsAuthenticated(false);
+        setContactId(null);
+        setUserRole(null);
+      }
+    }
+    loadProfile();
+  }, []);
 
   const addToCart = (product: Product, quantity: number, size: string, color: string) => {
     setCart(prev => {
@@ -78,11 +116,42 @@ const App: React.FC = () => {
     }, 3000);
   };
 
-  const handlePlaceOrder = () => {
-      setCart([]); // Clear cart
-      setAppliedCoupon(null);
-      setCouponCode('');
-      setView('ORDER_SUCCESS');
+  const handlePlaceOrder = async (shipping: { email: string; firstName: string; lastName: string; address: string; city: string; postalCode: string; }) => {
+      if (!isAuthenticated || !contactId) {
+        alert('Please sign in before checkout.');
+        setView('USER_AUTH');
+        return;
+      }
+      if (!cart.length) return;
+      try {
+        const lines = cart.map((item, idx) => ({
+          product_id: item.backendId || parseInt(item.id.replace('prod_', ''), 10),
+          quantity: item.quantity,
+          unit_price: item.price,
+          tax_percentage: 0,
+          line_number: idx + 1,
+        }));
+
+        const { order, invoice } = await checkoutOrder({
+          customer_id: contactId,
+          payment_term_id: 1,
+          coupon_code: appliedCoupon?.code,
+          shipping_address_line1: shipping.address,
+          shipping_city: shipping.city,
+          shipping_state: '',
+          shipping_pincode: shipping.postalCode,
+          lines,
+        });
+
+        await createPayment(invoice.customer_invoice_id, invoice.total_amount);
+
+        setCart([]); // Clear cart
+        setAppliedCoupon(null);
+        setCouponCode('');
+        setView('ORDER_SUCCESS');
+      } catch (err) {
+        alert('Checkout failed. Please try again.');
+      }
   };
 
   const handleQuickView = (e: React.MouseEvent, product: Product) => {
@@ -91,9 +160,37 @@ const App: React.FC = () => {
       setIsQuickViewOpen(true);
   };
 
-  const handleUserLogin = () => {
-      setIsAuthenticated(true);
-      setView('USER_PROFILE');
+  const handleApplyCoupon = async (code: string) => {
+      const coupon = await validateCoupon(code);
+      if (coupon) {
+          setAppliedCoupon(coupon);
+      } else {
+          setAppliedCoupon(null);
+      }
+  };
+
+  const handleUserLogin = async (email: string, password: string, fullName?: string, mode: 'login' | 'register' = 'login') => {
+      try {
+        if (mode === 'register') {
+          await registerUser({ email, password, fullName: fullName || email });
+        }
+        await loginUser({ email, password });
+        const profile = await fetchProfile();
+        setContactId(profile.contact_id);
+        setUserRole(profile.user_role);
+        setIsAuthenticated(true);
+        setView('USER_PROFILE');
+      } catch (err) {
+        alert('Authentication failed. Please check your details.');
+      }
+  };
+
+  const handleLogout = () => {
+      clearTokens();
+      setIsAuthenticated(false);
+      setContactId(null);
+      setUserRole(null);
+      setView('LANDING');
   };
 
   return (
@@ -104,6 +201,7 @@ const App: React.FC = () => {
             setView={setView} 
             isTransparent={view === 'LANDING'}
             isAuthenticated={isAuthenticated}
+            onLogout={handleLogout}
         />
       )}
 
@@ -120,6 +218,7 @@ const App: React.FC = () => {
             setSelectedGender={setSelectedGender} 
             setSelectedProduct={setSelectedProduct}
             onQuickView={handleQuickView}
+            products={products}
           />
       )}
 
@@ -156,6 +255,9 @@ const App: React.FC = () => {
                 setSelectedProduct={setSelectedProduct}
                 setView={setView}
                 onQuickView={handleQuickView}
+                products={products}
+                isLoading={isLoadingProducts}
+                error={productError ?? undefined}
             />
             <Footer />
           </>
@@ -184,6 +286,7 @@ const App: React.FC = () => {
                 setCouponCode={setCouponCode}
                 appliedCoupon={appliedCoupon}
                 setAppliedCoupon={setAppliedCoupon}
+                onValidateCoupon={handleApplyCoupon}
             />
             <Footer />
           </>
@@ -195,6 +298,7 @@ const App: React.FC = () => {
               setView={setView}
               onPlaceOrder={handlePlaceOrder}
               appliedCoupon={appliedCoupon}
+              isLoadingProducts={isLoadingProducts}
           />
       )}
 

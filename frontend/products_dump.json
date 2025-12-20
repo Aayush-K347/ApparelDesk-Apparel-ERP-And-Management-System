@@ -1,0 +1,3803 @@
+[
+  {
+    "id": "prod_1",
+    "name": "Men's T-Shirts - Classic Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 79,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-20112",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Burgundy"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 88,
+    "createdAt": "2025-12-06T19:35:31.003Z"
+  },
+  {
+    "id": "prod_2",
+    "name": "Men's T-Shirts - Modern Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 31,
+    "originalPrice": 37,
+    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-36079",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Ecru"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 57,
+    "createdAt": "2025-12-20T08:58:20.797Z"
+  },
+  {
+    "id": "prod_3",
+    "name": "Men's T-Shirts - Classic Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 174,
+    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-17062",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Sand"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 51,
+    "createdAt": "2025-12-03T10:37:46.620Z"
+  },
+  {
+    "id": "prod_4",
+    "name": "Men's Casual Shirts - Premium Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Casual Shirts",
+    "price": 155,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted casual shirts featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-49078",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Burgundy"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 61,
+    "createdAt": "2025-09-11T21:09:08.348Z"
+  },
+  {
+    "id": "prod_5",
+    "name": "Men's Casual Shirts - Modern Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Casual Shirts",
+    "price": 52,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted casual shirts featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-37281",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Sand"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 90,
+    "createdAt": "2025-09-15T10:21:23.545Z"
+  },
+  {
+    "id": "prod_6",
+    "name": "Men's Casual Shirts - Modern Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Casual Shirts",
+    "price": 33,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted casual shirts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-28464",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Burgundy"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 71,
+    "createdAt": "2025-10-19T21:07:22.234Z"
+  },
+  {
+    "id": "prod_7",
+    "name": "Men's Casual Shirts - Premium Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Casual Shirts",
+    "price": 86,
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted casual shirts featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-47411",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Noir"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 96,
+    "createdAt": "2025-10-30T07:42:39.163Z"
+  },
+  {
+    "id": "prod_8",
+    "name": "Men's Formal Shirts - Modern Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Formal Shirts",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted formal shirts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-53314",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Ecru"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 34,
+    "createdAt": "2025-11-30T22:32:54.447Z"
+  },
+  {
+    "id": "prod_9",
+    "name": "Men's Formal Shirts - Essential Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Formal Shirts",
+    "price": 46,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted formal shirts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-73672",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Gold"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 40,
+    "createdAt": "2025-12-17T23:16:05.771Z"
+  },
+  {
+    "id": "prod_10",
+    "name": "Men's Sweatshirts - Essential Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Sweatshirts",
+    "price": 50,
+    "originalPrice": 60,
+    "image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sweatshirts featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-64190",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Olive"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 9,
+    "createdAt": "2025-12-08T07:30:12.899Z"
+  },
+  {
+    "id": "prod_11",
+    "name": "Men's Sweatshirts - Modern Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Sweatshirts",
+    "price": 164,
+    "originalPrice": 196,
+    "image": "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sweatshirts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-47931",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Navy"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 71,
+    "createdAt": "2025-12-01T07:07:03.451Z"
+  },
+  {
+    "id": "prod_12",
+    "name": "Men's Jackets - Essential Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Jackets",
+    "price": 130,
+    "image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jackets featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-23772",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Slate"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 42,
+    "createdAt": "2025-10-15T04:28:37.879Z"
+  },
+  {
+    "id": "prod_13",
+    "name": "Men's Jackets - Premium Edition",
+    "gender": "Men",
+    "group": "Topwear",
+    "category": "Jackets",
+    "price": 100,
+    "image": "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jackets featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-84923",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Noir"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 66,
+    "createdAt": "2025-09-19T04:57:24.198Z"
+  },
+  {
+    "id": "prod_14",
+    "name": "Men's Jeans - Modern Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Jeans",
+    "price": 66,
+    "originalPrice": 79,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jeans featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-54762",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Navy"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 67,
+    "createdAt": "2025-09-18T05:53:07.046Z"
+  },
+  {
+    "id": "prod_15",
+    "name": "Men's Jeans - Premium Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Jeans",
+    "price": 98,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jeans featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-60119",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Gold"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 11,
+    "createdAt": "2025-12-16T06:41:46.636Z"
+  },
+  {
+    "id": "prod_16",
+    "name": "Men's Trousers - Premium Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Trousers",
+    "price": 74,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted trousers featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-87665",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Burgundy"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 60,
+    "createdAt": "2025-10-06T21:05:34.147Z"
+  },
+  {
+    "id": "prod_17",
+    "name": "Men's Trousers - Classic Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Trousers",
+    "price": 51,
+    "originalPrice": 61,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted trousers featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-66764",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Noir"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 4,
+    "createdAt": "2025-11-19T04:11:11.014Z"
+  },
+  {
+    "id": "prod_18",
+    "name": "Men's Joggers - Premium Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Joggers",
+    "price": 138,
+    "originalPrice": 165,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted joggers featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-75082",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Slate"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 74,
+    "createdAt": "2025-12-01T13:59:30.849Z"
+  },
+  {
+    "id": "prod_19",
+    "name": "Men's Joggers - Premium Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Joggers",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted joggers featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-82425",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Olive"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 15,
+    "createdAt": "2025-12-05T23:30:57.638Z"
+  },
+  {
+    "id": "prod_20",
+    "name": "Men's Joggers - Modern Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Joggers",
+    "price": 102,
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted joggers featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-13183",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Navy"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 19,
+    "createdAt": "2025-09-15T20:20:51.038Z"
+  },
+  {
+    "id": "prod_21",
+    "name": "Men's Joggers - Classic Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Joggers",
+    "price": 38,
+    "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted joggers featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-53696",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Gold"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 65,
+    "createdAt": "2025-10-04T08:06:09.621Z"
+  },
+  {
+    "id": "prod_22",
+    "name": "Men's Shorts - Premium Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Shorts",
+    "price": 150,
+    "originalPrice": 180,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted shorts featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-16927",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Ecru"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 84,
+    "createdAt": "2025-09-10T09:09:00.398Z"
+  },
+  {
+    "id": "prod_23",
+    "name": "Men's Shorts - Classic Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Shorts",
+    "price": 41,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted shorts featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-60726",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Slate"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 25,
+    "createdAt": "2025-09-18T20:04:03.558Z"
+  },
+  {
+    "id": "prod_24",
+    "name": "Men's Shorts - Classic Edition",
+    "gender": "Men",
+    "group": "Bottomwear",
+    "category": "Shorts",
+    "price": 173,
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted shorts featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-79852",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Ecru"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 44,
+    "createdAt": "2025-10-24T14:13:37.548Z"
+  },
+  {
+    "id": "prod_25",
+    "name": "Men's Sneakers - Modern Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 152,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-91457",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Gold"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 38,
+    "createdAt": "2025-12-09T01:00:34.118Z"
+  },
+  {
+    "id": "prod_26",
+    "name": "Men's Sneakers - Essential Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 52,
+    "originalPrice": 62,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-51582",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Gold"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 82,
+    "createdAt": "2025-10-20T21:31:32.925Z"
+  },
+  {
+    "id": "prod_27",
+    "name": "Men's Sneakers - Premium Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 67,
+    "originalPrice": 80,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-47857",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Noir"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 3,
+    "createdAt": "2025-11-23T22:33:45.364Z"
+  },
+  {
+    "id": "prod_28",
+    "name": "Men's Sneakers - Modern Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 30,
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-38263",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Olive"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 73,
+    "createdAt": "2025-11-02T10:34:31.550Z"
+  },
+  {
+    "id": "prod_29",
+    "name": "Men's Formal Shoes - Premium Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Formal Shoes",
+    "price": 110,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted formal shoes featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-57900",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Olive"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 29,
+    "createdAt": "2025-11-05T14:56:40.929Z"
+  },
+  {
+    "id": "prod_30",
+    "name": "Men's Formal Shoes - Premium Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Formal Shoes",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted formal shoes featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-75505",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Navy"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 52,
+    "createdAt": "2025-10-09T05:55:58.811Z"
+  },
+  {
+    "id": "prod_31",
+    "name": "Men's Boots - Essential Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Boots",
+    "price": 137,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted boots featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-47844",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Navy"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 5,
+    "createdAt": "2025-11-29T02:38:55.804Z"
+  },
+  {
+    "id": "prod_32",
+    "name": "Men's Boots - Classic Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Boots",
+    "price": 53,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted boots featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-19130",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Slate"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 4,
+    "createdAt": "2025-11-10T11:51:26.937Z"
+  },
+  {
+    "id": "prod_33",
+    "name": "Men's Boots - Classic Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Boots",
+    "price": 38,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted boots featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-31217",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Slate"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 52,
+    "createdAt": "2025-12-09T10:46:36.609Z"
+  },
+  {
+    "id": "prod_34",
+    "name": "Men's Boots - Classic Edition",
+    "gender": "Men",
+    "group": "Footwear",
+    "category": "Boots",
+    "price": 49,
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted boots featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-97108",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Olive"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 53,
+    "createdAt": "2025-08-28T23:00:17.534Z"
+  },
+  {
+    "id": "prod_35",
+    "name": "Men's Watches - Essential Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Watches",
+    "price": 51,
+    "originalPrice": 61,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted watches featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-78643",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Slate",
+      "Burgundy"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 78,
+    "createdAt": "2025-10-17T02:23:45.720Z"
+  },
+  {
+    "id": "prod_36",
+    "name": "Men's Watches - Classic Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Watches",
+    "price": 151,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted watches featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-24996",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Ecru",
+      "Ecru"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 15,
+    "createdAt": "2025-10-20T11:08:10.017Z"
+  },
+  {
+    "id": "prod_37",
+    "name": "Men's Watches - Essential Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Watches",
+    "price": 136,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted watches featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-53515",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Sand",
+      "Navy"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 36,
+    "createdAt": "2025-09-18T09:16:11.721Z"
+  },
+  {
+    "id": "prod_38",
+    "name": "Men's Watches - Essential Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Watches",
+    "price": 112,
+    "originalPrice": 134,
+    "image": "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted watches featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-52967",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Burgundy",
+      "Sand"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 42,
+    "createdAt": "2025-12-04T13:19:23.019Z"
+  },
+  {
+    "id": "prod_39",
+    "name": "Men's Perfumes - Classic Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Perfumes",
+    "price": 113,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted perfumes featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-22923",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Burgundy",
+      "Sand"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 8,
+    "createdAt": "2025-11-17T06:44:18.296Z"
+  },
+  {
+    "id": "prod_40",
+    "name": "Men's Perfumes - Premium Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Perfumes",
+    "price": 116,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted perfumes featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-90032",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Navy",
+      "Olive"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 77,
+    "createdAt": "2025-11-17T05:37:47.424Z"
+  },
+  {
+    "id": "prod_41",
+    "name": "Men's Perfumes - Premium Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Perfumes",
+    "price": 78,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted perfumes featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-15846",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Navy",
+      "Slate"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 94,
+    "createdAt": "2025-08-30T14:26:28.973Z"
+  },
+  {
+    "id": "prod_42",
+    "name": "Men's Perfumes - Classic Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Perfumes",
+    "price": 100,
+    "image": "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted perfumes featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-12893",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Sand",
+      "Noir"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 30,
+    "createdAt": "2025-10-19T20:19:58.585Z"
+  },
+  {
+    "id": "prod_43",
+    "name": "Men's Belts - Premium Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Belts",
+    "price": 64,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted belts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-36341",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Ecru"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 5,
+    "createdAt": "2025-11-11T02:01:29.057Z"
+  },
+  {
+    "id": "prod_44",
+    "name": "Men's Belts - Classic Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Belts",
+    "price": 175,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted belts featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-33409",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Burgundy"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 3,
+    "createdAt": "2025-12-13T14:56:39.077Z"
+  },
+  {
+    "id": "prod_45",
+    "name": "Men's Belts - Premium Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Belts",
+    "price": 90,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted belts featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-37426",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Ecru"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 49,
+    "createdAt": "2025-10-13T08:19:23.469Z"
+  },
+  {
+    "id": "prod_46",
+    "name": "Men's Belts - Essential Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Belts",
+    "price": 98,
+    "image": "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted belts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-36042",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Noir"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 9,
+    "createdAt": "2025-12-18T00:08:55.186Z"
+  },
+  {
+    "id": "prod_47",
+    "name": "Men's Wallets - Premium Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Wallets",
+    "price": 178,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted wallets featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-14201",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Sand"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 96,
+    "createdAt": "2025-09-22T04:12:32.422Z"
+  },
+  {
+    "id": "prod_48",
+    "name": "Men's Wallets - Classic Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Wallets",
+    "price": 164,
+    "originalPrice": 196,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted wallets featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-86964",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Slate"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 41,
+    "createdAt": "2025-11-12T03:26:33.269Z"
+  },
+  {
+    "id": "prod_49",
+    "name": "Men's Wallets - Modern Edition",
+    "gender": "Men",
+    "group": "Accessories",
+    "category": "Wallets",
+    "price": 127,
+    "originalPrice": 152,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted wallets featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-90296",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Burgundy"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 40,
+    "createdAt": "2025-11-12T04:41:59.562Z"
+  },
+  {
+    "id": "prod_50",
+    "name": "Women's Tops - Classic Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "Tops",
+    "price": 89,
+    "originalPrice": 106,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted tops featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-34153",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Olive"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 2,
+    "createdAt": "2025-11-13T16:37:34.421Z"
+  },
+  {
+    "id": "prod_51",
+    "name": "Women's Tops - Modern Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "Tops",
+    "price": 161,
+    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted tops featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-28844",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Gold"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 69,
+    "createdAt": "2025-10-14T08:44:50.401Z"
+  },
+  {
+    "id": "prod_52",
+    "name": "Women's T-Shirts - Modern Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 50,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-18600",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Gold"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 24,
+    "createdAt": "2025-11-11T14:23:29.239Z"
+  },
+  {
+    "id": "prod_53",
+    "name": "Women's T-Shirts - Essential Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 166,
+    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-76184",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Ecru"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 42,
+    "createdAt": "2025-10-01T08:04:12.631Z"
+  },
+  {
+    "id": "prod_54",
+    "name": "Women's T-Shirts - Modern Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 133,
+    "originalPrice": 159,
+    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-70868",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Gold"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 44,
+    "createdAt": "2025-10-03T20:47:09.494Z"
+  },
+  {
+    "id": "prod_55",
+    "name": "Women's T-Shirts - Modern Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 49,
+    "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-89727",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Gold"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 87,
+    "createdAt": "2025-09-20T15:51:56.931Z"
+  },
+  {
+    "id": "prod_56",
+    "name": "Women's Dresses - Premium Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "Dresses",
+    "price": 142,
+    "originalPrice": 170,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted dresses featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-77363",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Noir"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 94,
+    "createdAt": "2025-12-14T03:06:05.953Z"
+  },
+  {
+    "id": "prod_57",
+    "name": "Women's Dresses - Modern Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "Dresses",
+    "price": 124,
+    "originalPrice": 148,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted dresses featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-84593",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Burgundy"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 27,
+    "createdAt": "2025-12-15T14:36:39.755Z"
+  },
+  {
+    "id": "prod_58",
+    "name": "Women's Dresses - Premium Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "Dresses",
+    "price": 55,
+    "originalPrice": 66,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted dresses featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-47752",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Gold"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 42,
+    "createdAt": "2025-09-09T21:03:31.512Z"
+  },
+  {
+    "id": "prod_59",
+    "name": "Women's Jackets - Essential Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "Jackets",
+    "price": 174,
+    "originalPrice": 208,
+    "image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jackets featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-97888",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Sand"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 50,
+    "createdAt": "2025-09-21T00:57:21.400Z"
+  },
+  {
+    "id": "prod_60",
+    "name": "Women's Jackets - Classic Edition",
+    "gender": "Women",
+    "group": "Topwear",
+    "category": "Jackets",
+    "price": 69,
+    "originalPrice": 82,
+    "image": "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jackets featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-87288",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Noir"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 56,
+    "createdAt": "2025-10-13T23:39:11.155Z"
+  },
+  {
+    "id": "prod_61",
+    "name": "Women's Jeans - Classic Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Jeans",
+    "price": 82,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jeans featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-45820",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Olive"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 18,
+    "createdAt": "2025-11-21T23:24:11.664Z"
+  },
+  {
+    "id": "prod_62",
+    "name": "Women's Jeans - Premium Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Jeans",
+    "price": 118,
+    "originalPrice": 141,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jeans featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-97152",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Slate"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 35,
+    "createdAt": "2025-09-25T23:31:18.850Z"
+  },
+  {
+    "id": "prod_63",
+    "name": "Women's Jeans - Classic Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Jeans",
+    "price": 135,
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jeans featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-66997",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Noir"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 19,
+    "createdAt": "2025-12-01T05:01:18.579Z"
+  },
+  {
+    "id": "prod_64",
+    "name": "Women's Jeans - Premium Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Jeans",
+    "price": 63,
+    "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jeans featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-62149",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Navy"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 44,
+    "createdAt": "2025-11-02T10:17:06.614Z"
+  },
+  {
+    "id": "prod_65",
+    "name": "Women's Skirts - Modern Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Skirts",
+    "price": 79,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted skirts featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-64443",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Gold"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 59,
+    "createdAt": "2025-09-16T16:57:22.644Z"
+  },
+  {
+    "id": "prod_66",
+    "name": "Women's Skirts - Essential Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Skirts",
+    "price": 93,
+    "originalPrice": 111,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted skirts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-15595",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Olive"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 57,
+    "createdAt": "2025-10-29T06:09:26.018Z"
+  },
+  {
+    "id": "prod_67",
+    "name": "Women's Skirts - Essential Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Skirts",
+    "price": 122,
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted skirts featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-92283",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Olive"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 45,
+    "createdAt": "2025-09-26T03:46:59.090Z"
+  },
+  {
+    "id": "prod_68",
+    "name": "Women's Skirts - Classic Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Skirts",
+    "price": 105,
+    "originalPrice": 126,
+    "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted skirts featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-44150",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Noir"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 72,
+    "createdAt": "2025-12-14T11:39:26.343Z"
+  },
+  {
+    "id": "prod_69",
+    "name": "Women's Leggings - Classic Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Leggings",
+    "price": 46,
+    "originalPrice": 55,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted leggings featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-93572",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Noir"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 75,
+    "createdAt": "2025-10-14T09:46:47.120Z"
+  },
+  {
+    "id": "prod_70",
+    "name": "Women's Leggings - Premium Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Leggings",
+    "price": 83,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted leggings featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-12908",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Noir"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 32,
+    "createdAt": "2025-08-31T20:48:42.302Z"
+  },
+  {
+    "id": "prod_71",
+    "name": "Women's Leggings - Premium Edition",
+    "gender": "Women",
+    "group": "Bottomwear",
+    "category": "Leggings",
+    "price": 70,
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted leggings featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-19272",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Gold"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 12,
+    "createdAt": "2025-10-16T11:34:04.770Z"
+  },
+  {
+    "id": "prod_72",
+    "name": "Women's Heels - Modern Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Heels",
+    "price": 79,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted heels featuring our signature silhouette. Designed for comfort and style using premium Silk.",
+    "sku": "LUV-43302",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Slate"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 25,
+    "createdAt": "2025-11-10T02:20:51.942Z"
+  },
+  {
+    "id": "prod_73",
+    "name": "Women's Heels - Classic Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Heels",
+    "price": 157,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted heels featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-59857",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Noir"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 49,
+    "createdAt": "2025-10-29T22:37:49.149Z"
+  },
+  {
+    "id": "prod_74",
+    "name": "Women's Heels - Modern Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Heels",
+    "price": 89,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted heels featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-26773",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Noir"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 48,
+    "createdAt": "2025-09-15T07:25:59.569Z"
+  },
+  {
+    "id": "prod_75",
+    "name": "Women's Heels - Essential Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Heels",
+    "price": 40,
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted heels featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-33311",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Gold"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 6,
+    "createdAt": "2025-12-08T02:58:52.634Z"
+  },
+  {
+    "id": "prod_76",
+    "name": "Women's Flats - Premium Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Flats",
+    "price": 143,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted flats featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-93024",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Olive"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 49,
+    "createdAt": "2025-09-23T21:19:12.201Z"
+  },
+  {
+    "id": "prod_77",
+    "name": "Women's Flats - Classic Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Flats",
+    "price": 43,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted flats featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-37205",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Ecru"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 87,
+    "createdAt": "2025-10-10T07:49:56.375Z"
+  },
+  {
+    "id": "prod_78",
+    "name": "Women's Flats - Essential Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Flats",
+    "price": 153,
+    "originalPrice": 183,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted flats featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-15142",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Noir"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 35,
+    "createdAt": "2025-09-23T15:03:41.000Z"
+  },
+  {
+    "id": "prod_79",
+    "name": "Women's Sneakers - Essential Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 137,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-55539",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Burgundy"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 29,
+    "createdAt": "2025-08-29T05:53:25.514Z"
+  },
+  {
+    "id": "prod_80",
+    "name": "Women's Sneakers - Classic Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 155,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-29176",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Gold"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 11,
+    "createdAt": "2025-09-20T02:25:54.836Z"
+  },
+  {
+    "id": "prod_81",
+    "name": "Women's Sneakers - Essential Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 119,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-73772",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Slate"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 3,
+    "createdAt": "2025-10-05T11:56:02.313Z"
+  },
+  {
+    "id": "prod_82",
+    "name": "Women's Sneakers - Modern Edition",
+    "gender": "Women",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 39,
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-14570",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Gold"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 32,
+    "createdAt": "2025-12-01T02:31:02.216Z"
+  },
+  {
+    "id": "prod_83",
+    "name": "Women's Handbags - Premium Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Handbags",
+    "price": 67,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted handbags featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-77543",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Noir"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 58,
+    "createdAt": "2025-10-25T09:45:52.230Z"
+  },
+  {
+    "id": "prod_84",
+    "name": "Women's Handbags - Premium Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Handbags",
+    "price": 178,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted handbags featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-60200",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Sand"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 57,
+    "createdAt": "2025-12-10T04:47:32.381Z"
+  },
+  {
+    "id": "prod_85",
+    "name": "Women's Handbags - Essential Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Handbags",
+    "price": 177,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted handbags featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-89048",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Noir"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 4,
+    "createdAt": "2025-11-01T07:46:35.203Z"
+  },
+  {
+    "id": "prod_86",
+    "name": "Women's Handbags - Premium Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Handbags",
+    "price": 34,
+    "image": "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted handbags featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-34780",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Burgundy"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 6,
+    "createdAt": "2025-11-16T17:33:31.632Z"
+  },
+  {
+    "id": "prod_87",
+    "name": "Women's Jewelry - Classic Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Jewelry",
+    "price": 153,
+    "originalPrice": 183,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jewelry featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-97771",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Burgundy"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 81,
+    "createdAt": "2025-11-21T13:06:45.256Z"
+  },
+  {
+    "id": "prod_88",
+    "name": "Women's Jewelry - Essential Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Jewelry",
+    "price": 59,
+    "originalPrice": 70,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jewelry featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-45188",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Sand"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 56,
+    "createdAt": "2025-10-08T11:40:29.224Z"
+  },
+  {
+    "id": "prod_89",
+    "name": "Women's Jewelry - Modern Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Jewelry",
+    "price": 105,
+    "originalPrice": 126,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jewelry featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-68160",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Burgundy"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 21,
+    "createdAt": "2025-09-24T17:40:16.172Z"
+  },
+  {
+    "id": "prod_90",
+    "name": "Women's Jewelry - Classic Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Jewelry",
+    "price": 135,
+    "originalPrice": 162,
+    "image": "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted jewelry featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-42825",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Slate"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 44,
+    "createdAt": "2025-12-05T16:05:43.528Z"
+  },
+  {
+    "id": "prod_91",
+    "name": "Women's Perfumes - Modern Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Perfumes",
+    "price": 81,
+    "originalPrice": 97,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted perfumes featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-59409",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Ecru",
+      "Slate"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 51,
+    "createdAt": "2025-10-11T17:07:43.158Z"
+  },
+  {
+    "id": "prod_92",
+    "name": "Women's Perfumes - Premium Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Perfumes",
+    "price": 145,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted perfumes featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-16163",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Noir",
+      "Noir"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 2,
+    "createdAt": "2025-08-27T03:19:40.482Z"
+  },
+  {
+    "id": "prod_93",
+    "name": "Women's Perfumes - Modern Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Perfumes",
+    "price": 111,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted perfumes featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-98323",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      "Gold",
+      "Gold"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 87,
+    "createdAt": "2025-10-08T09:49:27.139Z"
+  },
+  {
+    "id": "prod_94",
+    "name": "Women's Scarves - Essential Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Scarves",
+    "price": 59,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted scarves featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-53043",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Slate"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 15,
+    "createdAt": "2025-09-05T05:40:14.701Z"
+  },
+  {
+    "id": "prod_95",
+    "name": "Women's Scarves - Premium Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Scarves",
+    "price": 105,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted scarves featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-88142",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Olive"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 35,
+    "createdAt": "2025-11-03T01:55:29.023Z"
+  },
+  {
+    "id": "prod_96",
+    "name": "Women's Scarves - Premium Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Scarves",
+    "price": 80,
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted scarves featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-15638",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Sand"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 31,
+    "createdAt": "2025-11-20T12:13:47.243Z"
+  },
+  {
+    "id": "prod_97",
+    "name": "Women's Scarves - Modern Edition",
+    "gender": "Women",
+    "group": "Accessories",
+    "category": "Scarves",
+    "price": 52,
+    "image": "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted scarves featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-49781",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Gold"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 97,
+    "createdAt": "2025-12-18T20:41:43.250Z"
+  },
+  {
+    "id": "prod_98",
+    "name": "Children's T-Shirts - Premium Edition",
+    "gender": "Children",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 178,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-29978",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Noir"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 83,
+    "createdAt": "2025-09-27T17:57:28.335Z"
+  },
+  {
+    "id": "prod_99",
+    "name": "Children's T-Shirts - Essential Edition",
+    "gender": "Children",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 48,
+    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Polyester.",
+    "sku": "LUV-75589",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Navy"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 71,
+    "createdAt": "2025-09-11T13:32:14.704Z"
+  },
+  {
+    "id": "prod_100",
+    "name": "Children's T-Shirts - Essential Edition",
+    "gender": "Children",
+    "group": "Topwear",
+    "category": "T-Shirts",
+    "price": 98,
+    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted t-shirts featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-97456",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Sand",
+      "Olive"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 4,
+    "createdAt": "2025-11-04T09:23:59.700Z"
+  },
+  {
+    "id": "prod_101",
+    "name": "Children's Sets - Modern Edition",
+    "gender": "Children",
+    "group": "Topwear",
+    "category": "Sets",
+    "price": 125,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sets featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-62162",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Slate"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 67,
+    "createdAt": "2025-11-14T10:09:15.631Z"
+  },
+  {
+    "id": "prod_102",
+    "name": "Children's Sets - Essential Edition",
+    "gender": "Children",
+    "group": "Topwear",
+    "category": "Sets",
+    "price": 70,
+    "originalPrice": 84,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sets featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-73690",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Sand"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 97,
+    "createdAt": "2025-09-27T21:49:04.698Z"
+  },
+  {
+    "id": "prod_103",
+    "name": "Children's Shorts - Classic Edition",
+    "gender": "Children",
+    "group": "Bottomwear",
+    "category": "Shorts",
+    "price": 152,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted shorts featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-79882",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Noir"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 87,
+    "createdAt": "2025-12-10T06:24:00.667Z"
+  },
+  {
+    "id": "prod_104",
+    "name": "Children's Shorts - Essential Edition",
+    "gender": "Children",
+    "group": "Bottomwear",
+    "category": "Shorts",
+    "price": 63,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted shorts featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-63252",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Slate"
+    ],
+    "material": "Crystal",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 13,
+    "createdAt": "2025-11-23T11:57:43.467Z"
+  },
+  {
+    "id": "prod_105",
+    "name": "Children's Shorts - Essential Edition",
+    "gender": "Children",
+    "group": "Bottomwear",
+    "category": "Shorts",
+    "price": 167,
+    "originalPrice": 200,
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted shorts featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-63216",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Noir"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 73,
+    "createdAt": "2025-10-17T08:46:02.469Z"
+  },
+  {
+    "id": "prod_106",
+    "name": "Children's Shorts - Modern Edition",
+    "gender": "Children",
+    "group": "Bottomwear",
+    "category": "Shorts",
+    "price": 100,
+    "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted shorts featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-74533",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Noir"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 17,
+    "createdAt": "2025-09-26T20:43:52.760Z"
+  },
+  {
+    "id": "prod_107",
+    "name": "Children's Pants - Premium Edition",
+    "gender": "Children",
+    "group": "Bottomwear",
+    "category": "Pants",
+    "price": 176,
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted pants featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-35994",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Burgundy"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 99,
+    "createdAt": "2025-09-11T10:12:57.246Z"
+  },
+  {
+    "id": "prod_108",
+    "name": "Children's Pants - Modern Edition",
+    "gender": "Children",
+    "group": "Bottomwear",
+    "category": "Pants",
+    "price": 98,
+    "image": "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272454315-4c01d7abdf4a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted pants featuring our signature silhouette. Designed for comfort and style using premium Gold.",
+    "sku": "LUV-33094",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Burgundy"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 7,
+    "createdAt": "2025-10-16T01:17:31.341Z"
+  },
+  {
+    "id": "prod_109",
+    "name": "Children's Sneakers - Classic Edition",
+    "gender": "Children",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 132,
+    "originalPrice": 158,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-33948",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Navy"
+    ],
+    "material": "Silk",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 8,
+    "createdAt": "2025-10-18T17:43:21.520Z"
+  },
+  {
+    "id": "prod_110",
+    "name": "Children's Sneakers - Premium Edition",
+    "gender": "Children",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 95,
+    "originalPrice": 114,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Silver.",
+    "sku": "LUV-64033",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Ecru"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 73,
+    "createdAt": "2025-09-11T05:49:56.468Z"
+  },
+  {
+    "id": "prod_111",
+    "name": "Children's Sneakers - Modern Edition",
+    "gender": "Children",
+    "group": "Footwear",
+    "category": "Sneakers",
+    "price": 168,
+    "originalPrice": 201,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sneakers featuring our signature silhouette. Designed for comfort and style using premium Denim.",
+    "sku": "LUV-13091",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Ecru",
+      "Olive"
+    ],
+    "material": "Gold",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 65,
+    "createdAt": "2025-09-14T22:52:37.482Z"
+  },
+  {
+    "id": "prod_112",
+    "name": "Children's Sandals - Modern Edition",
+    "gender": "Children",
+    "group": "Footwear",
+    "category": "Sandals",
+    "price": 63,
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sandals featuring our signature silhouette. Designed for comfort and style using premium Crystal.",
+    "sku": "LUV-28396",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Ecru"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 52,
+    "createdAt": "2025-12-17T18:18:40.883Z"
+  },
+  {
+    "id": "prod_113",
+    "name": "Children's Sandals - Essential Edition",
+    "gender": "Children",
+    "group": "Footwear",
+    "category": "Sandals",
+    "price": 173,
+    "originalPrice": 207,
+    "image": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sandals featuring our signature silhouette. Designed for comfort and style using premium Leather.",
+    "sku": "LUV-73387",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Slate"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 96,
+    "createdAt": "2025-10-14T10:17:21.875Z"
+  },
+  {
+    "id": "prod_114",
+    "name": "Children's Sandals - Modern Edition",
+    "gender": "Children",
+    "group": "Footwear",
+    "category": "Sandals",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551488852-d814c937d191?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sandals featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-30611",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Gold",
+      "Sand"
+    ],
+    "material": "Polyester",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 59,
+    "createdAt": "2025-11-05T05:32:41.174Z"
+  },
+  {
+    "id": "prod_115",
+    "name": "Children's Sandals - Premium Edition",
+    "gender": "Children",
+    "group": "Footwear",
+    "category": "Sandals",
+    "price": 79,
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted sandals featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-77650",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy",
+      "Noir"
+    ],
+    "material": "Denim",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 81,
+    "createdAt": "2025-10-20T01:51:12.691Z"
+  },
+  {
+    "id": "prod_116",
+    "name": "Children's Hats - Modern Edition",
+    "gender": "Children",
+    "group": "Accessories",
+    "category": "Hats",
+    "price": 75,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted hats featuring our signature silhouette. Designed for comfort and style using premium Cotton.",
+    "sku": "LUV-21720",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Burgundy",
+      "Burgundy"
+    ],
+    "material": "Silver",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 82,
+    "createdAt": "2025-11-24T21:31:48.002Z"
+  },
+  {
+    "id": "prod_117",
+    "name": "Children's Hats - Premium Edition",
+    "gender": "Children",
+    "group": "Accessories",
+    "category": "Hats",
+    "price": 80,
+    "originalPrice": 96,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted hats featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-62589",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Noir",
+      "Slate"
+    ],
+    "material": "Linen",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 60,
+    "createdAt": "2025-10-09T08:44:30.963Z"
+  },
+  {
+    "id": "prod_118",
+    "name": "Children's Bags - Modern Edition",
+    "gender": "Children",
+    "group": "Accessories",
+    "category": "Bags",
+    "price": 78,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted bags featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-17037",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Noir"
+    ],
+    "material": "Leather",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 11,
+    "createdAt": "2025-11-03T22:20:23.599Z"
+  },
+  {
+    "id": "prod_119",
+    "name": "Children's Bags - Essential Edition",
+    "gender": "Children",
+    "group": "Accessories",
+    "category": "Bags",
+    "price": 77,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1594038683601-b024214f43cc?q=80&w=1000&auto=format&fit=crop"
+    ],
+    "description": "Expertly crafted bags featuring our signature silhouette. Designed for comfort and style using premium Linen.",
+    "sku": "LUV-37357",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate",
+      "Slate"
+    ],
+    "material": "Cotton",
+    "vendor": "LUVARTE Atelier",
+    "reviews": [],
+    "popularityScore": 32,
+    "createdAt": "2025-10-30T07:19:57.447Z"
+  }
+]

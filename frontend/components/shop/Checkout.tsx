@@ -3,16 +3,34 @@ import React, { useState } from 'react';
 import { ViewState, CartItem, Coupon } from '../../types';
 import { ArrowLeft, CreditCard, Lock, Truck, CheckCircle } from 'lucide-react';
 
+interface ShippingInfo {
+    email: string;
+    firstName: string;
+    lastName: string;
+    address: string;
+    city: string;
+    postalCode: string;
+}
+
 interface CheckoutProps {
     cart: CartItem[];
     setView: (view: ViewState) => void;
-    onPlaceOrder: () => void;
+    onPlaceOrder: (shipping: ShippingInfo) => Promise<void>;
     appliedCoupon: Coupon | null;
+    isLoadingProducts?: boolean;
 }
 
-export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder, appliedCoupon }) => {
+export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder, appliedCoupon, isLoadingProducts }) => {
     const [step, setStep] = useState<'SHIPPING' | 'PAYMENT'>('SHIPPING');
     const [isProcessing, setIsProcessing] = useState(false);
+    const [shipping, setShipping] = useState<ShippingInfo>({
+        email: '',
+        firstName: '',
+        lastName: '',
+        address: '',
+        city: '',
+        postalCode: '',
+    });
 
     // Calculation Logic
     const cartSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -22,14 +40,11 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
     const deliveryFee = cartSubtotal > 200 ? 0 : 20.00;
     const total = Math.max(0, cartSubtotal - discountAmount + deliveryFee);
 
-    const handleProcessPayment = (e: React.FormEvent) => {
+    const handleProcessPayment = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsProcessing(true);
-        // Simulate API call
-        setTimeout(() => {
-            setIsProcessing(false);
-            onPlaceOrder();
-        }, 2000);
+        await onPlaceOrder(shipping);
+        setIsProcessing(false);
     };
 
     return (
@@ -54,27 +69,33 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                             <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="group md:col-span-2">
                                     <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">Email Address</label>
-                                    <input type="email" className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300" placeholder="you@example.com" />
+                                    <input
+                                        type="email"
+                                        value={shipping.email}
+                                        onChange={(e) => setShipping({...shipping, email: e.target.value})}
+                                        className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300"
+                                        placeholder="you@example.com"
+                                    />
                                 </div>
                                 <div className="group">
                                     <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">First Name</label>
-                                    <input type="text" className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
+                                    <input type="text" value={shipping.firstName} onChange={(e) => setShipping({...shipping, firstName: e.target.value})} className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
                                 </div>
                                 <div className="group">
                                     <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">Last Name</label>
-                                    <input type="text" className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
+                                    <input type="text" value={shipping.lastName} onChange={(e) => setShipping({...shipping, lastName: e.target.value})} className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
                                 </div>
                                 <div className="group md:col-span-2">
                                     <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">Address</label>
-                                    <input type="text" className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" placeholder="Street, Apt, Suite" />
+                                    <input type="text" value={shipping.address} onChange={(e) => setShipping({...shipping, address: e.target.value})} className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" placeholder="Street, Apt, Suite" />
                                 </div>
                                 <div className="group">
                                     <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">City</label>
-                                    <input type="text" className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
+                                    <input type="text" value={shipping.city} onChange={(e) => setShipping({...shipping, city: e.target.value})} className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
                                 </div>
                                 <div className="group">
                                     <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">Postal Code</label>
-                                    <input type="text" className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
+                                    <input type="text" value={shipping.postalCode} onChange={(e) => setShipping({...shipping, postalCode: e.target.value})} className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors" />
                                 </div>
                             </form>
                             
@@ -151,7 +172,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                                     </button>
                                     <button 
                                         type="submit"
-                                        disabled={isProcessing}
+                                        disabled={isProcessing || isLoadingProducts}
                                         className="bg-[#111111] text-white px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#488C5C] transition-colors shadow-lg flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         {isProcessing ? (

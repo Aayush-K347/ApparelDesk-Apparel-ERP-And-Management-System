@@ -2,16 +2,16 @@
 import React, { useEffect, useRef } from 'react';
 import { ViewState, Product } from '../../types';
 import { ArrowRight, Gem, Star, ArrowUpRight } from 'lucide-react';
-import { MOCK_PRODUCTS } from '../../constants';
 
 interface HeroProps {
     setView: (view: ViewState) => void;
     setSelectedGender: (gender: string) => void;
     setSelectedProduct: (product: Product) => void;
     onQuickView: (e: React.MouseEvent, product: Product) => void;
+    products: Product[];
 }
 
-export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelectedProduct }) => {
+export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelectedProduct, products }) => {
 
   // Hook for intersection observer animation
   const useIntersectionObserver = (ref: React.RefObject<HTMLDivElement>) => {
@@ -173,9 +173,8 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
   };
 
   const NewArrivalsMarquee = () => {
-    // Select latest products, duplicate for smooth loop
-    const products = MOCK_PRODUCTS.slice(0, 8);
-    
+    const latestProducts = products.slice(0, 8);
+
     return (
         <section className="py-24 bg-[#111111] overflow-hidden border-t border-white/5 relative z-20">
             <div className="container mx-auto px-6 mb-12 flex justify-between items-end">
@@ -188,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ setView, setSelectedGender, setSelec
             <div className="flex w-full overflow-hidden relative">
                 <div className="flex animate-infiniteScroll w-max hover:[animation-play-state:paused]">
                     {/* Double the list for infinite effect */}
-                    {[...products, ...products, ...products].map((product, idx) => (
+                    {[...latestProducts, ...latestProducts, ...latestProducts].map((product, idx) => (
                         <div 
                             key={`${product.id}-${idx}`} 
                             onClick={() => { setSelectedProduct(product); setView('PRODUCT_DETAIL'); }}

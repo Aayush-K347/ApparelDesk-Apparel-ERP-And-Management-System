@@ -9,9 +9,10 @@ interface NavigationProps {
   setView: (view: ViewState) => void;
   isTransparent?: boolean;
   isAuthenticated: boolean;
+  onLogout?: () => void;
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTransparent = false, isAuthenticated }) => {
+export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTransparent = false, isAuthenticated, onLogout }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

@@ -1,22 +1,25 @@
 
 import React, { useState } from 'react';
 import { ViewState } from '../../types';
-import { ArrowLeft, ArrowRight, Mail, Lock, User, Github, Twitter } from 'lucide-react';
+import { ArrowRight, Mail, Lock, User, Github, Twitter } from 'lucide-react';
 
 interface UserAuthProps {
     setView: (view: ViewState) => void;
-    onLogin: () => void;
+    onLogin: (email: string, password: string, fullName?: string, mode?: 'login' | 'register') => Promise<void> | void;
 }
 
 export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [fullName, setFullName] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Mock authentication
-        onLogin();
+        setIsSubmitting(true);
+        await onLogin(email, password, fullName || email, isLogin ? 'login' : 'register');
+        setIsSubmitting(false);
     };
 
     return (
@@ -69,7 +72,7 @@ export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
                              <div className="group">
                                 <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Full Name</label>
                                 <div className="relative">
-                                    <input type="text" className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300" placeholder="John Doe" />
+                                    <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300" placeholder="John Doe" />
                                     <User className="absolute right-0 top-3 text-gray-300 group-focus-within:text-[#111111] transition-colors" size={16} />
                                 </div>
                             </div>
@@ -113,9 +116,10 @@ export const UserAuth: React.FC<UserAuthProps> = ({ setView, onLogin }) => {
 
                         <button 
                             type="submit"
-                            className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#488C5C] transition-colors shadow-xl"
+                            disabled={isSubmitting}
+                            className="w-full bg-[#111111] text-white py-4 text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#488C5C] transition-colors shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
                         >
-                            {isLogin ? 'Sign In' : 'Create Account'}
+                            {isSubmitting ? 'Please wait...' : isLogin ? 'Sign In' : 'Create Account'}
                         </button>
                     </form>
 

@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { CartItem, Coupon, ViewState } from '../../types';
-import { AVAILABLE_COUPONS } from '../../constants';
 import { Minus, Plus, Trash2, Check, ArrowRight } from 'lucide-react';
 
 interface CartProps {
@@ -12,11 +11,12 @@ interface CartProps {
     setCouponCode: (code: string) => void;
     appliedCoupon: Coupon | null;
     setAppliedCoupon: (coupon: Coupon | null) => void;
+    onValidateCoupon: (code: string) => Promise<void>;
 }
 
 export const Cart: React.FC<CartProps> = ({ 
     cart, setCart, setView, 
-    couponCode, setCouponCode, appliedCoupon, setAppliedCoupon 
+    couponCode, setCouponCode, appliedCoupon, setAppliedCoupon, onValidateCoupon
 }) => {
     
     const updateQuantity = (id: string, size: string, color: string, delta: number) => {
@@ -32,14 +32,8 @@ export const Cart: React.FC<CartProps> = ({
         setCart(prev => prev.filter(item => !(item.id === id && item.selectedSize === size && item.selectedColor === color)));
     };
 
-    const handleApplyCoupon = () => {
-        const coupon = AVAILABLE_COUPONS.find(c => c.code === couponCode.toUpperCase());
-        if (coupon) {
-            setAppliedCoupon(coupon);
-        } else {
-            alert('Invalid Coupon Code');
-            setAppliedCoupon(null);
-        }
+    const handleApplyCoupon = async () => {
+        await onValidateCoupon(couponCode);
     };
 
     const cartSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
