@@ -25,7 +25,7 @@ Shoppers explore curated collections, creators publish shoppable outfits, vendor
 
 </td>
 <td width="40%">
-<img src="/frontend/screenshots/image.png" width="100%" alt="Luvarte logo">
+<img src="/frontend/screenshots/logo.png" width="100%" alt="Luvarte logo">
 </td>
 </tr>
 </table>
@@ -45,7 +45,7 @@ Shoppers explore curated collections, creators publish shoppable outfits, vendor
 
 ## Landing Page
 
-<img src="/frontend/screenshots/landing_page.png" alt="Dashboard Overview" width="100%">
+<img src="/frontend/screenshots/image.png" alt="Dashboard Overview" width="100%">
 
 ## 🧠 What It Does
 
