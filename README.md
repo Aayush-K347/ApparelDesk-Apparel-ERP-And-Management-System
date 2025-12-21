@@ -45,7 +45,7 @@ Shoppers explore curated collections, creators publish shoppable outfits, vendor
 
 ## Landing Page
 
-<img src="/frontend/screenshots/image.png" alt="Dashboard Overview" width="100%">
+<img src="/frontend/screenshots/landing_page.png" alt="Dashboard Overview" width="100%">
 
 ## 🧠 What It Does
 
@@ -61,10 +61,10 @@ Shoppers explore curated collections, creators publish shoppable outfits, vendor
     </tr>
     <tr>
       <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Vendor & Inventory Intelligence</h4><p>Centralized vendor portal for managing catalogs, tracking performance, monitoring inventory, and generating operational reports.</p></td>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Social Commerce Studio</h4><p>Creator-driven feed with shoppable posts that allow users to explore outfits and instantly purchase featured items.</p></td>
+      <td align="center"><h3><img src="/frontend/screenshots/studio.png" alt="" width="80%"></h3></h3><h4>Social Commerce Studio</h4><p>Creator-driven feed with shoppable posts that allow users to explore outfits and instantly purchase featured items.</p></td>
     </tr>
      <tr>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Transaction-Safe Commerce Backend</h4><p>Robust MySQL-backed system with ACID-compliant transactions, line-item tracking, and audit-ready financial records.</p></td>
+      <td align="center"><h3><img src="/frontend/screenshots/image.png" alt="" width="80%"></h3></h3><h4>Transaction-Safe Commerce Backend</h4><p>Robust MySQL-backed system with ACID-compliant transactions, line-item tracking, and audit-ready financial records.</p></td>
       <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Visual Analytics Dashboard</h4><p>Clear, data-first dashboards for admins and vendors, showing sales performance, margins, trends, and inventory health.</p></td>
     </tr>
   
