@@ -170,7 +170,49 @@ This module transforms Luvarte from a traditional fashion storefront into a **pr
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
+## 📸 Demo Screenshots
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="/frontend/screenshots/homepage1.png" alt="Dashboard" width="100%"></td>
+      <td><img src="/frontend/screenshots/homepage3.png" alt="Receipts" width="100%"></td>      
+    </tr>
+    <tr>
+      <td><img src="/frontend/screenshots/homepage2.png" alt="Products" width="100%"></td>
+      <td><img src="/frontend/screenshots/homepage4.png" alt="Deliveries" width="100%"></td>
+    </tr>
+    <tr>
+      <td><img src="/frontend/screenshots/homepage5.png" alt="Adjustments" width="100%"></td>
+      <td><img src="/frontend/screenshots/category.png" alt="Automated Stock Manager" width="100%"></td>
+    </tr>
+        <tr>
+      <td><img src="/frontend/screenshots/Studio.png" alt="Stock Ledger" width="100%"></td>
+      <td><img src="/frontend/screenshots/Studio.png" alt="Internal Transfers" width="100%"></td>
+    </tr>
+    </tr>
+        <tr>
+      <td><img src="/frontend/screenshots/signin.png" alt="Stock Ledger" width="100%"></td>
+      <td><img src="/frontend/screenshots/venderLogin.png" alt="Internal Transfers" width="100%"></td>
+    </tr>
+  <tr>
+      <td><img src="/frontend/screenshots/Studio.png" alt="Social Commerce Studio"></td>
+      <td><img src="/frontend/screenshots/virtualTryOn.jpeg" alt="AI Virtual Try-On" ></td>
+  </tr>
+    <tr>
+      <td><img src="/frontend/screenshots/invoice.jpeg" alt="Invoice Generation" ></td>
+      <td><img src="/frontend/screenshots/dashboard.jpeg" alt="Visual Analytics Dashboard" ></td>
+  </tr>
+  </table>
+</div>
+## 📊 Feature Preview
+
+<div align="center">
+  <img src="/frontend/screenshots/homepage5.png" alt="AI Dashboard Preview" width="80%">
+</div>
+
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=80&section=divider&text=Technical%20Workflow&fontColor=ffffff&fontSize=28"/>
+
 
 ## 🛠️ Technical Workflow
 
@@ -270,47 +312,6 @@ Admin Panel: http://127.0.0.1:8000/admin
 - 📈 Advanced analytics with customizable dashboards for sales, margins, and user behavior  
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Divider">
-
-## 📸 Demo Screenshots
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="/frontend/screenshots/homepage1.png" alt="Dashboard" width="100%"></td>
-      <td><img src="/frontend/screenshots/homepage2.png" alt="Products" width="100%"></td>
-    </tr>
-    <tr>
-      <td><img src="/frontend/screenshots/homepage3.png" alt="Receipts" width="100%"></td>
-      <td><img src="/frontend/screenshots/homepage4.png" alt="Deliveries" width="100%"></td>
-    </tr>
-    <tr>
-      <td><img src="/frontend/screenshots/homepage5.png" alt="Adjustments" width="100%"></td>
-      <td><img src="/frontend/screenshots/category.png" alt="Automated Stock Manager" width="100%"></td>
-    </tr>
-        <tr>
-      <td><img src="/frontend/screenshots/Studio.png" alt="Stock Ledger" width="100%"></td>
-      <td><img src="/frontend/screenshots/Studio.png" alt="Internal Transfers" width="100%"></td>
-    </tr>
-    </tr>
-        <tr>
-      <td><img src="/frontend/screenshots/signin.png" alt="Stock Ledger" width="100%"></td>
-      <td><img src="/frontend/screenshots/venderLogin.png" alt="Internal Transfers" width="100%"></td>
-    </tr>
-  <tr>
-      <td><img src="/frontend/screenshots/Studio.png" alt="Social Commerce Studio"></td>
-      <td><img src="/frontend/screenshots/virtualTryOn.jpeg" alt="AI Virtual Try-On" ></td>
-  </tr>
-    <tr>
-      <td><img src="/frontend/screenshots/invoice.jpeg" alt="Invoice Generation" ></td>
-      <td><img src="/frontend/screenshots/dashboard.jpeg" alt="Visual Analytics Dashboard" ></td>
-  </tr>
-  </table>
-</div>
-## 📊 Feature Preview
-
-<div align="center">
-  <img src="/frontend/screenshots/homepage5.png" alt="AI Dashboard Preview" width="80%">
-</div>
 
 ## 🎯 Project Structure
 
