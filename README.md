@@ -1,6 +1,8 @@
 <div align="center">
 
-  <h1>Luvarte Commerce</h1>
+  <h1 align="center">
+  L U V A R T E
+</h1>
   <h3><em>Fashion storefront, creator studio, and commerce intelligence in one stack</em></h3>
 
 </div>
@@ -52,24 +54,48 @@ Shoppers explore curated collections, creators publish shoppable outfits, vendor
 <div align="center">
   <table>
     <tr>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3><h4>AI Virtual Try-On</h4><p>Photo-based virtual fitting that lets users preview outfits on themselves before purchasing, reducing uncertainty and returns</p></td>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Personalized AI Recommendations</h4><p>Product suggestions powered by past orders and user behavior using collaborative filtering (ALS-based), improving discovery and conversions</p></td>
+      <td align="center">
+        <img src="/frontend/screenshots/Studio.png" alt="Social Commerce Studio" width="260" height="180" />
+        <h4>Social Commerce Studio</h4>
+        <p>
+          Creator-driven feed with shoppable posts that allow users to explore outfits
+          and instantly purchase featured items.
+        </p>
+      </td>
+      <td align="center">
+        <img src="/frontend/screenshots/virtualTryOn.jpeg" alt="AI Virtual Try-On" width="260" height="180" />
+        <h4>AI Virtual Try-On</h4>
+        <p>
+          Photo-based virtual fitting that lets users preview outfits on themselves
+          before purchasing, reducing uncertainty and returns.
+        </p>
+      </td>
     </tr>
     <tr>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>AI Outfit Completion</h4><p>Automatically recommends complementary items (pants, shoes, accessories) based on the selected product’s style, color, and category.</p></td>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Smart Pricing & Profit Simulation</h4><p>Simulates transaction profitability in real time by accounting for discounts, COGS, taxes, operational fees, and payment terms before approval.</p></td>
+      <td align="center">
+        <img src="/frontend/screenshots/invoice.jpeg" alt="Invoice Generation" width="260" height="180" />
+        <h4>Invoice Generation & Billing</h4>
+        <p>
+          Automated invoice creation with GST-ready formats, line-item breakdowns,
+          tax calculations, downloadable PDFs, and real-time billing status tracking.
+        </p>
+      </td>
+      <td align="center">
+        <img src="/frontend/screenshots/dashboard.jpeg" alt="Visual Analytics Dashboard" width="260" height="180" />
+        <h4>Visual Analytics Dashboard</h4>
+        <p>
+          Clear, data-first dashboards for admins and vendors, showing sales performance,
+          margins, trends, and inventory health.
+        </p>
+      </td>
     </tr>
-    <tr>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Vendor & Inventory Intelligence</h4><p>Centralized vendor portal for managing catalogs, tracking performance, monitoring inventory, and generating operational reports.</p></td>
-      <td align="center"><h3><img src="/frontend/screenshots/studio.png" alt="" width="80%"></h3></h3><h4>Social Commerce Studio</h4><p>Creator-driven feed with shoppable posts that allow users to explore outfits and instantly purchase featured items.</p></td>
-    </tr>
-     <tr>
-      <td align="center"><h3><img src="/frontend/screenshots/image.png" alt="" width="80%"></h3></h3><h4>Transaction-Safe Commerce Backend</h4><p>Robust MySQL-backed system with ACID-compliant transactions, line-item tracking, and audit-ready financial records.</p></td>
-      <td align="center"><h3><img src="/images/dashboard-hero.png" alt="" width="80%"></h3></h3><h4>Visual Analytics Dashboard</h4><p>Clear, data-first dashboards for admins and vendors, showing sales performance, margins, trends, and inventory health.</p></td>
-    </tr>
-  
   </table>
 </div>
+
+<img src="/frontend/screenshots/image.png" alt="Dashboard Overview" width="100%">
+<h4>Transaction-Safe Commerce Backend</h4><p>Robust MySQL-backed system with ACID-compliant transactions, line-item tracking, and audit-ready financial records.</p>
+
+
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
@@ -99,12 +125,7 @@ This module transforms Luvarte from a traditional fashion storefront into a **pr
 - **High-Accuracy Math**: Uses decimal-based arithmetic to avoid floating-point errors
 - **Margin Evaluation**: Determines whether a transaction is healthy, risky, or loss-making
 
-#### 5. AI Strategic Advisor (The Voice)
-- **Decision Guidance**: Automatically labels transactions as APPROVE, CAUTION, or REJECT based on margin thresholds
-- **Scenario Awareness**: Accounts for inventory levels to allow loss-leading or liquidation strategies when justified
-- **Negotiation Support**: Provides breakeven discount limits for pricing discussions
-
-#### 6. Scenario Comparison Dashboard
+#### 5. Scenario Comparison Dashboard
 - **What-If Analysis**: Generates side-by-side views for no-discount, proposed, and breakeven scenarios
 - **Visual Clarity**: Enables admins to instantly compare profitability outcomes
 - **Actionable Insights**: Turns raw numbers into clear business decisions
@@ -148,59 +169,6 @@ This module transforms Luvarte from a traditional fashion storefront into a **pr
 - 💼 **Admins** – Profit simulation, pricing intelligence, and transaction approval control  
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<h1 align="center">Luvarte — AI Commerce + Studio</h1>
-
-<p align="center">
-Fashion storefront, creator studio, and AI-powered commerce intelligence in one stack
-</p>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=90&section=divider"/>
-
-## Overview
-
-Luvarte is a full-stack fashion commerce platform that combines a premium shopping experience, a creator-driven Studio feed, vendor tooling, and AI-powered decision intelligence.
-
-Users discover products through guided flows, creators publish shoppable outfits, vendors manage catalogs, and admins simulate profitability before approving transactions.
-
----
-
-## 🧠 AI Commerce Intelligence & Smart Decisioning
-
-This module transforms Luvarte from a traditional fashion storefront into a proactive, AI-driven commerce engine. By leveraging behavioral analysis, collaborative filtering, and precision financial modeling, the system improves shopping decisions while enabling admins to evaluate profitability before a transaction is finalized.
-
-### 🚀 Key Capabilities
-
-#### 1. Personalized Recommendation Engine (The Brain)
-- Analyzes historical orders, browsing behavior, and interaction signals
-- Uses ALS-based collaborative filtering to identify latent preferences
-- Generates personalized product recommendations
-
-#### 2. AI Outfit Completion Engine (The Stylist)
-- Detects base product added to cart
-- Recommends complementary items based on style, color, and category
-- Optimized for cross-selling and higher average order value
-
-#### 3. Virtual Try-On System (The Mirror)
-- Image-based try-on using uploaded user photos
-- Improves visual confidence before purchase
-- Reduces hesitation and returns
-
-#### 4. Profit Simulation Engine (The Judge)
-- Calculates net profit using discounts, COGS, tax, payment terms, and overhead
-- Uses decimal-based arithmetic for high precision
-- Evaluates margin health before order approval
-
-#### 5. AI Strategic Advisor (The Voice)
-- Approve: Margin > 15%
-- Caution: Margin 5–15%
-- Reject: Margin < 5% unless liquidation is justified
-
-#### 6. Quick View (Instant Preview)
-- In-Context Viewing: Allows shoppers to preview product details without leaving the current catalog or collection page
-- Essential Details Only: Displays images, price, available sizes/colors, and key actions in a lightweight modal
-- Faster Decisions: Reduces navigation friction and enables quicker comparison between multiple products
----
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=80&section=divider&text=Technical%20Workflow&fontColor=ffffff&fontSize=28"/>
 
@@ -328,14 +296,20 @@ Admin Panel: http://127.0.0.1:8000/admin
       <td><img src="/frontend/screenshots/signin.png" alt="Stock Ledger" width="100%"></td>
       <td><img src="/frontend/screenshots/venderLogin.png" alt="Internal Transfers" width="100%"></td>
     </tr>
-
+  <tr>
+      <td><img src="/frontend/screenshots/Studio.png" alt="Social Commerce Studio"></td>
+      <td><img src="/frontend/screenshots/virtualTryOn.jpeg" alt="AI Virtual Try-On" ></td>
+  </tr>
+    <tr>
+      <td><img src="/frontend/screenshots/invoice.jpeg" alt="Invoice Generation" ></td>
+      <td><img src="/frontend/screenshots/dashboard.jpeg" alt="Visual Analytics Dashboard" ></td>
+  </tr>
   </table>
 </div>
 ## 📊 Feature Preview
 
 <div align="center">
   <img src="/frontend/screenshots/homepage5.png" alt="AI Dashboard Preview" width="80%">
-  <p><em>Interactive dashboard showing AI predictions, confidence intervals, and shortage alerts</em></p>
 </div>
 
 ## 🎯 Project Structure
