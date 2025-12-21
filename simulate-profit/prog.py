@@ -18,8 +18,6 @@ from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
 from typing import Optional, List, Dict, Any
 from datetime import date, datetime
 from enum import Enum
-import mysql.connector
-from mysql.connector import Error
 from contextlib import contextmanager
 from dotenv import load_dotenv
 
@@ -60,15 +58,28 @@ def get_db_connection():
     """Context manager for database connections with automatic cleanup."""
     connection = None
     try:
+        # Import connector lazily so the module can be imported even if the
+        # database driver isn't installed in the environment. This avoids
+        # ModuleNotFoundError during application startup.
+        try:
+            import mysql.connector as mysql_connector
+            from mysql.connector import Error as MySQLError
+        except Exception as imp_err:
+            print(f"MySQL driver import error: {imp_err}")
+            raise HTTPException(status_code=500, detail="Database driver not installed")
+
         config = get_db_config()
-        connection = mysql.connector.connect(**config)
+        connection = mysql_connector.connect(**config)
         yield connection
-    except Error as e:
-        print(f"Database Error: {e}") # Log error to console
+    except MySQLError as e:
+        print(f"Database Error: {e}")
         raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
     finally:
-        if connection and connection.is_connected():
-            connection.close()
+        try:
+            if connection and getattr(connection, 'is_connected', lambda: False)():
+                connection.close()
+        except Exception:
+            pass
 
 
 # ============================================================================

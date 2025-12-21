@@ -9,6 +9,8 @@ from .views import (
     SalesOrderStatusUpdateView,
     CartView,
     CustomerListForOrdersView,
+    InvoiceReportPdfView,
+    InvoiceReportSummaryView,
 )
 
 urlpatterns = [
@@ -21,4 +23,6 @@ urlpatterns = [
     path("me/contact/", PublicContactLookupView.as_view(), name="contact-lookup"),
     path("customers/", CustomerListForOrdersView.as_view(), name="order-customers"),
     path("cart/", CartView.as_view(), name="cart"),
+    path("reports/invoices-bills.pdf", InvoiceReportPdfView.as_view(), name="invoice-bill-report"),
+    path("reports/summary/", InvoiceReportSummaryView.as_view(), name="invoice-bill-summary"),
 ]

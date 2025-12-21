@@ -319,14 +319,35 @@ export async function vendorCreateProduct(payload: {
   images?: string[];
   is_published?: boolean;
 }): Promise<Product> {
+  const body = {
+    product_category: payload.product_category || 'men',
+    product_type: payload.product_type || 'other',
+    product_code: payload.product_code,
+    material: payload.material,
+    description: payload.description,
+    sales_price: payload.sales_price,
+    purchase_price: payload.purchase_price,
+    product_name: payload.product_name,
+    colors: payload.colors || [],
+    images: payload.images || [],
+    is_published: payload.is_published ?? true,
+    is_active: true,
+  };
+
   const res = await fetch(`${API_BASE}/catalog/vendor/products/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...authHeaders() },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.detail || 'Unable to create product');
+    let detail = 'Unable to create product';
+    try {
+      const err = await res.json();
+      detail = err.detail || JSON.stringify(err);
+    } catch (_e) {
+      /* ignore */
+    }
+    throw new Error(detail);
   }
   const data = await res.json();
   if (Array.isArray(data)) return mapProducts(data)[0];
@@ -430,6 +451,14 @@ export async function generateCoupons(payload: {
   }
   const data = await res.json();
   return data.created || [];
+}
+
+// Reports summary
+export async function fetchReportSummary(group_by: 'product' | 'contact' | 'document' = 'product') {
+  const qs = new URLSearchParams({ group_by });
+  const res = await fetch(`${API_BASE}/sales/reports/summary/?${qs.toString()}`, { headers: authHeaders() });
+  if (!res.ok) throw new Error('Unable to load report summary');
+  return res.json();
 }
 
 export async function fetchVendorInvoices(filter?: { customer_id?: number; status?: string }) {

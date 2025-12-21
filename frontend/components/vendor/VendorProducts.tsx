@@ -43,7 +43,7 @@ export const VendorProducts: React.FC = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            await vendorCreateProduct({
+            const created = await vendorCreateProduct({
                 product_name: form.product_name,
                 product_category: form.product_category as any,
                 product_type: form.product_type as any,
@@ -61,7 +61,12 @@ export const VendorProducts: React.FC = () => {
                     .filter(Boolean),
                 is_published: form.is_published,
             });
-            await load();
+            // Optimistically prepend the new product so it shows up immediately
+            if (created) {
+                setProducts(prev => [created, ...prev]);
+            } else {
+                await load();
+            }
             setForm({
                 product_name: '',
                 product_category: 'men',

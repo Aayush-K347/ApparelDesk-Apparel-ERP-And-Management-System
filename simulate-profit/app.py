@@ -103,7 +103,7 @@ async def get_config():
 if __name__ == "__main__":
     import uvicorn
     
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.getenv("PORT", 8080))
     
     print(f"""
     ╔════════════════════════════════════════════════════════════════╗

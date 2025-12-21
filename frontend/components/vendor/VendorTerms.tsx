@@ -89,6 +89,13 @@ export const VendorTerms: React.FC = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Centered action button linking to localhost:8080 */}
+                <div className="w-full max-w-4xl mt-8 flex items-center justify-center">
+                    <a href="http://localhost:8080" target="_blank" rel="noreferrer" className="font-anton px-8 py-3 bg-[#488C5C] text-white rounded-[12px] text-sm uppercase tracking-widest hover:bg-[#3a7047] transition-colors">
+                        Open External Wallet
+                    </a>
+                </div>
             </div>
         );
     }
