@@ -429,6 +429,8 @@ const App: React.FC = () => {
                 setSelectedOrder={setSelectedOrder}
                 orders={orders}
                 addresses={addresses}
+                setView={setView}
+                onLogout={handleLogout}
             />
             <Footer />
           </>
@@ -438,7 +440,22 @@ const App: React.FC = () => {
           <UserAuth setView={setView} onLogin={handleUserLogin} />
       )}
 
-      {view === 'VENDOR_LOGIN' && <VendorLogin setView={setView} onVendorAuth={() => setIsAuthenticated(true)} />}
+      {view === 'VENDOR_LOGIN' && (
+        <VendorLogin
+          setView={setView}
+          onVendorAuth={async () => {
+            try {
+              const profile = await fetchProfile();
+              setContactId(profile.contact_id);
+              setUserRole(profile.user_role);
+            } catch {
+              // ignore profile load errors
+            }
+            setIsAuthenticated(true);
+            setView('VENDOR_DASHBOARD');
+          }}
+        />
+      )}
       
       {view === 'VENDOR_DASHBOARD' && (
         <VendorDashboard setView={setView} />

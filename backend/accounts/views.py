@@ -6,7 +6,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Contact, Address
-from .serializers import UserSerializer, AddressSerializer
+from .serializers import UserSerializer, AddressSerializer, ContactSerializer
 
 User = get_user_model()
 
@@ -131,3 +131,40 @@ class AddressDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Address.objects.filter(contact=self.request.user.contact)
+
+
+class PortalUsersListView(generics.ListAPIView):
+    """Fetch all portal users (customers/contacts)"""
+    serializer_class = ContactSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Contact.objects.filter(contact_type__in=['customer', 'both']).order_by('-created_at')
+
+
+class PortalUserDetailView(generics.RetrieveUpdateAPIView):
+    """Fetch/update a specific portal user"""
+    serializer_class = ContactSerializer
+    permission_classes = [IsAuthenticated]
+    lookup_field = "contact_id"
+
+    def get_queryset(self):
+        return Contact.objects.filter(contact_type__in=['customer', 'both'])
+
+
+class CustomersListView(generics.ListAPIView):
+    """Fetch all customers (contact_type='customer' or 'both')"""
+    serializer_class = ContactSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Contact.objects.filter(contact_type__in=['customer', 'both']).order_by('-created_at')
+
+
+class VendorsListView(generics.ListAPIView):
+    """Fetch all vendors (contact_type='vendor' or 'both')"""
+    serializer_class = ContactSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Contact.objects.filter(contact_type__in=['vendor', 'both']).order_by('-created_at')

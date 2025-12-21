@@ -1,11 +1,19 @@
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
+from django.db.models import Prefetch
 from accounts.serializers import ContactSerializer
 from accounts.models import Contact
 from catalog.models import Product
+from accounts.permissions import IsVendorUser
 from .models import SalesOrder, CustomerInvoice, Cart, CartItem
-from .serializers import SalesOrderSerializer, CustomerInvoiceSerializer, CheckoutSerializer, CartSerializer
+from .serializers import (
+    SalesOrderSerializer,
+    CustomerInvoiceSerializer,
+    CheckoutSerializer,
+    CartSerializer,
+    SalesOrderDetailSerializer,
+)
 from .services import create_checkout
 from django.shortcuts import get_object_or_404
 
@@ -15,7 +23,33 @@ class SalesOrderListView(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return SalesOrder.objects.filter(customer__users=self.request.user).order_by("-created_at")
+        return (
+            SalesOrder.objects.filter(customer__users=self.request.user)
+            .prefetch_related(
+                "lines",
+                "lines__product",
+                Prefetch("status_logs"),
+            )
+            .order_by("-created_at")
+        )
+
+
+class SalesOrderDetailView(generics.RetrieveAPIView):
+    serializer_class = SalesOrderDetailSerializer
+    permission_classes = [IsAuthenticated]
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        return (
+            SalesOrder.objects.filter(customer__users=self.request.user)
+            .prefetch_related(
+                "lines",
+                "lines__product",
+                Prefetch("invoices"),
+                Prefetch("status_logs"),
+            )
+            .order_by("-created_at")
+        )
 
 
 class CustomerInvoiceListView(generics.ListAPIView):
@@ -26,26 +60,46 @@ class CustomerInvoiceListView(generics.ListAPIView):
         return CustomerInvoice.objects.filter(customer__users=self.request.user).order_by("-created_at")
 
 
+class VendorInvoiceListView(generics.ListAPIView):
+    serializer_class = CustomerInvoiceSerializer
+    permission_classes = [IsAuthenticated & IsVendorUser]
+
+    def get_queryset(self):
+        qs = (
+            CustomerInvoice.objects.select_related("customer", "payment_term", "sales_order")
+            .order_by("-created_at")
+        )
+        customer_id = self.request.query_params.get("customer_id")
+        status = self.request.query_params.get("status")
+        if customer_id:
+            qs = qs.filter(customer_id=customer_id)
+        if status:
+            qs = qs.filter(invoice_status=status)
+        return qs
+
+
 class CheckoutView(generics.GenericAPIView):
     serializer_class = CheckoutSerializer
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         data = request.data.copy()
-        # enforce using the logged-in user's contact
-        if request.user and getattr(request.user, "contact_id", None):
-            data["customer_id"] = request.user.contact_id
-        elif request.user and request.user.is_authenticated:
-            # create a contact if missing for the user
-            contact = Contact.objects.create(
-                contact_name=request.user.username or request.user.email or "Customer",
-                contact_type="customer",
-                email=request.user.email or f"user-{request.user.user_id}@example.com",
-                mobile="",
-            )
-            request.user.contact = contact
-            request.user.save(update_fields=["contact"])
-            data["customer_id"] = contact.contact_id
+        # If vendor/internal, allow explicit customer_id; otherwise bind to own contact
+        if not (request.user and getattr(request.user, "contact_id", None)) or (
+            request.user and getattr(request.user, "user_role", "") != "internal"
+        ):
+            if getattr(request.user, "contact_id", None):
+                data["customer_id"] = request.user.contact_id
+            elif request.user and request.user.is_authenticated:
+                contact = Contact.objects.create(
+                    contact_name=request.user.username or request.user.email or "Customer",
+                    contact_type="customer",
+                    email=request.user.email or f"user-{request.user.user_id}@example.com",
+                    mobile="",
+                )
+                request.user.contact = contact
+                request.user.save(update_fields=["contact"])
+                data["customer_id"] = contact.contact_id
         serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
         try:
@@ -69,6 +123,22 @@ class PublicContactLookupView(generics.GenericAPIView):
         if not request.user.is_authenticated:
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         return Response(ContactSerializer(request.user.contact).data)
+
+
+class CustomerListForOrdersView(generics.ListAPIView):
+    """
+    For vendor/internal users to select any portal customer for sale orders.
+    """
+
+    serializer_class = ContactSerializer
+    permission_classes = [IsAuthenticated & IsVendorUser]
+
+    def get_queryset(self):
+        qs = Contact.objects.filter(contact_type__in=["customer", "both"], is_active=True).order_by("contact_name")
+        search = self.request.query_params.get("search")
+        if search:
+            qs = qs.filter(contact_name__icontains=search)
+        return qs
 
 
 class SalesOrderStatusUpdateView(generics.GenericAPIView):

@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 import { ViewState } from '../../types';
-import { ArrowRight, Briefcase, Lock, Key } from 'lucide-react';
-import { loginUser } from '../../api';
+import { ArrowRight, Briefcase, Lock, Key, Shield } from 'lucide-react';
+import { loginUser, registerVendor } from '../../api';
 
 interface VendorLoginProps {
     setView: (view: ViewState) => void;
@@ -12,14 +12,24 @@ interface VendorLoginProps {
 export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth }) => {
     const [vendorPassword, setVendorPassword] = useState('');
     const [vendorEmail, setVendorEmail] = useState('');
+    const [fullName, setFullName] = useState('');
+    const [isLogin, setIsLogin] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleLogin = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError(null);
+        if (!isLogin && vendorPassword !== confirmPassword) {
+            setError('Passwords do not match');
+            return;
+        }
         setIsSubmitting(true);
         try {
+            if (!isLogin) {
+                await registerVendor({ email: vendorEmail, password: vendorPassword, fullName: fullName || vendorEmail });
+            }
             await loginUser({ email: vendorEmail, password: vendorPassword });
             onVendorAuth?.();
             setView('VENDOR_DASHBOARD');
@@ -79,13 +89,29 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
                       <div className="w-12 h-12 bg-[#111111] text-white flex items-center justify-center rounded-full mb-6">
                           <Briefcase size={20} />
                       </div>
-                      <h3 className="font-anton text-4xl uppercase mb-2">Restricted Access</h3>
+                      <h3 className="font-anton text-4xl uppercase mb-2">{isLogin ? 'Vendor Login' : 'Vendor Signup'}</h3>
                       <p className="text-gray-400 text-xs uppercase tracking-widest">
-                          Authorized Vendors Only
+                          {isLogin ? 'Authorized Vendors Only' : 'Create a Vendor Account'}
                       </p>
                   </div>
 
-                  <form onSubmit={handleLogin} className="space-y-8">
+                  {error && <div className="text-red-500 text-sm mb-4">{error}</div>}
+
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                      {!isLogin && (
+                        <div className="group">
+                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Full Name</label>
+                            <div className="relative">
+                                <input 
+                                  type="text" 
+                                  value={fullName}
+                                  onChange={(e) => setFullName(e.target.value)}
+                                  className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors font-bold placeholder:text-gray-300" 
+                                  placeholder="Vendor Name" 
+                                />
+                            </div>
+                        </div>
+                      )}
                       <div className="group">
                           <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Vendor Email</label>
                           <div className="relative">
@@ -114,6 +140,22 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
                           </div>
                       </div>
 
+                      {!isLogin && (
+                        <div className="group">
+                            <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Confirm Password</label>
+                            <div className="relative">
+                                <input 
+                                  type="password" 
+                                  value={confirmPassword}
+                                  onChange={(e) => setConfirmPassword(e.target.value)}
+                                  className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300" 
+                                  placeholder="••••••••" 
+                                />
+                                <Lock className="absolute right-0 top-3 text-gray-300 group-focus-within:text-[#111111] transition-colors" size={16} />
+                            </div>
+                        </div>
+                      )}
+
                       <button 
                           type="submit"
                           disabled={isSubmitting}
@@ -123,7 +165,10 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
                       </button>
                   </form>
 
-                  {error && <div className="mt-6 text-sm text-red-500">{error}</div>}
+                  <div className="mt-6 text-center text-[10px] text-gray-500 uppercase tracking-[0.2em]">
+                    {isLogin ? "Don't have an account?" : "Already have an account?"}
+                    <button onClick={() => setIsLogin(!isLogin)} className="ml-2 text-[#488C5C] underline"> {isLogin ? 'Sign Up' : 'Log In'} </button>
+                  </div>
 
                   <div className="mt-12 text-center">
                       <p className="text-[10px] text-gray-400 uppercase tracking-widest">
