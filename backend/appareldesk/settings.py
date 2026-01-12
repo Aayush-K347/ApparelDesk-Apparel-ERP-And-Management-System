@@ -1,5 +1,6 @@
 from pathlib import Path
 import environ
+import dj_database_url
 from datetime import timedelta
 import os
 
@@ -71,18 +72,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "appareldesk.wsgi.application"
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": env("DB_NAME", default="apparelDesk"),
-        "USER": env("DB_USER", default="root"),
-        "PASSWORD": env("DB_PASSWORD", default=""),
-        "HOST": env("DB_HOST", default="127.0.0.1"),
-        "PORT": env("DB_PORT", default="3306"),
-        "OPTIONS": {
-            "charset": "utf8mb4",
-            "init_command": "SET sql_mode='STRICT_ALL_TABLES'",
-        },
-    }
+    "default": dj_database_url.config(
+        default=env("DATABASE_URL", default=""),
+        conn_max_age=600,
+    )
 }
 
 AUTH_USER_MODEL = "accounts.User"
