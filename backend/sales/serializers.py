@@ -120,6 +120,13 @@ class CheckoutSerializer(serializers.Serializer):
     def validate(self, attrs):
         if not attrs.get("lines"):
             raise serializers.ValidationError("No order lines provided")
+        if "customer_id" not in attrs:
+            request = self.context.get("request")
+            contact_id = getattr(getattr(request, "user", None), "contact_id", None) if request else None
+            if contact_id:
+                attrs["customer_id"] = contact_id
+            else:
+                raise serializers.ValidationError("Customer is required for checkout")
         # ensure products exist, auto-create placeholders if missing
         for line in attrs["lines"]:
             pid = line.get("product_id")
