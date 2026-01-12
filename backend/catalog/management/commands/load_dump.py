@@ -50,8 +50,8 @@ class Command(BaseCommand):
                     INSERT INTO products
                     (product_name, product_code, product_category, product_type, material, description,
                      current_stock, minimum_stock, sales_price, sales_tax_percentage, purchase_price,
-                     purchase_tax_percentage, is_published, is_active)
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                     purchase_tax_percentage, is_published, is_active, created_at, updated_at)
+                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)
                     """,
                     [
                         p["name"],
