@@ -119,31 +119,34 @@ def create_checkout(data, user=None):
             )
 
     invoice_number = get_next_document_number("customer_invoice")
-    with connection.cursor() as cursor:
-        cursor.execute(
-            """
+    insert_invoice_sql = """
             INSERT INTO customer_invoices
             (invoice_number, sales_order_id, customer_id, payment_term_id, invoice_date, due_date, invoice_status,
              subtotal, discount_amount, tax_amount, total_amount, paid_amount, created_by)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """,
-            [
-                invoice_number,
-                order.pk,
-                customer.pk,
-                payment_term.pk,
-                date.today(),
-                date.today(),
-                "confirmed",
-                subtotal,
-                discount_amount,
-                tax_amount,
-                total_amount,
-                Decimal("0.00"),
-                created_by_id,
-            ],
-        )
-        invoice_id = cursor.lastrowid
+            """
+    invoice_params = [
+        invoice_number,
+        order.pk,
+        customer.pk,
+        payment_term.pk,
+        date.today(),
+        date.today(),
+        "confirmed",
+        subtotal,
+        discount_amount,
+        tax_amount,
+        total_amount,
+        Decimal("0.00"),
+        created_by_id,
+    ]
+    with connection.cursor() as cursor:
+        if connection.features.can_return_columns_from_insert:
+            cursor.execute(insert_invoice_sql + " RETURNING customer_invoice_id", invoice_params)
+            invoice_id = cursor.fetchone()[0]
+        else:
+            cursor.execute(insert_invoice_sql, invoice_params)
+            invoice_id = cursor.lastrowid
 
     invoice = CustomerInvoice.objects.get(pk=invoice_id)
 
