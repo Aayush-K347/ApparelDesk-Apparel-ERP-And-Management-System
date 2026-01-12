@@ -40,6 +40,8 @@ class Command(BaseCommand):
         data = json.loads(path.read_text(encoding="utf-8"))
 
         with transaction.atomic(), connection.cursor() as cur:
+            # Clear dependent rows that reference products before deleting products.
+            cur.execute("DELETE FROM cart_items")
             cur.execute("DELETE FROM product_images")
             cur.execute("DELETE FROM product_colors")
             cur.execute("DELETE FROM products")
