@@ -70,7 +70,7 @@ class Command(BaseCommand):
                 ]
 
                 if connection.features.can_return_columns_from_insert:
-                    cur.execute(insert_sql + " RETURNING id", params)
+                    cur.execute(insert_sql + " RETURNING product_id", params)
                     product_id = cur.fetchone()[0]
                 else:
                     cur.execute(insert_sql, params)
