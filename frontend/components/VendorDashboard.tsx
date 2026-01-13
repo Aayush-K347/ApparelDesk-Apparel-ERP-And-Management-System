@@ -60,8 +60,8 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
 
             {/* SIDEBAR */}
             <aside className={
-                `w-72 bg-white flex flex-col border-r border-gray-100 flex-shrink-0 z-20 transform transition-transform duration-300
-                 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:static fixed inset-y-0 left-0`
+                `${sidebarOpen ? 'w-72' : 'w-0'} bg-white flex flex-col border-r border-gray-100 flex-shrink-0 z-20 transform transition-all duration-300
+                 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:static fixed inset-y-0 left-0 overflow-hidden`
             }>
           
           {/* User Profile Card (Top Left as per reference) */}
@@ -131,13 +131,17 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
       </aside>
 
     {/* MAIN CONTENT AREA */}
-    <main className="flex-1 flex flex-col h-screen overflow-hidden relative md:ml-72">
+    <main className="flex-1 flex flex-col h-screen overflow-hidden relative">
           
           {/* Top Header */}
           <header className="h-20 px-4 md:px-8 flex items-center justify-between flex-shrink-0 z-10">
               <div className="flex items-center gap-4">
-                  {/* Mobile menu toggle */}
-                  <button aria-label="Toggle sidebar" className="md:hidden w-10 h-10 bg-white rounded-md flex items-center justify-center shadow-sm border border-gray-100" onClick={() => setSidebarOpen(!sidebarOpen)}>
+                  {/* Sidebar toggle */}
+                  <button
+                      aria-label="Toggle sidebar"
+                      className="w-10 h-10 bg-white rounded-md flex items-center justify-center shadow-sm border border-gray-100"
+                      onClick={() => setSidebarOpen(!sidebarOpen)}
+                  >
                       {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
                   </button>
                   <div>
