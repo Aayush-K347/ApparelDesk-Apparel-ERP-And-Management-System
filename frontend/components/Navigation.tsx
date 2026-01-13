@@ -140,6 +140,14 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
                   )}
                   <a href="https://appareldesk-apparel-erp-and-management-k34j.onrender.com" target="_blank" rel="noopener noreferrer" className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300">Virtual Try On</a>
                   <button className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300" onClick={() => { handleUserClick(); setMobileMenuOpen(false); }}>My Profile</button>
+                  {isAuthenticated && onLogout && (
+                      <button
+                        className="text-left text-red-500 hover:text-red-600 transition-colors hover:translate-x-4 duration-300"
+                        onClick={() => { onLogout(); setMobileMenuOpen(false); }}
+                      >
+                        Logout
+                      </button>
+                  )}
                   <button className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('VENDOR_LOGIN'); setMobileMenuOpen(false); }}>Vendor Portal</button>
               </div>
           </div>

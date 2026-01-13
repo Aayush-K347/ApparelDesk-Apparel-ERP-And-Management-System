@@ -458,7 +458,7 @@ const App: React.FC = () => {
       )}
       
       {view === 'VENDOR_DASHBOARD' && (
-        <VendorDashboard setView={setView} />
+        <VendorDashboard setView={setView} onLogout={handleLogout} />
       )}
 
       {/* Toast Notification */}

@@ -14,11 +14,12 @@ import { VendorReports } from './vendor/VendorReports';
 
 interface VendorDashboardProps {
     setView: (view: ViewState) => void;
+    onLogout?: () => void;
 }
 
 export type VendorTab = 'DASHBOARD' | 'PRODUCTS' | 'BILLING' | 'TERMS' | 'USERS' | 'REPORTS';
 
-export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => {
+export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView, onLogout }) => {
   const [activeTab, setActiveTab] = useState<VendorTab>('DASHBOARD');
     const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
 
@@ -110,6 +111,19 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
                   <button className="w-full flex items-center gap-3 px-4 py-3.5 rounded-[16px] text-sm font-bold text-gray-500 hover:bg-gray-50 hover:text-[#111111] transition-all">
                       <HelpCircle size={18} strokeWidth={2} className="text-gray-400" />
                       Help Center
+                  </button>
+                  <button
+                      onClick={() => {
+                          if (onLogout) {
+                              onLogout();
+                          } else {
+                              setView('LANDING');
+                          }
+                      }}
+                      className="w-full flex items-center gap-3 px-4 py-3.5 rounded-[16px] text-sm font-bold text-red-500 hover:bg-red-50 hover:text-red-700 transition-all"
+                  >
+                      <LogOut size={18} strokeWidth={2} className="text-red-400" />
+                      Logout
                   </button>
               </nav>
           </div>

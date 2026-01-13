@@ -172,8 +172,9 @@ class PurchaseOrderBillCreateView(generics.GenericAPIView):
                         """
                         INSERT INTO vendor_bills
                         (bill_number, purchase_order_id, vendor_id, invoice_date, due_date,
-                         bill_status, subtotal, tax_amount, total_amount, paid_amount, vendor_reference)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                         bill_status, subtotal, tax_amount, total_amount, paid_amount, vendor_reference,
+                         created_at, updated_at)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
                         """,
                         [
                             bill_number,

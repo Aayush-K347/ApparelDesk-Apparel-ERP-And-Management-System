@@ -57,7 +57,7 @@ const apiFetch: typeof globalThis.fetch = async (input, init) => {
     return res;
   }
   const retryHeaders = new Headers(init?.headers || {});
-  if (accessToken && !retryHeaders.has('Authorization')) {
+  if (accessToken) {
     retryHeaders.set('Authorization', `Bearer ${accessToken}`);
   }
   return baseFetch(input, { ...init, headers: retryHeaders });
