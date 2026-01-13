@@ -28,6 +28,43 @@ export const clearTokens = () => {
 
 const authHeaders = () => (accessToken ? { Authorization: `Bearer ${accessToken}` } : {});
 
+const baseFetch: typeof globalThis.fetch = (...args) => globalThis.fetch(...args);
+
+const refreshAccessToken = async (): Promise<boolean> => {
+  if (!refreshToken) return false;
+  const res = await baseFetch(`${API_BASE}/auth/refresh/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ refresh: refreshToken }),
+  });
+  if (!res.ok) return false;
+  const data = await res.json().catch(() => ({}));
+  if (!data?.access) return false;
+  setTokens(data.access, refreshToken);
+  return true;
+};
+
+const apiFetch: typeof globalThis.fetch = async (input, init) => {
+  const headers = new Headers(init?.headers || {});
+  if (accessToken && !headers.has('Authorization')) {
+    headers.set('Authorization', `Bearer ${accessToken}`);
+  }
+  const res = await baseFetch(input, { ...init, headers });
+  if (res.status !== 401) return res;
+  const refreshed = await refreshAccessToken();
+  if (!refreshed) {
+    clearTokens();
+    return res;
+  }
+  const retryHeaders = new Headers(init?.headers || {});
+  if (accessToken && !retryHeaders.has('Authorization')) {
+    retryHeaders.set('Authorization', `Bearer ${accessToken}`);
+  }
+  return baseFetch(input, { ...init, headers: retryHeaders });
+};
+
+const fetch: typeof globalThis.fetch = apiFetch;
+
 type BackendProduct = {
   product_id: number;
   product_name: string;
