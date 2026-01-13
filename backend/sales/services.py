@@ -100,12 +100,15 @@ def create_checkout(data, user=None):
                 purchase_tax_percentage=Decimal(line.get("tax_percentage", 0)),
             )
         # insert via raw SQL to avoid generated column constraints
+        line_subtotal = Decimal(line["quantity"]) * Decimal(line["unit_price"])
+        line_tax_amount = line_subtotal * Decimal(line.get("tax_percentage", 0)) / Decimal("100")
+        line_total = line_subtotal + line_tax_amount
         with connection.cursor() as cursor:
             cursor.execute(
                 """
                 INSERT INTO sales_order_lines
-                (sales_order_id, product_id, line_number, quantity, unit_price, tax_percentage, invoiced_quantity)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                (sales_order_id, product_id, line_number, quantity, unit_price, tax_percentage, line_subtotal, line_tax_amount, line_total, invoiced_quantity)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """,
                 [
                     order.pk,
@@ -114,6 +117,9 @@ def create_checkout(data, user=None):
                     line["quantity"],
                     line["unit_price"],
                     line.get("tax_percentage", 0),
+                    line_subtotal,
+                    line_tax_amount,
+                    line_total,
                     Decimal("0"),
                 ],
             )
