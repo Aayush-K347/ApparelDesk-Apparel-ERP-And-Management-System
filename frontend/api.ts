@@ -580,8 +580,7 @@ export async function fetchCustomers(): Promise<PortalUser[]> {
 }
 
 export async function fetchVendors(): Promise<PortalUser[]> {
-  // Use purchases vendors endpoint to include active vendor/both contacts
-  const res = await fetch(`${API_BASE}/purchases/vendors/`, { headers: authHeaders() });
+  const res = await fetch(`${API_BASE}/contacts/vendors/`, { headers: authHeaders() });
   if (!res.ok) throw new Error('Unable to load vendors');
   const data = await res.json();
   return Array.isArray(data) ? data : data.results || [];

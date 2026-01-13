@@ -200,8 +200,8 @@ export const VendorUsers: React.FC = () => {
                         <Loader size={32} className="animate-spin text-[#488C5C]" />
                     </div>
                 ) : (
-                    <div className="flex-1 overflow-auto">
-                        <table className="w-full text-sm">
+                <div className="flex-1 overflow-x-auto">
+                        <table className="w-full text-sm min-w-[720px]">
                             <thead>
                                 <tr className="border-b border-gray-200 sticky top-0 bg-white">
                                     <th className="text-left px-4 py-3 font-bold text-[10px] uppercase tracking-wider text-gray-500">Name</th>
@@ -410,7 +410,7 @@ export const VendorUsers: React.FC = () => {
                 </div>
 
                 {/* Contact Type Tabs */}
-                <div className="flex gap-4 mb-8 border-b border-gray-200">
+                <div className="flex flex-wrap gap-2 sm:gap-4 mb-8 border-b border-gray-200">
                     <button
                         onClick={() => setContactTab('ALL')}
                         className={`px-4 py-3 text-[10px] font-bold uppercase tracking-widest transition-all border-b-2 ${
@@ -454,8 +454,8 @@ export const VendorUsers: React.FC = () => {
                         <Loader size={32} className="animate-spin text-[#488C5C]" />
                     </div>
                 ) : (
-                    <div className="flex-1 overflow-auto">
-                        <table className="w-full text-sm">
+                    <div className="flex-1 overflow-x-auto">
+                        <table className="w-full text-sm min-w-[780px]">
                             <thead>
                                 <tr className="border-b border-gray-200 sticky top-0 bg-white">
                                     <th className="text-left px-4 py-3 font-bold text-[10px] uppercase tracking-wider text-gray-500">Name</th>

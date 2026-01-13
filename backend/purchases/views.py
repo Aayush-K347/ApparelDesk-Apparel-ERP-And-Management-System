@@ -74,6 +74,7 @@ class PurchaseOrderCreateView(generics.GenericAPIView):
                 tax_pct = line.get("tax_percentage") or 0
                 line_sub = qty * price
                 line_tax = line_sub * tax_pct / 100
+                line_total = line_sub + line_tax
                 subtotal += line_sub
                 tax_total += line_tax
                 insert_rows.append(
@@ -84,17 +85,20 @@ class PurchaseOrderCreateView(generics.GenericAPIView):
                         qty,
                         price,
                         tax_pct,
+                        line_sub,
+                        line_tax,
+                        line_total,
                         0,  # received_quantity
                     )
                 )
 
-            # Avoid writing generated columns (line_subtotal, line_tax_amount, line_total)
             with connection.cursor() as cursor:
                 cursor.executemany(
                     """
                     INSERT INTO purchase_order_lines
-                    (purchase_order_id, product_id, line_number, quantity, unit_price, tax_percentage, received_quantity)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    (purchase_order_id, product_id, line_number, quantity, unit_price, tax_percentage,
+                     line_subtotal, line_tax_amount, line_total, received_quantity)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                     """,
                     insert_rows,
                 )

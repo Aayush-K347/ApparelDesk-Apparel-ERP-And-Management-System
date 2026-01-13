@@ -35,22 +35,21 @@ def get_db_config():
         # Fallback for local testing if env var is missing (NOT for production)
         return {
             "host": "localhost",
-            "user": "root",
+            "user": "postgres",
             "password": "",
-            "database": "appareldesk",
-            "charset": "utf8mb4"
+            "dbname": "appareldesk",
+            "port": 5432,
         }
     
     # Parse the Railway/Render connection URL
-    # Format: mysql://user:password@host:port/database
+    # Format: postgresql://user:password@host:port/database
     url = urlparse(db_url)
     return {
         "host": url.hostname,
         "user": url.username,
         "password": url.password,
-        "database": url.path[1:],  # Removes the leading slash
-        "port": url.port or 3306,
-        "charset": "utf8mb4"
+        "dbname": url.path[1:],  # Removes the leading slash
+        "port": url.port or 5432,
     }
 
 @contextmanager
@@ -62,21 +61,21 @@ def get_db_connection():
         # database driver isn't installed in the environment. This avoids
         # ModuleNotFoundError during application startup.
         try:
-            import mysql.connector as mysql_connector
-            from mysql.connector import Error as MySQLError
+            import psycopg
+            from psycopg import Error as DatabaseError
         except Exception as imp_err:
             print(f"MySQL driver import error: {imp_err}")
             raise HTTPException(status_code=500, detail="Database driver not installed")
 
         config = get_db_config()
-        connection = mysql_connector.connect(**config)
+        connection = psycopg.connect(**config)
         yield connection
-    except MySQLError as e:
+    except DatabaseError as e:
         print(f"Database Error: {e}")
         raise HTTPException(status_code=500, detail=f"Database connection error: {str(e)}")
     finally:
         try:
-            if connection and getattr(connection, 'is_connected', lambda: False)():
+            if connection:
                 connection.close()
         except Exception:
             pass

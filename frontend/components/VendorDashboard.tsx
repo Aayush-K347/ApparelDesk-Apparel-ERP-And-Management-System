@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ViewState } from '../types';
 import { 
     LayoutDashboard, Box, Receipt, FileText, Users, BarChart3, 
     Settings, HelpCircle, LogOut, Search, Bell, ChevronDown, Gem, 
-    CreditCard, ArrowUpRight
+    CreditCard, ArrowUpRight, Menu, X
 } from 'lucide-react';
 import { VendorHome } from './vendor/VendorHome';
 import { VendorProducts } from './vendor/VendorProducts';
@@ -20,6 +20,15 @@ export type VendorTab = 'DASHBOARD' | 'PRODUCTS' | 'BILLING' | 'TERMS' | 'USERS'
 
 export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => {
   const [activeTab, setActiveTab] = useState<VendorTab>('DASHBOARD');
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
+
+    // Initialize sidebar visibility based on viewport and keep in sync on resize
+    useEffect(() => {
+        const handleResize = () => setSidebarOpen(window.innerWidth >= 768);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
   const menuItems = [
       { id: 'DASHBOARD', label: 'Dashboard', icon: LayoutDashboard },
@@ -43,10 +52,17 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FD] font-sans text-[#111111] flex overflow-hidden selection:bg-[#c9b52e] selection:text-[#111111]">
-      
-      {/* SIDEBAR */}
-      <aside className="w-72 bg-white flex flex-col border-r border-gray-100 flex-shrink-0 z-20">
+        <div className="min-h-screen bg-[#F8F9FD] font-sans text-[#111111] flex overflow-hidden selection:bg-[#c9b52e] selection:text-[#111111]">
+            {/* Mobile overlay when sidebar is open */}
+            {sidebarOpen && (
+                <div className="fixed inset-0 bg-black/40 z-10 md:hidden" onClick={() => setSidebarOpen(false)}></div>
+            )}
+
+            {/* SIDEBAR */}
+            <aside className={
+                `w-72 bg-white flex flex-col border-r border-gray-100 flex-shrink-0 z-20 transform transition-transform duration-300
+                 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:static fixed inset-y-0 left-0`
+            }>
           
           {/* User Profile Card (Top Left as per reference) */}
           <div className="p-6 pb-2">
@@ -114,16 +130,22 @@ export const VendorDashboard: React.FC<VendorDashboardProps> = ({ setView }) => 
           </div>
       </aside>
 
-      {/* MAIN CONTENT AREA */}
-      <main className="flex-1 flex flex-col h-screen overflow-hidden relative">
+    {/* MAIN CONTENT AREA */}
+    <main className="flex-1 flex flex-col h-screen overflow-hidden relative md:ml-72">
           
           {/* Top Header */}
-          <header className="h-20 px-8 flex items-center justify-between flex-shrink-0 z-10">
-              <div>
-                  <h1 className="font-anton text-2xl uppercase tracking-wide">
-                      {menuItems.find(m => m.id === activeTab)?.label}
-                  </h1>
-                  <p className="text-xs text-gray-400 font-medium">Track finances easily with AI insights.</p>
+          <header className="h-20 px-4 md:px-8 flex items-center justify-between flex-shrink-0 z-10">
+              <div className="flex items-center gap-4">
+                  {/* Mobile menu toggle */}
+                  <button aria-label="Toggle sidebar" className="md:hidden w-10 h-10 bg-white rounded-md flex items-center justify-center shadow-sm border border-gray-100" onClick={() => setSidebarOpen(!sidebarOpen)}>
+                      {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
+                  </button>
+                  <div>
+                      <h1 className="font-anton text-2xl uppercase tracking-wide">
+                          {menuItems.find(m => m.id === activeTab)?.label}
+                      </h1>
+                      <p className="text-xs text-gray-400 font-medium">Track finances easily with AI insights.</p>
+                  </div>
               </div>
 
               <div className="flex items-center gap-6">

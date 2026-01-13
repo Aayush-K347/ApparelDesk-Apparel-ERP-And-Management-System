@@ -176,7 +176,7 @@ export const VendorBilling: React.FC = () => {
   };
 
   const StatusBar = () => (
-    <div className="flex items-center text-[10px] font-bold uppercase tracking-widest gap-2 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+    <div className="flex flex-wrap items-center text-[10px] font-bold uppercase tracking-widest gap-2 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
       <span className="text-[#111111]">Draft</span>
       <ChevronRight size={12} className="text-gray-300" />
       <span className="text-gray-400">Confirmed</span>
@@ -201,7 +201,7 @@ export const VendorBilling: React.FC = () => {
     );
     return (
       <div className="p-10 space-y-8 bg-gradient-to-br from-[#f7f9fc] via-white to-[#eef2f7] rounded-2xl shadow-inner">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <h3 className="font-bold">Your Sales (Vendor)</h3>
             {statCard('Portal Sale Orders', `Total vendor sales: ${purchaseOrders.length || 0}`, 'Pending to invoice: —', () => setView('SALE_ORDER'))}
@@ -211,20 +211,12 @@ export const VendorBilling: React.FC = () => {
             {statCard('Customer Invoices (Your Customers)', `Unpaid invoices: ${vendorInvoices.length || 0}`, 'Overdue: —', () => setView('INVOICE'))}
           </div>
           <div className="space-y-4">
-            <h3 className="font-bold text-transparent">Spacer</h3>
-            {statCard('Customer Payments (Vendor)', '—')}
-          </div>
-          <div className="space-y-4">
             <h3 className="font-bold">Purchase (Your Supply)</h3>
             {statCard('Vendor Purchase Orders', `Your supply POs: ${purchaseOrders.length || 0}`, 'Pending to bill: —', () => setView('PURCHASE_ORDER'))}
           </div>
           <div className="space-y-4">
-            <h3 className="font-bold text-transparent">Spacer</h3>
+            <h3 className="font-bold">Vendor Bills</h3>
             {statCard('Vendor Bills (Your Payables)', `Unpaid bills: ${vendorBills.length || 0}`, 'Overdue: —', () => setView('VENDOR_BILL'))}
-          </div>
-          <div className="space-y-4">
-            <h3 className="font-bold text-transparent">Spacer</h3>
-            {statCard('Vendor Payments (Outgoing)', '—')}
           </div>
         </div>
       </div>
@@ -235,7 +227,7 @@ export const VendorBilling: React.FC = () => {
   if (view === 'PURCHASE_ORDER') {
     return (
       <div className="p-8 space-y-6">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
           <button className="text-xs uppercase font-bold text-gray-500" onClick={() => setView('DASHBOARD')}>&larr; Back</button>
           <StatusBar />
         </div>
@@ -261,7 +253,7 @@ export const VendorBilling: React.FC = () => {
           </div>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm border-t">
+          <table className="w-full text-left text-sm border-t min-w-[640px]">
             <thead className="text-[10px] uppercase text-gray-500">
               <tr><th>Product</th><th>Qty</th><th>Unit Price</th><th>Tax %</th><th className="text-right">Total</th><th></th></tr>
             </thead>
@@ -323,7 +315,7 @@ export const VendorBilling: React.FC = () => {
           </div>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm border-t">
+          <table className="w-full text-left text-sm border-t min-w-[720px]">
             <thead className="text-[10px] uppercase text-gray-500">
               <tr><th>Product</th><th>Qty</th><th>Unit Price</th><th>Tax %</th><th className="text-right">Total</th><th></th></tr>
             </thead>
@@ -372,7 +364,7 @@ export const VendorBilling: React.FC = () => {
     
     return (
       <div className="p-8 space-y-6">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
           <button className="text-xs uppercase font-bold text-gray-500" onClick={()=>setView('DASHBOARD')}>&larr; Back</button>
           <div className="flex items-center gap-3">
             <button
@@ -439,7 +431,7 @@ export const VendorBilling: React.FC = () => {
     
     return (
       <div className="p-8 space-y-6">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
           <button className="text-xs uppercase font-bold text-gray-500" onClick={() => setView('DASHBOARD')}>&larr; Back</button>
           <div className="flex items-center gap-3">
             <button

@@ -63,25 +63,25 @@ export const Cart: React.FC<CartProps> = ({
                     ) : (
                         <div className="space-y-8">
                             {cart.map((item, idx) => (
-                                <div key={idx} className="flex gap-6 bg-white p-4 border border-gray-100 shadow-sm transition-all hover:shadow-md">
+                                <div key={idx} className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-white p-4 border border-gray-100 shadow-sm transition-all hover:shadow-md">
                                     <div className="w-24 h-32 bg-[#E8E6E1] flex-shrink-0">
                                         <img src={item.image} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="flex-1 flex flex-col justify-between">
-                                        <div className="flex justify-between">
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                                             <div>
                                                 <h3 className="font-bold uppercase text-sm tracking-wide mb-1">{item.name}</h3>
                                                 <p className="text-[10px] text-gray-500 uppercase tracking-widest">{item.selectedColor} / {item.selectedSize}</p>
                                             </div>
                                             <span className="font-bold text-lg">₹{(item.price * item.quantity).toFixed(2)}</span>
                                         </div>
-                                        <div className="flex justify-between items-end">
+                                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3">
                                              <div className="flex items-center border border-gray-200">
                                                   <button onClick={() => updateQuantity(item.id, item.selectedSize, item.selectedColor, -1)} className="w-8 h-8 flex items-center justify-center hover:bg-gray-50"><Minus size={12}/></button>
                                                   <span className="w-8 text-center text-xs font-bold">{item.quantity}</span>
                                                   <button onClick={() => updateQuantity(item.id, item.selectedSize, item.selectedColor, 1)} className="w-8 h-8 flex items-center justify-center hover:bg-gray-50"><Plus size={12}/></button>
                                              </div>
-                                             <button onClick={() => removeFromCart(item.id, item.selectedSize, item.selectedColor)} className="text-red-400 hover:text-red-600 p-2"><Trash2 size={16} /></button>
+                                             <button onClick={() => removeFromCart(item.id, item.selectedSize, item.selectedColor)} className="text-red-400 hover:text-red-600 p-2 self-start sm:self-auto"><Trash2 size={16} /></button>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@ export const Cart: React.FC<CartProps> = ({
                         {/* Coupon Code */}
                         <div className="mb-8 bg-gray-50 p-6 border border-gray-200">
                             <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 block">Promo Code</label>
-                            <div className="flex gap-2">
+                            <div className="flex flex-col sm:flex-row gap-2">
                                 <input 
                                   type="text" 
                                   value={couponCode}
@@ -106,7 +106,7 @@ export const Cart: React.FC<CartProps> = ({
                                   placeholder="Enter Code" 
                                   className="flex-1 bg-white border border-gray-200 px-3 py-2 text-xs focus:border-[#111111] uppercase tracking-wider"
                                 />
-                                <button onClick={handleApplyCoupon} className="bg-[#111111] text-white px-4 text-[10px] font-bold uppercase tracking-widest hover:bg-[#c9b52e] transition-colors">Apply</button>
+                                <button onClick={handleApplyCoupon} className="bg-[#111111] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-[#c9b52e] transition-colors">Apply</button>
                             </div>
                             {appliedCoupon && (
                                 <div className="mt-3 flex items-center gap-2 text-[#c9b52e] bg-green-50 p-2 border border-green-100 text-xs animate-[fadeIn_0.3s_ease-out]">

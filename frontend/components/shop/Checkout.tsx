@@ -61,7 +61,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                     <div className="space-y-8">
                         {/* Shipping Section */}
                         <div className={`bg-white p-8 md:p-10 border border-gray-200 shadow-sm transition-opacity duration-500 ${step === 'PAYMENT' ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
-                            <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-8 border-b border-gray-100 pb-4">
                                 <h2 className="font-anton text-2xl uppercase tracking-wide">Shipping Details</h2>
                                 <Truck size={20} className="text-[#c9b52e]" />
                             </div>
@@ -113,7 +113,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
 
                         {/* Payment Section */}
                         <div className={`bg-white p-8 md:p-10 border border-gray-200 shadow-sm transition-all duration-500 ${step === 'SHIPPING' ? 'opacity-50 pointer-events-none grayscale' : 'opacity-100 ring-2 ring-[#c9b52e]/10'}`}>
-                            <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-8 border-b border-gray-100 pb-4">
                                 <h2 className="font-anton text-2xl uppercase tracking-wide">Payment Method</h2>
                                 <div className="flex items-center gap-2 text-[#c9b52e] text-[10px] font-bold uppercase tracking-widest">
                                     <Lock size={14} /> Secure Encrypted
@@ -122,14 +122,14 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
 
                             <form onSubmit={handleProcessPayment}>
                                 <div className="mb-8">
-                                    <div className="flex gap-4 mb-6">
-                                        <button type="button" className="flex-1 py-3 border-2 border-[#111111] bg-[#F9FAFB] flex items-center justify-center gap-2 font-bold text-sm">
+                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
+                                        <button type="button" className="w-full sm:flex-1 py-3 border-2 border-[#111111] bg-[#F9FAFB] flex items-center justify-center gap-2 font-bold text-sm">
                                             <CreditCard size={18} /> Card
                                         </button>
-                                        <button type="button" className="flex-1 py-3 border border-gray-200 text-gray-400 hover:border-gray-300 flex items-center justify-center gap-2 font-bold text-sm transition-colors">
+                                        <button type="button" className="w-full sm:flex-1 py-3 border border-gray-200 text-gray-400 hover:border-gray-300 flex items-center justify-center gap-2 font-bold text-sm transition-colors">
                                             PayPal
                                         </button>
-                                        <button type="button" className="flex-1 py-3 border border-gray-200 text-gray-400 hover:border-gray-300 flex items-center justify-center gap-2 font-bold text-sm transition-colors">
+                                        <button type="button" className="w-full sm:flex-1 py-3 border border-gray-200 text-gray-400 hover:border-gray-300 flex items-center justify-center gap-2 font-bold text-sm transition-colors">
                                             Apple Pay
                                         </button>
                                     </div>
@@ -145,7 +145,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="grid grid-cols-2 gap-6">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                             <div className="group">
                                                 <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">Expiry Date</label>
                                                 <input type="text" className="w-full border-b border-gray-200 py-3 bg-transparent text-sm focus:border-[#111111] transition-colors font-mono" placeholder="MM / YY" />
@@ -199,7 +199,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                              
                              <div className="max-h-[300px] overflow-y-auto pr-2 mb-6 space-y-6 scrollbar-thin scrollbar-thumb-gray-200">
                                  {cart.map((item, idx) => (
-                                     <div key={idx} className="flex gap-4">
+                                     <div key={idx} className="flex flex-col sm:flex-row gap-4">
                                          <div className="w-16 h-20 bg-[#E8E6E1] flex-shrink-0 relative">
                                              <img src={item.image} className="w-full h-full object-cover" />
                                              <span className="absolute -top-2 -right-2 w-5 h-5 bg-[#111111] text-white rounded-full flex items-center justify-center text-[10px] font-bold">
@@ -241,7 +241,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, setView, onPlaceOrder,
                         </div>
 
                         {/* Trust Badges */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="bg-white p-4 border border-gray-100 flex items-center gap-3">
                                 <CheckCircle className="text-[#c9b52e]" size={20} />
                                 <div>

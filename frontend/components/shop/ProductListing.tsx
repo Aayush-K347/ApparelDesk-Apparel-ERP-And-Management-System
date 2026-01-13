@@ -155,7 +155,7 @@ export const ProductListing: React.FC<ProductListingProps> = ({
 
                 {/* PRODUCT GRID */}
                 <div className="flex-1">
-                    <div className="flex justify-between items-center mb-8">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center mb-8">
                         <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">
                             {isLoading ? 'Loading...' : `${filteredProducts.length} Products Found`}
                         </span>
