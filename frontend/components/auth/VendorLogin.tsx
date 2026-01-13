@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { ViewState } from '../../types';
-import { ArrowRight, Briefcase, Lock, Key, Shield } from 'lucide-react';
+import { ArrowRight, Briefcase, Lock, Key, Shield, Eye, EyeOff } from 'lucide-react';
 import { loginUser, registerVendor } from '../../api';
 
 interface VendorLoginProps {
@@ -17,6 +17,8 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
     const [error, setError] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -130,14 +132,29 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
                           <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Password</label>
                           <div className="relative">
                               <input 
-                                type="password" 
+                                type={showPassword ? 'text' : 'password'}
                                 value={vendorPassword}
                                 onChange={(e) => setVendorPassword(e.target.value)}
                                 className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300" 
                                 placeholder="••••••••" 
                               />
-                              <Lock className="absolute right-0 top-3 text-gray-300 group-focus-within:text-[#111111] transition-colors" size={16} />
+                              <div className="absolute right-0 top-3 flex items-center gap-2 text-gray-300 group-focus-within:text-[#111111] transition-colors">
+                                  <Lock size={16} />
+                                  <button
+                                      type="button"
+                                      onClick={() => setShowPassword(!showPassword)}
+                                      className="hover:text-[#111111]"
+                                      aria-label={showPassword ? 'Hide password' : 'Show password'}
+                                  >
+                                      {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                                  </button>
+                              </div>
                           </div>
+                          {!isLogin && (
+                              <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-gray-400">
+                                  Password must be 8+ chars with uppercase, lowercase, and number
+                              </p>
+                          )}
                       </div>
 
                       {!isLogin && (
@@ -145,13 +162,23 @@ export const VendorLogin: React.FC<VendorLoginProps> = ({ setView, onVendorAuth 
                             <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 group-focus-within:text-[#111111] transition-colors">Confirm Password</label>
                             <div className="relative">
                                 <input 
-                                  type="password" 
+                                  type={showConfirmPassword ? 'text' : 'password'}
                                   value={confirmPassword}
                                   onChange={(e) => setConfirmPassword(e.target.value)}
                                   className="w-full border-b border-gray-200 py-3 pl-0 bg-transparent text-sm focus:border-[#111111] transition-colors placeholder:text-gray-300" 
                                   placeholder="••••••••" 
                                 />
-                                <Lock className="absolute right-0 top-3 text-gray-300 group-focus-within:text-[#111111] transition-colors" size={16} />
+                                <div className="absolute right-0 top-3 flex items-center gap-2 text-gray-300 group-focus-within:text-[#111111] transition-colors">
+                                    <Lock size={16} />
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                        className="hover:text-[#111111]"
+                                        aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                                    >
+                                        {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                       )}
