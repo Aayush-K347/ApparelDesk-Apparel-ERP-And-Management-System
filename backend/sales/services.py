@@ -128,9 +128,12 @@ def create_checkout(data, user=None):
     insert_invoice_sql = """
             INSERT INTO customer_invoices
             (invoice_number, sales_order_id, customer_id, payment_term_id, invoice_date, due_date, invoice_status,
-             subtotal, discount_amount, tax_amount, total_amount, paid_amount, created_by, created_at, updated_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+             subtotal, discount_amount, tax_amount, total_amount, paid_amount, remaining_amount,
+             early_payment_discount_applicable, early_payment_discount_amount, early_payment_deadline, notes,
+             created_by, created_at, updated_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
             """
+    early_discount_applicable = bool(getattr(payment_term, "early_payment_discount", False))
     invoice_params = [
         invoice_number,
         order.pk,
@@ -144,6 +147,11 @@ def create_checkout(data, user=None):
         tax_amount,
         total_amount,
         Decimal("0.00"),
+        total_amount,
+        early_discount_applicable,
+        Decimal("0.00"),
+        None,
+        None,
         created_by_id,
     ]
     with connection.cursor() as cursor:

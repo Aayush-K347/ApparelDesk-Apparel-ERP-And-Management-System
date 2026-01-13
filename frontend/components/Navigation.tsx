@@ -68,10 +68,7 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
             Shop
             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c9b52e] transition-all duration-500 ease-out group-hover:w-full"></span>
           </button>
-          <button onClick={() => setView('GENDER_SELECTION')} className="hover:text-[#c9b52e] transition-colors relative group py-2">
-            Collections
-            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c9b52e] transition-all duration-500 ease-out group-hover:w-full"></span>
-          </button>
+          {/* Collections removed from top navbar per design */}
           {ENABLE_STUDIO && (
               <button onClick={() => setView('STUDIO')} className="hover:text-[#c9b52e] transition-colors relative group py-2">
                  Studio
@@ -137,7 +134,7 @@ export const Navigation: React.FC<NavigationProps> = ({ cartCount, setView, isTr
                   <button className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300" onClick={() => { setSearchOpen(true); setMobileMenuOpen(false); }}>Search</button>
                   <button className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>Shop All</button>
                   <button className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>New Arrivals</button>
-                  <button className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('GENDER_SELECTION'); setMobileMenuOpen(false); }}>Collections</button>
+                  {/* Collections removed from mobile menu */}
                   {ENABLE_STUDIO && (
                       <button className="text-left hover:text-[#c9b52e] transition-colors hover:translate-x-4 duration-300" onClick={() => { setView('STUDIO'); setMobileMenuOpen(false); }}>Studio</button>
                   )}
