@@ -8,6 +8,9 @@ from PIL import Image
 import io
 from gradio_client import Client, handle_file
 import tempfile
+import base64
+import json
+import requests
 
 # ============================================
 # Hugging Face Inference API (IDM-VTON)
